@@ -3,10 +3,10 @@
 [RMF Systems Engineering Handbook](README.md)
 
 - [Project Home Page](project-home-page.md)
-    - [What is RMF@TRL](nested/what-is-rmf@trl.md)
-    - [Our mission and objectives](nested/our-mission-and-objectives.md)
-    - [Our partners and contributors](nested/our-partners-and-contributors.md)
-    - [Testimonials left by vendors for RMF's effort and](nested/testimonials-left-by-vendors.md)
+    - [What is RMF@TRL](nested1/what-is-rmf@trl.md)
+    - [Our mission and objectives](nested1/our-mission-and-objectives.md)
+    - [Our partners and contributors](nested1/our-partners-and-contributors.md)
+    - [Testimonials left by vendors for RMF's effort and](nested1/testimonials-left-by-vendors.md)
 
 - [Our Current Progress](our-current-progress.md)
     - [Sample Project 1](project1.md)
