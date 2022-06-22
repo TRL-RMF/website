@@ -1,6 +1,6 @@
 # Our partners and contributors
 
-![logo_govtech_hort](../images/logo_govtech_hort.jpg)
+![logo_govtech_hort](../images/logo_govtech_hort.gif)
 
 ![GovTech Logo](../images/govtech_logo.jpg)
 
