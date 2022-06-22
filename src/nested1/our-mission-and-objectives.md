@@ -18,7 +18,7 @@ We wish to establish the following:
     - Operational safety and reliability concerns
     - Policy considerations
 
-## Objectives - Outcomes
+## Objectives -> Outcomes
 
 Requirements:
 - Operational Safety & reliability
@@ -33,6 +33,6 @@ Test Centric Approach:
 Readiness Assessment:
 - Remote/Unsupervised operations
 - "Many AMRs to One operator" operations
-- Increased AMR operations frequency
+- Increased AMR operations frequencies
 
-![Overall Architecture](images/overall_architecture.png)
+![Overall Architecture](../images/overall_architecture.png)
