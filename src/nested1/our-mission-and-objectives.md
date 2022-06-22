@@ -18,7 +18,7 @@ We wish to establish the following:
     - Operational safety and reliability concerns
     - Policy considerations
 
-## Objectives - Outcomes
+## Objectives -> Outcomes
 
 Requirements:
 - Operational Safety & reliability

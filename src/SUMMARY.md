@@ -6,18 +6,25 @@
     - [What is RMF@TRL](nested1/what-is-rmf@trl.md)
     - [Our mission and objectives](nested1/our-mission-and-objectives.md)
     - [Our partners and contributors](nested1/our-partners-and-contributors.md)
-    - [Testimonials left by vendors for RMF's effort and](nested1/testimonials-left-by-vendors.md)
+    <!-- - [Testimonials left by vendors for RMF's effort and](nested1/testimonials-left-by-vendors.md) -->
 
 - [Our Current Progress](our-current-progress.md)
+    - [Current Status](nested2/current-status.md)
+    - [Design Efforts](nested2/design-efforts.md)
+    - [Platform standards](nested2/platform-standards.md)
+    - [Risk Assessment](nested2/risk-assessment.md)
+    - [Systems Test Plan](nested2/systems-test-plan.md)
+    <!-- done pages till 23 lesgoo -->
+    - [Terms of Reference](nested2/terms-of-references.md)
     - [Sample Project 1](nested2/project1.md)
-        - [Products delivered and features currently in progress](nested21/products-delivered.md)
-        - [Guidelines and procedures abided by](nested21/guidelines-and-procedures.md)
-        - [Project milestones](nested21/project-milestones.md)
-        - [Other working beneficiaries and partners](nested21/other-working-beneficiaries.md)
-        - [Project specific Q&A](nested21/project-specific-qna.md)
-        - [Discussion post for all the comment and questions](nested21/discussion-post.md)
-        - [Contact to vendor for further queries/collaborations](nested21/contact-to-vendor.md)
-        - [Other working beneficiaries and partners](nested21/other-working-beneficiaries.md)
+        <!-- - [Products delivered and features currently in progress](nested21/products-delivered.md) -->
+        <!-- - [Guidelines and procedures abided by](nested21/guidelines-and-procedures.md) -->
+        <!-- - [Project milestones](nested21/project-milestones.md) -->
+        <!-- - [Other working beneficiaries and partners](nested21/other-working-beneficiaries.md) -->
+        <!-- - [Project specific Q&A](nested21/project-specific-qna.md) -->
+        <!-- - [Discussion post for all the comment and questions](nested21/discussion-post.md) -->
+        <!-- - [Contact to vendor for further queries/collaborations](nested21/contact-to-vendor.md) -->
+        <!-- - [Other working beneficiaries and partners](nested21/other-working-beneficiaries.md) -->
     
 - [Systems Functionality](system-functionality.md)
     - [Simplifying interactions](nested3/simplifying-interactions.md)
