@@ -34,7 +34,7 @@
 
 <div class="row">
   <div class="column">
-    <img src="../images/smart-nation-logo.png" alt="Smart Nation Singapore" height="300" width="400" class="column">
+    <img src="../images/SNDGO.jpg" alt="Smart Nation Singapore" height="300" width="400" class="column">
   </div>
   <div class="column">
     <img src="../images/snt.jpeg" alt="GovTech" height="300" width="400" class="column">
