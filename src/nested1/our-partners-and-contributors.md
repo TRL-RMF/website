@@ -1,4 +1,5 @@
 # Our partners and contributors
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +14,7 @@
     justify-content:center;
 }
 
-
-.column {
+.column{
   float: left;
   width: 33.33%;
   padding: 5px;
@@ -34,15 +34,15 @@
 
 <div class="row">
   <div class="column">
-    <img src="../images/smart-nation-logo.png" alt="Smart Nation Singapore" height="300" width="400" class="img_item">
+    <img src="../images/smart-nation-logo.png" alt="Smart Nation Singapore" height="300" width="400" class="column">
   </div>
   <div class="column">
-    <img src="../images/snt.jpeg" alt="GovTech" height="300" width="400" style="vertical-align:top" class="img_item">
+    <img src="../images/snt.jpeg" alt="GovTech" height="300" width="400" class="column">
   </div>
   <div class="column">
-    <img src="../images/imda_logo.jpg" alt="IMDA" height="300" width="400" style="vertical-align:top" class="img_item">
+    <img src="../images/imda_logo.jpg" alt="IMDA" height="300" width="400" class="column">
   </div>
 </div>
 
 </body>
-</html>
+</html>			
