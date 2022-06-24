@@ -1,7 +1,48 @@
 # Our partners and contributors
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+.row{
+    overflow: scroll;
+    white-space:nowrap;
+    display: flex;
+    justify-content:center;
+}
 
-![SNDGG](../images/smart-nation-logo.png)
 
-![GovTech Logo](../images/snt.jpeg)
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
 
-![IMDA Logo](../images/imda_logo.jpg)
+</style>
+</head>
+<body>
+
+<!--- ![SNDGG](../images/smart-nation-logo.png)-->
+<!--- <img src="../images/smart-nation-logo.png" width="200"/>-->
+
+
+<!--- ![GovTech Logo](../images/snt.jpeg)-->
+
+<!--- ![IMDA Logo](../images/imda_logo.jpg)-->
+
+<div class="row">
+  <div class="column">
+    <img src="../images/smart-nation-logo.png" alt="Smart Nation Singapore" height="300" width="400" class="img_item">
+  </div>
+  <div class="column">
+    <img src="../images/snt.jpeg" alt="GovTech" height="300" width="400" style="vertical-align:top" class="img_item">
+  </div>
+  <div class="column">
+    <img src="../images/imda_logo.jpg" alt="IMDA" height="300" width="400" style="vertical-align:top" class="img_item">
+  </div>
+</div>
+
+</body>
+</html>

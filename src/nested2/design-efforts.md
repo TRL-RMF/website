@@ -30,7 +30,10 @@
 - AMR Vendors (Lionsbot? Gaussian..?)
     - RMF Nominal case integration requirements (to be discussed)
 
-![termin](../images/termin.png)
+<!--- ![termin](../images/termin.png)-->
+<p align="center">
+    <img width="400" height="300" src="../images/termin.png">
+</p>
 
 ## Design Efforts / Documentation Goals:
 
@@ -39,6 +42,9 @@
 RMF-like system
     - *Complimentary to I2R efforts to update ISO/TC299, ISO/CD 18646-2
 
-![SS ISO 13482:2017](../images/iso.png)
+<!--- ![SS ISO 13482:2017](../images/iso.png)-->
+<p align="center">
+    <img width="400" height="60" src="../images/iso.png">
+</p>
 
 - Update to IMDA AMR guidelines (ie: Govt Playbook)
