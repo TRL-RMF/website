@@ -25,5 +25,6 @@
     - Beckhoff Programable Logic Controllers (PLC) for Lift
     - Decada Edge (Dell Edge) device purchase
     
+# Virtual TRL (ROS-Gazebo)
 
-![Current Status](../images/virtual-trl.png)
+![Current Status](../images/gazebo.png)
