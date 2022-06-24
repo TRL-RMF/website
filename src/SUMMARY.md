@@ -13,7 +13,6 @@
 - [Risk Assessment](nested2/risk-assessment.md)
 - [Systems Test Plan](nested2/systems-test-plan.md)
 - [Terms of Reference](nested2/terms-of-references.md)
-- [Sample Project 1](nested2/project1.md)
 
 - [Systems Functionality](system-functionality.md)
     - [Simplifying interactions](nested3/simplifying-interactions.md)
