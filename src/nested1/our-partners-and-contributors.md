@@ -1,7 +1,7 @@
 # Our partners and contributors
 
-![logo_govtech_hort](../images/logo_govtech_hort.jpg)
+![SNDGG](../images/smart-nation-logo.png)
 
-![GovTech Logo](../images/govtech_logo.jpg)
+![GovTech Logo](../images/snt.jpeg)
 
 ![IMDA Logo](../images/imda_logo.jpg)
