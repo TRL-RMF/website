@@ -17,4 +17,3 @@
 - [Roles & Responsibilities](nested2/roles-responsibilities.md)
 - [Project Risks](nested2/project-risks.md)
 - [Ethernet wiring diagram at TRL](nested2/wiring-diagram.md)
-- [Testing link](nested2/link.md)
