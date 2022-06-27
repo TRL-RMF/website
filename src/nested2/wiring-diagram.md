@@ -22,3 +22,7 @@ Wireless charger to deploy at level 4 and 6
 
 ### Server room
 ![Server room](../images/server.png)
+
+## Download link
+Click the link to download the Ethernet Wiring Diagram.
+[Download](../download/Wiring.pptx)
