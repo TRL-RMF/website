@@ -1,3 +1,2 @@
-# Baseline 0
+# Gazebo SwIL Simulation
 
-## Static test rig

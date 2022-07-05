@@ -1,3 +1,2 @@
-# Baseline 0
+# Verification and Verification
 
-## Static test rig
