@@ -51,8 +51,8 @@ Project Sponsor, S&TPPO
 <chong_teng_sheng@pmo.gov.sg> 
 
 <br> <br>
-Mr Timothy-Joe Tan - Govtech        
-Project Lead, RMF@TRL   
+Mr Timothy-Joe Tan       
+Project Lead, Govtech
 <timothy_tan@tech.gov.sg>     
 
 <br> <br>
