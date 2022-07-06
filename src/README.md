@@ -57,11 +57,5 @@ Chong Teng Sheng
 Project Sponsor, S&TPPO  
 <chong_teng_sheng@pmo.gov.sg>
 
-<br>
-
-Timothy-Joe Tan 
-Project Lead, Govtech
-<timothy_tan@tech.gov.sg>
-
 
 
