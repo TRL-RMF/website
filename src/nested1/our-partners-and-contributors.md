@@ -52,8 +52,11 @@ Project Sponsor, S&TPPO
 
 <br> <br>
 Mr Timothy-Joe Tan       
-Project Lead, Govtech
-<timothy_tan@tech.gov.sg>     
+Project Lead, Govtech  
+<timothy_tan@tech.gov.sg> 
+
+Mr Abilash Siva
+<chong_teng_sheng@pmo.gov.sg> 
 
 <br> <br>
 Mr Lim Joo Siang - PM, Hope Technik   
