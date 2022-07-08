@@ -44,24 +44,33 @@
   </div>
 </div>
 
-<br> <br> <br> <br> <br> <br>
+<br> <br>
 
-Mr Chong Teng Sheng  
-Project Sponsor, S&TPPO  
+## Project Sponsor & Executing Agency
+
+Mr Chong Teng Sheng  - S&TPPO   
+Project Sponsor  
 <chong_teng_sheng@pmo.gov.sg> 
 
-<br> <br>
-Mr Timothy-Joe Tan       
-Project Lead, Govtech  
-<timothy_tan@tech.gov.sg> 
+Mr Timothy-Joe Tan - Govtech     
+Project Lead  
+<timothy_tan@tech.gov.sg>  
 
-Mr Abilash Siva
-<chong_teng_sheng@pmo.gov.sg> 
+Mr Abilash Sivalingam  
+<abilash_sivalingam@tech.gov.sg>   
 
-<br> <br>
+Mr Selvavignesh Balasubramanian  
+<balasubramanian_selvavignesh@tech.gov.sg> 
+
+## RMF Overall Systems Integrator & Building Management Systems Integrator  
 Mr Lim Joo Siang - PM, Hope Technik   
 Overall Systems Integrator Lead & RMF Building Management Systems  
 <limjoosiang@hopetechnik.com>  
+
+## RMF Core & Fleet Systems Integrator  
+Dr Ho Chin Keong - CTO, Senserbot  
+RMF Core Integrator Lead  
+<ChinKeong@senserbot.com>  
 
 <br> <br> 
 Mr Matt Festo - PM, OSRF Singapore   
@@ -72,12 +81,7 @@ Dr Michael Grey - Lead Developer, OSRF Singapore
 RMF Scheduler Development Lead    
 <grey@openrobotics.org>     
 
-<br> <br> 
-Dr Ho Chin Keong - CTO, Senserbot  
-RMF Core Integrator Lead  
-<ChinKeong@senserbot.com>  
-
-<br> <br>
+## Universal Wireless Charger Systems Integrator  
 Mr Terrenlzze Wong - Xnergy Wireless
 Wireless Charger Lead    
 <twongms@xnergytech.com>    

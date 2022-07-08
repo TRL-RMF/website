@@ -4,7 +4,7 @@
 
 ## What is the RMF@TRL project about?
 In the course of building the [RMF](https://osrf.github.io/ros2multirobotbook/intro.html), the team observed many questions being asked 
-(by Government agencies, end users and developers), about RMF's 
+(by Government agencies, end users, AMR vendors and developers), about RMF's 
 - Safety & reliability
 - Operational concerns 
 - Policy and regulations.
