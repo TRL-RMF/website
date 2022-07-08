@@ -1,0 +1,2268 @@
+<html xmlns:graph="graph" xmlns:results="results">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+    BODY,P,OL,TD,pre{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    A:link {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:active {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:visited {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #999999;text-decoration: none;}
+    A:hover {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: underline;}
+    A.gray_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: underline;}
+    A.red_link:link {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:active {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:visited {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:hover {font-family: Arial;font-size: 12px;color: #990000;text-decoration: underline;}
+    A.green_link:link {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:active {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:visited {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:hover {font-family: Arial;font-size: 12px;color: #008040;text-decoration: underline;}
+    A.black_link:link {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:active {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:visited {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:hover {font-family: Arial;font-size: 12px;color: #000000;text-decoration: underline;}
+    
+    A.blue_link:link {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:active {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:visited {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:hover {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: underline;}
+    
+    A.gray_red_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    DIV.suite_details{margin-left: 40px; padding: 10px; border: 2px solid #99aaaa;}
+    DIV.test_comment{color:#666666;}
+    DIV.header{font-size: 32px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }
+    DIV.small_header{font-size: 18px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }    
+    FONT.gray {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #999999;}    
+    FONT.gray2, FONT.gray_red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #666666;}
+    FONT.white {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #FFFFFF;}
+    FONT.time {font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;}
+    FONT.black {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    FONT.red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000;}
+    FONT.red2 {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000; text-decoration: underline;}
+    FONT.blue {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #427fb6;}
+    FONT.green {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #008040;}
+    FONT.orange {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #F69500;}
+    FONT.goldenrod {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #DAA520;}    
+    FONT.small {font-size: 3px;font-family: Arial, Helvetica, sans-serif;color: #cccccc;}
+    IMG.screenshot{float:left; margin-right: 20px; border:1px solid black;}
+    SELECT.cs_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SELECT.ju_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SPAN.toggle_button{width: 16px; padding-right: 2px; display: inline-block;} 
+    TD.associations{vertical-align: top;}
+    TD.collapse_controls{text-align:right;}
+    TD.cs_authors{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;border: 1px; bordercolor: #d9c8ac;}
+    TD.error{background-color:#ffeeee}
+    TD.errorsingleborder{background-color:#ffeeee;border:1px solid #CBCBCB}
+    TD.singleborder{ border:1px solid #CBCBCB}
+    TABLE.header{background-color:#FFFFFF}
+    TABLE.singleborder{ border:1px solid #CBCBCB}
+    TABLE.doubleborder{ border:2px solid #CBCBCB}     
+    TABLE.singleborder_blue{ border:2px solid #427fb6}
+    TD.fixed_width{width: 150px;}
+    TD.no_error{}
+    TD.suite_details{padding:2px; }
+    UL.metrics {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:12px;}
+    UL.root {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:3px;}
+    UL {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:12px;}
+    LI {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left: 0px;}
+    #foldheader{cursor:pointer;cursor:hand ;}
+    #cs_foldheader{cursor:pointer;cursor:hand ;}
+    #metrics_foldheader{cursor:pointer;cursor:hand ;}
+    #exec_foldheader{cursor:pointer;cursor:hand ;}
+    #paramsHeader {word-break:break-all;overflow: auto; padding: 3px;}
+    </style><title>msi3
+- Static Analysis [ 0 / 190 / 50 ]
+
+</title><script language="JavaScript">
+    var nwin;    
+    function openWin (loc_to_open) {    
+       if (!nwin || nwin.closed) {
+          nwin = window.open(loc_to_open,'');
+       } else {
+          nwin.location = loc_to_open;
+       }
+       nwin.focus();
+    }
+    function openDevReport (dev_rep_name) {
+       openWin('&id=' + dev_rep_name);
+    }
+    </script><script language="JavaScript">
+    function sortBySeverity(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }   
+    if(sev != null) sev.style.display='block';
+    if(sev_title != null) sev_title.style.display='block';
+    if(sev_link != null) {
+    sev_link.style.color="#666666";  
+    sev_link.style.textDecoration="none";
+    }
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }   
+    if(cat != null) cat.style.display='none';
+    if(cat_title != null) cat_title.style.display='none';
+    if(cat_link != null) {
+    cat_link.style.color="#990000";
+    cat_link.style.textDecoration="underline";
+    }
+    }
+    
+    function sortByCategory(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }
+    if(sev != null) sev.style.display='none';
+    if(sev_title != null) sev_title.style.display='none';
+    if(sev_link != null) { 
+    sev_link.style.color="#990000";   
+    sev_link.style.textDecoration="underline";
+    }       
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }
+    if(cat != null) cat.style.display='block';
+    if(cat_title != null) cat_title.style.display='block';
+    if(cat_link != null) { 
+    cat_link.style.color="#666666"; 
+    cat_link.style.textDecoration="none";
+    }
+    }
+    
+    function expandViolation(headerID, violationID, startIndex)
+    {
+        var violation = document.getElementById(violationID);
+        var m = document.getElementById(headerID).getElementsByTagName('td');
+
+        if (violation.style.display === '') {
+            violation.style.display = 'none';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#FFFFFF";
+            }
+        }
+        else{
+            violation.style.display = '';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#E0E0E0";
+            }
+        }
+    }
+    </script></head>
+<body bgcolor="#E7F0F5">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="left"><img src="rep_header_logo.png" alt="rep_header_logo.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="40%" align="center"><img src="rep_header_3.png" alt="rep_header_3.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="center"></td>
+</tr>
+</table>
+<table width="100%" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:0px" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-left:20px" align="left" width="20%"></td>
+<td style="padding:10px" align="center" width="60%">
+<table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">Builtin configuration:
+	    		&nbsp;<b>Recommended Rules</b></td>
+</tr>
+<tr>
+<td width="16%" align="center"><font class="time">2022-06-24T11:26:41+08:00</font></td>
+</tr>
+</table>
+</td>
+<td style="padding-right:20px" align="right" width="20%"></td>
+</tr>
+</table>
+<table width="100%" class="singleborder_blue" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:5px" cellspacing="0" bgcolor="#FFFFFF" bordercolor="#A0CAEC">
+<tr>
+<td><a xmlns:textutil="textutil" name="cst_msi3"></a><table xmlns:textutil="textutil" class="header" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td width="15%"></td>
+<td align="center">
+<div class="header">STATIC ANALYSIS</div>
+</td>
+<td width="15%" align="right" valign="bottom"></td>
+</tr>
+</table><br><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td align="left"><a class="black_link" href="#cs_urg_dev1"><b>Recommended Tasks to Accomplish Today</b></a>:
+&nbsp;50
+</td>
+</tr>
+<tr>
+<td align="left">(push the "Import My Recommended Tasks" button to import the tasks into your workspace)</td>
+</tr>
+<tr>
+<td align="left"><b>Tasks</b>:
+
+190&nbsp;<a class="black_link" href="#cs_msi3"><b>total</b></a>,
+&nbsp;0&nbsp;<b>suppressed</b></td>
+</tr>
+<tr>
+<td align="left"><b>Goal</b>:
+accomplish all tasks
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table class="header" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="30%">&nbsp;</td>
+<td align="center">
+<div class="small_header" id="cs_title_cattrue" style="display:block;">All Recommended Tasks&nbsp;by Category</div>
+<div class="small_header" id="cs_title_sevtrue" style="display:none;">All Recommended Tasks&nbsp;by Severity</div>
+</td>
+<td align="right" width="30%"><font class="gray2">by:</font>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_cattrue" class="gray_red_link" href="javascript:sortByCategory(true)">Category</a>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_sevtrue" class="gray_red_link" href="javascript:sortBySeverity(true)">Severity</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left">
+<div id="cs_cattrue" style="display:block;">
+<table class="doubleborder" width="100%" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Code Duplication Detection</b>&nbsp;<font class="gray">(CDD)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid function duplication&nbsp;<font class="gray">(CDD-DUPM-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>Coding Conventions</b>&nbsp;<font class="gray">(CODSTA)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Local variables should not use the same names as member variables&nbsp;<font class="gray">(CODSTA-44-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>10</b>]
+&nbsp;&nbsp;<b>Coding Conventions for C++</b>&nbsp;<font class="gray">(CODSTA-CPP)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>13</b>]
+&nbsp;&nbsp;<b>Initialization</b>&nbsp;<font class="gray">(INIT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Metric</b>&nbsp;<font class="gray">(METRIC)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>23</b>]
+&nbsp;&nbsp;<b>Optimization</b>&nbsp;<font class="gray">(OPT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>23</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div id="cs_sevtrue" style="display:none;">
+<table width="100%" class="doubleborder" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>25</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;1 - Highest</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Local variables should not use the same names as member variables&nbsp;<font class="gray">(CODSTA-44-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;2 - High</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid function duplication&nbsp;<font class="gray">(CDD-DUPM-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>24</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;3 - Medium</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>23</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td xmlns:authors="authors" style="padding-left:20px;" colspan="2" align="left" nowrap><a name="cs_urg_dev1"></a><b>msi3</b>&nbsp;&nbsp;Recommended Tasks to Accomplish Today			
+			:
+			&nbsp;50
+</td>
+<td xmlns:authors="authors" align="right"><a class="blue_link" href="#top">Back to Top </a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="3" align="left">
+<table width="100%" bgcolor="#FFFFFF" bordercolor="#CBCBCB" class="doubleborder" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Activator.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">80:&nbsp;</font></td>
+<td>The parameter 'phase_finished' of function 'restore' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/BackupFileManager.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">197:&nbsp;</font></td>
+<td>The parameter 'info' of function 'BackupFileManager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/BinaryPriority.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">31:&nbsp;</font></td>
+<td>Constructor 'BinaryPriority' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/BinaryPriorityCostCalculator.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">31:&nbsp;</font></td>
+<td>Constructor 'BinaryPriorityCostCalculator' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">37:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'compute_cost' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">42:&nbsp;</font></td>
+<td>The parameter 'assignments' of function 'compute_cost' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/CompositeData.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">57:&nbsp;</font></td>
+<td>The parameter 'type' of function '_get' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Constraints.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">25:&nbsp;</font></td>
+<td>No constructor. All member variables: 'drain_battery, recharge_soc, threshold_soc' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Estimate.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>No constructor. All member variables: 'change_in_charge' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">97:&nbsp;</font></td>
+<td>Constructor 'Implementation' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">178:&nbsp;</font></td>
+<td>Constructor 'PairHash' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Event.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">80:&nbsp;</font></td>
+<td>No constructor. All member variables: 'id, status' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/InvariantHeuristicQueue.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>Constructor 'InvariantHeuristicQueue' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>The parameter 'initial_values' of function 'InvariantHeuristicQueue' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Log.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">36:&nbsp;</font></td>
+<td>Constructor 'Implementation' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">54:&nbsp;</font></td>
+<td>No constructor. All member variables: 'seq, tier' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">272:&nbsp;</font></td>
+<td>The parameter 'text' of function 'warn' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Payload.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">99:&nbsp;</font></td>
+<td>No constructor. All member variables: 'quantity' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Phase.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">23:&nbsp;</font></td>
+<td>No constructor. All member variables: 'id' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">71:&nbsp;</font></td>
+<td>The parameter 'finish_' of function 'Completed' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/State.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">136:&nbsp;</font></td>
+<td>The parameter 'default_time' of function 'project_plan_start' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Task.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">25:&nbsp;</font></td>
+<td>No constructor. All member variables: 'automatic' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/TaskPlanner.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>No constructor. All member variables: 'greedy' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">252:&nbsp;</font></td>
+<td>Constructor 'AssignmentHash' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">937:&nbsp;</font></td>
+<td>Value 7 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1103:&nbsp;</font></td>
+<td>The parameter 'agents' of function 'plan' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1120:&nbsp;</font></td>
+<td>The parameter 'options' of function 'plan' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/VersionedString.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">29:&nbsp;</font></td>
+<td>Constructor 'Implementation' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">29:&nbsp;</font></td>
+<td>The parameter 'initial_value' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/detail/Backup.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>No constructor. All member variables: 'sequence' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/detail/internal_Resume.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">47:&nbsp;</font></td>
+<td>The parameter 'callback' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">49:&nbsp;</font></td>
+<td>Constructor 'Implementation' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/events/SimpleEventState.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>No constructor. All member variables: 'id, status' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/internal_task_planning.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">99:&nbsp;</font></td>
+<td>The parameter 'start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">204:&nbsp;</font></td>
+<td>The local variable 'model' hides a member variable declared in class 'PendingTask'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-44-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">207:&nbsp;</font></td>
+<td>The local variable 'candidates' hides a member variable declared in class 'PendingTask'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-44-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/internal_task_planning.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">95:&nbsp;</font></td>
+<td>The parameter 'previous_state' of function 'update_candidate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">102:&nbsp;</font></td>
+<td>Constructor 'Candidates' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">114:&nbsp;</font></td>
+<td>The parameter 'start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">130:&nbsp;</font></td>
+<td>The parameter 'candidates_' of function 'PendingTask' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/phases/RestoreBackup.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">41:&nbsp;</font></td>
+<td>The parameter 'estimated_remaining_time_' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/requests/ChargeBattery.cpp</b></td>
+</tr>
+<tr id="authViolFAid41H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid41H','authViolFAid41', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="gray"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">30:&nbsp;</font></td>
+<td>Duplicated function: 'std :: string generate_uuid ( const std :: size_t length = 3...'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CDD-DUPM-2</font></td>
+</tr>
+<tr id="authViolFAid41" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px" class="tree">&nbsp;</td>
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px" colspan="2" class="tree"><pre style="margin:0px;">[Line 30] Duplicated function in file 'ChargeBattery.cpp'
+[Line 29] Duplicated function in file 'ParkRobotFactory.cpp'</pre></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">185:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'make_model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/requests/Clean.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">199:&nbsp;</font></td>
+<td>Constructor does not initialize members: 'end_waypoint, start_waypoint'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/requests/Delivery.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">60:&nbsp;</font></td>
+<td>The parameter 'pickup_wait' of function 'Model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">62:&nbsp;</font></td>
+<td>The parameter 'dropoff_wait' of function 'Model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">207:&nbsp;</font></td>
+<td>No constructor. All member variables: 'dropoff_waypoint, pickup_waypoint' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">323:&nbsp;</font></td>
+<td>The parameter 'pickup_wait' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">332:&nbsp;</font></td>
+<td>The parameter 'dropoff_to_ingestor' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/requests/Loop.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">214:&nbsp;</font></td>
+<td>Constructor does not initialize members: 'finish_waypoint, num_loops, start_waypoint'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="3"><br></td>
+</tr>
+</table>
+<table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table class="header" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="30%">&nbsp;</td>
+<td align="center">
+<div class="small_header" id="cs_title_cat" style="display:block;">All Tasks&nbsp;by Category</div>
+<div class="small_header" id="cs_title_sev" style="display:none;">All Tasks&nbsp;by Severity</div>
+</td>
+<td align="right" width="30%"><font class="gray2">by:</font>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_cat" class="gray_red_link" href="javascript:sortByCategory()">Category</a>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_sev" class="gray_red_link" href="javascript:sortBySeverity()">Severity</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left">
+<div id="cs_cat" style="display:block;">
+<table class="doubleborder" width="100%" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Code Duplication Detection</b>&nbsp;<font class="gray">(CDD)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid function duplication&nbsp;<font class="gray">(CDD-DUPM-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>Coding Conventions</b>&nbsp;<font class="gray">(CODSTA)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Local variables should not use the same names as member variables&nbsp;<font class="gray">(CODSTA-44-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>10</b>]
+&nbsp;&nbsp;<b>Coding Conventions for C++</b>&nbsp;<font class="gray">(CODSTA-CPP)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>13</b>]
+&nbsp;&nbsp;<b>Initialization</b>&nbsp;<font class="gray">(INIT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Metric</b>&nbsp;<font class="gray">(METRIC)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>163</b>]
+&nbsp;&nbsp;<b>Optimization</b>&nbsp;<font class="gray">(OPT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>163</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div id="cs_sev" style="display:none;">
+<table width="100%" class="doubleborder" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>25</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;1 - Highest</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Local variables should not use the same names as member variables&nbsp;<font class="gray">(CODSTA-44-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;2 - High</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid function duplication&nbsp;<font class="gray">(CDD-DUPM-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>164</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;3 - Medium</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>163</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td xmlns:authors="authors" style="padding-left:20px;" colspan="2" align="left" nowrap><a name="cs_dev1"></a><b>msi3</b>&nbsp;&nbsp;Total Tasks			
+			:
+			&nbsp;190
+</td>
+<td xmlns:authors="authors" align="right"><a class="blue_link" href="#top">Back to Top </a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="3" align="left">
+<table width="100%" bgcolor="#FFFFFF" bordercolor="#CBCBCB" class="doubleborder" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Activator.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">43:&nbsp;</font></td>
+<td>The parameter 'update' of function 'activate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">44:&nbsp;</font></td>
+<td>The parameter 'checkpoint' of function 'activate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">45:&nbsp;</font></td>
+<td>The parameter 'phase_finished' of function 'activate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">46:&nbsp;</font></td>
+<td>The parameter 'task_finished' of function 'activate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">77:&nbsp;</font></td>
+<td>The parameter 'backup_state' of function 'restore' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>The parameter 'update' of function 'restore' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">79:&nbsp;</font></td>
+<td>The parameter 'checkpoint' of function 'restore' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">80:&nbsp;</font></td>
+<td>The parameter 'phase_finished' of function 'restore' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">81:&nbsp;</font></td>
+<td>The parameter 'task_finished' of function 'restore' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>The parameter 'type' of function '_add_activator' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">107:&nbsp;</font></td>
+<td>The parameter 'activator' of function '_add_activator' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/BackupFileManager.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">42:&nbsp;</font></td>
+<td>The parameter 'directory' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">43:&nbsp;</font></td>
+<td>The parameter 'info' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">44:&nbsp;</font></td>
+<td>The parameter 'debug' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>The parameter 'directory' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">98:&nbsp;</font></td>
+<td>The parameter 'directory' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">146:&nbsp;</font></td>
+<td>The parameter 'msg' of function 'log_debug' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">158:&nbsp;</font></td>
+<td>The parameter 'msg' of function 'log_info' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">196:&nbsp;</font></td>
+<td>The parameter 'root_directory' of function 'BackupFileManager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">197:&nbsp;</font></td>
+<td>The parameter 'info' of function 'BackupFileManager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">198:&nbsp;</font></td>
+<td>The parameter 'debug' of function 'BackupFileManager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">222:&nbsp;</font></td>
+<td>The parameter 'name' of function 'make_group' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">243:&nbsp;</font></td>
+<td>The parameter 'name' of function 'make_robot' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/BinaryPriority.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">31:&nbsp;</font></td>
+<td>Constructor 'BinaryPriority' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/BinaryPriorityCostCalculator.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">74:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'compute_h' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">208:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'compute_cost' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">225:&nbsp;</font></td>
+<td>The parameter 'assignments' of function 'compute_cost' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/BinaryPriorityCostCalculator.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">31:&nbsp;</font></td>
+<td>Constructor 'BinaryPriorityCostCalculator' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">37:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'compute_cost' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">42:&nbsp;</font></td>
+<td>The parameter 'assignments' of function 'compute_cost' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'compute_h' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/CompositeData.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">47:&nbsp;</font></td>
+<td>The parameter 'type' of function '_get' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">57:&nbsp;</font></td>
+<td>The parameter 'type' of function '_get' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">63:&nbsp;</font></td>
+<td>The parameter 'value' of function '_insert' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">79:&nbsp;</font></td>
+<td>The parameter 'type' of function '_erase' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Constraints.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">25:&nbsp;</font></td>
+<td>No constructor. All member variables: 'drain_battery, recharge_soc, threshold_soc' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/CostCalculator.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">34:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'compute_cost' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">39:&nbsp;</font></td>
+<td>The parameter 'assignments' of function 'compute_cost' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Estimate.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">30:&nbsp;</font></td>
+<td>The parameter 'finish_state' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">30:&nbsp;</font></td>
+<td>The parameter 'wait_until' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">40:&nbsp;</font></td>
+<td>The parameter 'finish_state' of function 'Estimate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">40:&nbsp;</font></td>
+<td>The parameter 'wait_until' of function 'Estimate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>The parameter 'new_finish_state' of function 'finish_state' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>The parameter 'new_wait_until' of function 'wait_until' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>No constructor. All member variables: 'change_in_charge' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>The parameter 'duration_' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">97:&nbsp;</font></td>
+<td>Constructor 'Implementation' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">178:&nbsp;</font></td>
+<td>Constructor 'PairHash' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Event.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">80:&nbsp;</font></td>
+<td>No constructor. All member variables: 'id, status' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Header.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">35:&nbsp;</font></td>
+<td>The parameter 'category_' of function 'Header' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">36:&nbsp;</font></td>
+<td>The parameter 'detail_' of function 'Header' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">37:&nbsp;</font></td>
+<td>The parameter 'estimate_' of function 'Header' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/InvariantHeuristicQueue.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">27:&nbsp;</font></td>
+<td>The parameter 'initial_values' of function 'InvariantHeuristicQueue' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/InvariantHeuristicQueue.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>Constructor 'InvariantHeuristicQueue' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>The parameter 'initial_values' of function 'InvariantHeuristicQueue' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Log.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">36:&nbsp;</font></td>
+<td>Constructor 'Implementation' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">36:&nbsp;</font></td>
+<td>The parameter 'clock_' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">54:&nbsp;</font></td>
+<td>No constructor. All member variables: 'seq, tier' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">61:&nbsp;</font></td>
+<td>The parameter 'time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">62:&nbsp;</font></td>
+<td>The parameter 'text' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">169:&nbsp;</font></td>
+<td>The parameter 'it' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">169:&nbsp;</font></td>
+<td>The parameter 'last' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">187:&nbsp;</font></td>
+<td>The parameter 'begin' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">188:&nbsp;</font></td>
+<td>The parameter 'last_in_view' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">259:&nbsp;</font></td>
+<td>The parameter 'clock' of function 'Log' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">266:&nbsp;</font></td>
+<td>The parameter 'text' of function 'info' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">272:&nbsp;</font></td>
+<td>The parameter 'text' of function 'warn' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">278:&nbsp;</font></td>
+<td>The parameter 'text' of function 'error' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">284:&nbsp;</font></td>
+<td>The parameter 'text' of function 'push' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">301:&nbsp;</font></td>
+<td>The parameter 'entry' of function 'insert' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Parameters.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">36:&nbsp;</font></td>
+<td>The parameter 'battery_system' of function 'Parameters' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">61:&nbsp;</font></td>
+<td>The parameter 'battery_system' of function 'battery_system' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Payload.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">36:&nbsp;</font></td>
+<td>The parameter 'components' of function 'Payload' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">99:&nbsp;</font></td>
+<td>No constructor. All member variables: 'quantity' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">111:&nbsp;</font></td>
+<td>The parameter 'sku' of function 'Component' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">113:&nbsp;</font></td>
+<td>The parameter 'compartment' of function 'Component' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Phase.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">23:&nbsp;</font></td>
+<td>No constructor. All member variables: 'id' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">35:&nbsp;</font></td>
+<td>The parameter 'header_' of function 'Tag' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">70:&nbsp;</font></td>
+<td>The parameter 'start_' of function 'Completed' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">71:&nbsp;</font></td>
+<td>The parameter 'finish_' of function 'Completed' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Request.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'Request' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/State.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>The parameter 'new_time' of function 'time' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">136:&nbsp;</font></td>
+<td>The parameter 'default_time' of function 'project_plan_start' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/Task.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">25:&nbsp;</font></td>
+<td>No constructor. All member variables: 'automatic' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">36:&nbsp;</font></td>
+<td>The parameter 'id_' of function 'Booking' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">37:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time_' of function 'Booking' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">86:&nbsp;</font></td>
+<td>The parameter 'header_' of function 'Tag' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">109:&nbsp;</font></td>
+<td>The parameter 'callback' of function 'make_resumer' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/TaskPlanner.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">44:&nbsp;</font></td>
+<td>The parameter 'parameters' of function 'Configuration' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">45:&nbsp;</font></td>
+<td>The parameter 'constraints' of function 'Configuration' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">64:&nbsp;</font></td>
+<td>The parameter 'parameters' of function 'parameters' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>The parameter 'constraints' of function 'constraints' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>No constructor. All member variables: 'greedy' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">113:&nbsp;</font></td>
+<td>The parameter 'interrupter' of function 'Options' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">139:&nbsp;</font></td>
+<td>The parameter 'interrupter' of function 'interrupter' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">179:&nbsp;</font></td>
+<td>The parameter 'state' of function 'Assignment' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>The parameter 'deployment_time' of function 'Assignment' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">252:&nbsp;</font></td>
+<td>Constructor 'AssignmentHash' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">379:&nbsp;</font></td>
+<td>The parameter 'start_time' of function 'make_charging_request' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">501:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'complete_solve' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">504:&nbsp;</font></td>
+<td>The parameter 'interrupter' of function 'complete_solve' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">606:&nbsp;</font></td>
+<td>The parameter 'initial_states' of function 'make_initial_node' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">607:&nbsp;</font></td>
+<td>The parameter 'requests' of function 'make_initial_node' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">608:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'make_initial_node' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">698:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'expand_candidate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">864:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'expand_charger' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">937:&nbsp;</font></td>
+<td>Value 7 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">940:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'greedy_solve' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">998:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'expand' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1045:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'solve' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1046:&nbsp;</font></td>
+<td>The parameter 'interrupter' of function 'solve' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1088:&nbsp;</font></td>
+<td>The parameter 'configuration' of function 'TaskPlanner' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1089:&nbsp;</font></td>
+<td>The parameter 'default_options' of function 'TaskPlanner' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1102:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'plan' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1103:&nbsp;</font></td>
+<td>The parameter 'agents' of function 'plan' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1104:&nbsp;</font></td>
+<td>The parameter 'requests' of function 'plan' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1117:&nbsp;</font></td>
+<td>The parameter 'time_now' of function 'plan' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1118:&nbsp;</font></td>
+<td>The parameter 'agents' of function 'plan' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1119:&nbsp;</font></td>
+<td>The parameter 'requests' of function 'plan' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">1120:&nbsp;</font></td>
+<td>The parameter 'options' of function 'plan' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/VersionedString.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">29:&nbsp;</font></td>
+<td>Constructor 'Implementation' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">29:&nbsp;</font></td>
+<td>The parameter 'initial_value' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">134:&nbsp;</font></td>
+<td>The parameter 'initial_value' of function 'VersionedString' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">141:&nbsp;</font></td>
+<td>The parameter 'new_value' of function 'update' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/detail/Backup.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>No constructor. All member variables: 'sequence' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">32:&nbsp;</font></td>
+<td>The parameter 'state' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">61:&nbsp;</font></td>
+<td>The parameter 'new_state' of function 'state' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/detail/Resume.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>The parameter 'callback' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>The parameter 'callback' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">63:&nbsp;</font></td>
+<td>The parameter 'callback_' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/detail/internal_Resume.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">47:&nbsp;</font></td>
+<td>The parameter 'callback' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">49:&nbsp;</font></td>
+<td>Constructor 'Implementation' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">49:&nbsp;</font></td>
+<td>The parameter 'callback' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/events/SimpleEventState.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>No constructor. All member variables: 'id, status' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">40:&nbsp;</font></td>
+<td>The parameter 'name' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">41:&nbsp;</font></td>
+<td>The parameter 'detail' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">43:&nbsp;</font></td>
+<td>The parameter 'dependencies' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">44:&nbsp;</font></td>
+<td>The parameter 'clock' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">86:&nbsp;</font></td>
+<td>The parameter 'new_name' of function 'update_name' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">99:&nbsp;</font></td>
+<td>The parameter 'new_detail' of function 'update_detail' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">125:&nbsp;</font></td>
+<td>The parameter 'new_dependencies' of function 'update_dependencies' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/internal_task_planning.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">37:&nbsp;</font></td>
+<td>The parameter 'candidate_values' of function 'Candidates' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">46:&nbsp;</font></td>
+<td>The parameter 'state' of function 'update_candidate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">47:&nbsp;</font></td>
+<td>The parameter 'wait_until' of function 'update_candidate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">48:&nbsp;</font></td>
+<td>The parameter 'previous_state' of function 'update_candidate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">99:&nbsp;</font></td>
+<td>The parameter 'start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">183:&nbsp;</font></td>
+<td>The parameter 'candidates_' of function 'PendingTask' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">193:&nbsp;</font></td>
+<td>The parameter 'start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">204:&nbsp;</font></td>
+<td>The local variable 'model' hides a member variable declared in class 'PendingTask'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-44-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">207:&nbsp;</font></td>
+<td>The local variable 'candidates' hides a member variable declared in class 'PendingTask'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-44-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/internal_task_planning.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">74:&nbsp;</font></td>
+<td>The parameter 'start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">93:&nbsp;</font></td>
+<td>The parameter 'state' of function 'update_candidate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">94:&nbsp;</font></td>
+<td>The parameter 'wait_until' of function 'update_candidate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">95:&nbsp;</font></td>
+<td>The parameter 'previous_state' of function 'update_candidate' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">102:&nbsp;</font></td>
+<td>Constructor 'Candidates' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">102:&nbsp;</font></td>
+<td>The parameter 'candidate_values' of function 'Candidates' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">114:&nbsp;</font></td>
+<td>The parameter 'start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">130:&nbsp;</font></td>
+<td>The parameter 'candidates_' of function 'PendingTask' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/phases/RestoreBackup.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">41:&nbsp;</font></td>
+<td>The parameter 'estimated_remaining_time_' of function 'Implementation' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">63:&nbsp;</font></td>
+<td>The parameter 'estimated_remaining_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/requests/ChargeBattery.cpp</b></td>
+</tr>
+<tr id="authViolFAid210H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid210H','authViolFAid210', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="gray"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">30:&nbsp;</font></td>
+<td>Duplicated function: 'std :: string generate_uuid ( const std :: size_t length = 3...'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CDD-DUPM-2</font></td>
+</tr>
+<tr id="authViolFAid210" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px" class="tree">&nbsp;</td>
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px" colspan="2" class="tree"><pre style="margin:0px;">[Line 30] Duplicated function in file 'ChargeBattery.cpp'
+[Line 29] Duplicated function in file 'ParkRobotFactory.cpp'</pre></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'Model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">74:&nbsp;</font></td>
+<td>The parameter 'parameters' of function 'Model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">185:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'make_model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">206:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/requests/Clean.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'Model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">199:&nbsp;</font></td>
+<td>Constructor does not initialize members: 'end_waypoint, start_waypoint'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">230:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'make_model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">280:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/requests/Delivery.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">57:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'Model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">60:&nbsp;</font></td>
+<td>The parameter 'pickup_wait' of function 'Model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">62:&nbsp;</font></td>
+<td>The parameter 'dropoff_wait' of function 'Model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">207:&nbsp;</font></td>
+<td>No constructor. All member variables: 'dropoff_waypoint, pickup_waypoint' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The parameter 'pickup_wait' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">225:&nbsp;</font></td>
+<td>The parameter 'dropoff_wait' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">226:&nbsp;</font></td>
+<td>The parameter 'payload' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">227:&nbsp;</font></td>
+<td>The parameter 'pickup_from_dispenser' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">228:&nbsp;</font></td>
+<td>The parameter 'dropoff_to_ingestor' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">253:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'make_model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">323:&nbsp;</font></td>
+<td>The parameter 'pickup_wait' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">325:&nbsp;</font></td>
+<td>The parameter 'dropoff_wait' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">326:&nbsp;</font></td>
+<td>The parameter 'payload' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">328:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">331:&nbsp;</font></td>
+<td>The parameter 'pickup_from_dispenser' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">332:&nbsp;</font></td>
+<td>The parameter 'dropoff_to_ingestor' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/requests/Loop.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">54:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'Model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">214:&nbsp;</font></td>
+<td>Constructor does not initialize members: 'finish_waypoint, num_loops, start_waypoint'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'make_model' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">293:&nbsp;</font></td>
+<td>The parameter 'earliest_start_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_task_testing/src/rmf_task/requests/ParkRobotFactory.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">57:&nbsp;</font></td>
+<td>The parameter 'parking_waypoint' of function 'ParkRobotFactory' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="3"><br></td>
+</tr>
+</table><br><script language="JavaScript">
+    if(document.getElementById("cs_link_sev") != null) {
+    document.getElementById("cs_link_sev").style.color="#990000";
+    document.getElementById("cs_link_sev").style.textDecoration="underline";
+    }
+    if(document.getElementById("cs_link_sevtrue") != null) {
+    document.getElementById("cs_link_sevtrue").style.color="#990000";
+    document.getElementById("cs_link_sevtrue").style.textDecoration="underline";
+    }
+    </script></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="100%" bgcolor="#1D488D" border="0" bordercolor="#999999" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center"><font class="white">&copy;Parasoft Corp. -&nbsp;C++test&nbsp;2021.1.0.20210505B1390&nbsp;Reporting System&nbsp;</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
