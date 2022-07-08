@@ -1,5 +1,7 @@
 # RMF Systems Engineering Handbook
 
+1st July 2022
+
 ## What is the RMF@TRL project about?
 In the course of building the [RMF](https://osrf.github.io/ros2multirobotbook/intro.html), the team observed many questions being asked 
 (by Government agencies, end users and developers), about RMF's 
