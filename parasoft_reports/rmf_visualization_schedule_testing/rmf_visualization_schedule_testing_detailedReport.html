@@ -1,0 +1,3636 @@
+<html xmlns:graph="graph" xmlns:results="results">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+    BODY,P,OL,TD,pre{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    A:link {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:active {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:visited {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #999999;text-decoration: none;}
+    A:hover {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: underline;}
+    A.gray_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: underline;}
+    A.red_link:link {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:active {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:visited {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:hover {font-family: Arial;font-size: 12px;color: #990000;text-decoration: underline;}
+    A.green_link:link {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:active {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:visited {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:hover {font-family: Arial;font-size: 12px;color: #008040;text-decoration: underline;}
+    A.black_link:link {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:active {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:visited {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:hover {font-family: Arial;font-size: 12px;color: #000000;text-decoration: underline;}
+    
+    A.blue_link:link {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:active {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:visited {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:hover {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: underline;}
+    
+    A.gray_red_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    DIV.suite_details{margin-left: 40px; padding: 10px; border: 2px solid #99aaaa;}
+    DIV.test_comment{color:#666666;}
+    DIV.header{font-size: 32px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }
+    DIV.small_header{font-size: 18px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }    
+    FONT.gray {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #999999;}    
+    FONT.gray2, FONT.gray_red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #666666;}
+    FONT.white {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #FFFFFF;}
+    FONT.time {font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;}
+    FONT.black {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    FONT.red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000;}
+    FONT.red2 {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000; text-decoration: underline;}
+    FONT.blue {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #427fb6;}
+    FONT.green {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #008040;}
+    FONT.orange {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #F69500;}
+    FONT.goldenrod {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #DAA520;}    
+    FONT.small {font-size: 3px;font-family: Arial, Helvetica, sans-serif;color: #cccccc;}
+    IMG.screenshot{float:left; margin-right: 20px; border:1px solid black;}
+    SELECT.cs_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SELECT.ju_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SPAN.toggle_button{width: 16px; padding-right: 2px; display: inline-block;} 
+    TD.associations{vertical-align: top;}
+    TD.collapse_controls{text-align:right;}
+    TD.cs_authors{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;border: 1px; bordercolor: #d9c8ac;}
+    TD.error{background-color:#ffeeee}
+    TD.errorsingleborder{background-color:#ffeeee;border:1px solid #CBCBCB}
+    TD.singleborder{ border:1px solid #CBCBCB}
+    TABLE.header{background-color:#FFFFFF}
+    TABLE.singleborder{ border:1px solid #CBCBCB}
+    TABLE.doubleborder{ border:2px solid #CBCBCB}     
+    TABLE.singleborder_blue{ border:2px solid #427fb6}
+    TD.fixed_width{width: 150px;}
+    TD.no_error{}
+    TD.suite_details{padding:2px; }
+    UL.metrics {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:12px;}
+    UL.root {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:3px;}
+    UL {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:12px;}
+    LI {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left: 0px;}
+    #foldheader{cursor:pointer;cursor:hand ;}
+    #cs_foldheader{cursor:pointer;cursor:hand ;}
+    #metrics_foldheader{cursor:pointer;cursor:hand ;}
+    #exec_foldheader{cursor:pointer;cursor:hand ;}
+    #paramsHeader {word-break:break-all;overflow: auto; padding: 3px;}
+    </style><title>msi3
+- Static Analysis [ 0 / 382 / 50 ]
+
+</title><script language="JavaScript">
+    var nwin;    
+    function openWin (loc_to_open) {    
+       if (!nwin || nwin.closed) {
+          nwin = window.open(loc_to_open,'');
+       } else {
+          nwin.location = loc_to_open;
+       }
+       nwin.focus();
+    }
+    function openDevReport (dev_rep_name) {
+       openWin('&id=' + dev_rep_name);
+    }
+    </script><script language="JavaScript">
+    function sortBySeverity(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }   
+    if(sev != null) sev.style.display='block';
+    if(sev_title != null) sev_title.style.display='block';
+    if(sev_link != null) {
+    sev_link.style.color="#666666";  
+    sev_link.style.textDecoration="none";
+    }
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }   
+    if(cat != null) cat.style.display='none';
+    if(cat_title != null) cat_title.style.display='none';
+    if(cat_link != null) {
+    cat_link.style.color="#990000";
+    cat_link.style.textDecoration="underline";
+    }
+    }
+    
+    function sortByCategory(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }
+    if(sev != null) sev.style.display='none';
+    if(sev_title != null) sev_title.style.display='none';
+    if(sev_link != null) { 
+    sev_link.style.color="#990000";   
+    sev_link.style.textDecoration="underline";
+    }       
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }
+    if(cat != null) cat.style.display='block';
+    if(cat_title != null) cat_title.style.display='block';
+    if(cat_link != null) { 
+    cat_link.style.color="#666666"; 
+    cat_link.style.textDecoration="none";
+    }
+    }
+    
+    function expandViolation(headerID, violationID, startIndex)
+    {
+        var violation = document.getElementById(violationID);
+        var m = document.getElementById(headerID).getElementsByTagName('td');
+
+        if (violation.style.display === '') {
+            violation.style.display = 'none';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#FFFFFF";
+            }
+        }
+        else{
+            violation.style.display = '';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#E0E0E0";
+            }
+        }
+    }
+    </script></head>
+<body bgcolor="#E7F0F5">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="left"><img src="rep_header_logo.png" alt="rep_header_logo.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="40%" align="center"><img src="rep_header_3.png" alt="rep_header_3.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="center"></td>
+</tr>
+</table>
+<table width="100%" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:0px" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-left:20px" align="left" width="20%"></td>
+<td style="padding:10px" align="center" width="60%">
+<table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">User configuration:
+	    		&nbsp;<b>Recommended Rules with Security</b></td>
+</tr>
+<tr>
+<td width="16%" align="center"><font class="time">2022-07-08T15:34:30+08:00</font></td>
+</tr>
+</table>
+</td>
+<td style="padding-right:20px" align="right" width="20%"></td>
+</tr>
+</table>
+<table width="100%" class="singleborder_blue" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:5px" cellspacing="0" bgcolor="#FFFFFF" bordercolor="#A0CAEC">
+<tr>
+<td><a xmlns:textutil="textutil" name="cst_msi3"></a><table xmlns:textutil="textutil" class="header" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td width="15%"></td>
+<td align="center">
+<div class="header">STATIC ANALYSIS</div>
+</td>
+<td width="15%" align="right" valign="bottom"></td>
+</tr>
+</table><br><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td align="left"><a class="black_link" href="#cs_urg_dev1"><b>Recommended Tasks to Accomplish Today</b></a>:
+&nbsp;50
+</td>
+</tr>
+<tr>
+<td align="left">(push the "Import My Recommended Tasks" button to import the tasks into your workspace)</td>
+</tr>
+<tr>
+<td align="left"><b>Tasks</b>:
+
+382&nbsp;<a class="black_link" href="#cs_msi3"><b>total</b></a>,
+&nbsp;0&nbsp;<b>suppressed</b></td>
+</tr>
+<tr>
+<td align="left"><b>Goal</b>:
+accomplish all tasks
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table class="header" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="30%">&nbsp;</td>
+<td align="center">
+<div class="small_header" id="cs_title_cattrue" style="display:block;">All Recommended Tasks&nbsp;by Category</div>
+<div class="small_header" id="cs_title_sevtrue" style="display:none;">All Recommended Tasks&nbsp;by Severity</div>
+</td>
+<td align="right" width="30%"><font class="gray2">by:</font>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_cattrue" class="gray_red_link" href="javascript:sortByCategory(true)">Category</a>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_sevtrue" class="gray_red_link" href="javascript:sortBySeverity(true)">Severity</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left">
+<div id="cs_cattrue" style="display:block;">
+<table class="doubleborder" width="100%" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>24</b>]
+&nbsp;&nbsp;<b>CERT-MSC41_C (RULE) Never hard code sensitive information</b>&nbsp;<font class="gray">(CERT_C-MSC41)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>24</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-POS54_C (RULE) Detect and handle POSIX library errors</b>&nbsp;<font class="gray">(CERT_C-POS54)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-ERR33_C (RULE) Detect and handle standard library errors</b>&nbsp;<font class="gray">(CERT_C-ERR33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>18</b>]
+&nbsp;&nbsp;<b>CERT-ERR59_CPP (RULE) Do not throw an exception across execution boundaries</b>&nbsp;<font class="gray">(CERT_CPP-ERR59)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>18</b>]
+&nbsp;&nbsp;Do not throw an exception across execution boundaries&nbsp;<font class="gray">(CERT_CPP-ERR59-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-EXP60_CPP (RULE) Do not pass a nonstandard-layout type object across execution boundaries</b>&nbsp;<font class="gray">(CERT_CPP-EXP60)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not pass a nonstandard-layout type object across execution boundaries&nbsp;<font class="gray">(CERT_CPP-EXP60-a-1)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div id="cs_sevtrue" style="display:none;">
+<table width="100%" class="doubleborder" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>50</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;1 - Highest</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>24</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>18</b>]
+&nbsp;&nbsp;Do not throw an exception across execution boundaries&nbsp;<font class="gray">(CERT_CPP-ERR59-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not pass a nonstandard-layout type object across execution boundaries&nbsp;<font class="gray">(CERT_CPP-EXP60-a-1)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td xmlns:authors="authors" style="padding-left:20px;" colspan="2" align="left" nowrap><a name="cs_urg_dev1"></a><b>msi3</b>&nbsp;&nbsp;Recommended Tasks to Accomplish Today			
+			:
+			&nbsp;50
+</td>
+<td xmlns:authors="authors" align="right"><a class="blue_link" href="#top">Back to Top </a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="3" align="left">
+<table width="100%" bgcolor="#FFFFFF" bordercolor="#CBCBCB" class="doubleborder" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_visualization_schedule_testing/src/rmf_visualization_schedule/ScheduleDataNode.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">165:&nbsp;</font></td>
+<td>Do not pass the nonstandard-layout type object to the 'convert' function defined in the library that may not be ABI-compatible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-EXP60-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>Unused function's "copy" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_visualization_schedule_testing/src/rmf_visualization_schedule/TrajectoryServer.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">60:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: x</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">99:&nbsp;</font></td>
+<td>Unused function's "erase" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Unused function's "erase" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [TrajectoryServer] Disconnected with a client</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [TrajectoryServer] Empty request received. Ignoring...</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">132:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: token</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">183:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: param</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'get_logger' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'rcutils_get_error_string' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'rcutils_logging_initialize' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">209:&nbsp;</font></td>
+<td>The error from the 'get_mutex' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">221:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: request</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The error from the 'fwrite' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Time request received</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">228:&nbsp;</font></td>
+<td>The error from the 'now' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">243:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: request</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The error from the 'rcutils_get_error_string' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">248:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: conflict_version</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">260:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: negotiation_trajectory</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:276]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">303:&nbsp;</font></td>
+<td>The error from the 'map' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">303:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: map_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">304:&nbsp;</font></td>
+<td>The error from the 'name' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">305:&nbsp;</font></td>
+<td>The error from the 'owner' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">308:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: shape</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">309:&nbsp;</font></td>
+<td>The error from the 'footprint' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">309:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: dimensions</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">329:&nbsp;</font></td>
+<td>The error from the 'start_time' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">332:&nbsp;</font></td>
+<td>The error from the 'find' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">341:&nbsp;</font></td>
+<td>The error from the 'compute_position' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">348:&nbsp;</font></td>
+<td>The error from the 'time' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">349:&nbsp;</font></td>
+<td>The error from the 'position' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">360:&nbsp;</font></td>
+<td>The error from the 'compute_velocity' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">365:&nbsp;</font></td>
+<td>The error from the 'begin' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Error: %s</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:378]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">394:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: error</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">438:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Failed to start the TrajectoryServer: </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="3"><br></td>
+</tr>
+</table>
+<table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table class="header" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="30%">&nbsp;</td>
+<td align="center">
+<div class="small_header" id="cs_title_cat" style="display:block;">All Tasks&nbsp;by Category</div>
+<div class="small_header" id="cs_title_sev" style="display:none;">All Tasks&nbsp;by Severity</div>
+</td>
+<td align="right" width="30%"><font class="gray2">by:</font>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_cat" class="gray_red_link" href="javascript:sortByCategory()">Category</a>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_sev" class="gray_red_link" href="javascript:sortBySeverity()">Severity</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left">
+<div id="cs_cat" style="display:block;">
+<table class="doubleborder" width="100%" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-MSC24_C (REC) Do not use deprecated or obsolescent functions</b>&nbsp;<font class="gray">(CERT_C-MSC24)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The 'getenv()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-MSC24-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>30</b>]
+&nbsp;&nbsp;<b>CERT-MEM04_C (REC) Beware of zero-length allocations</b>&nbsp;<font class="gray">(CERT_C-MEM04)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>30</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM04-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>5</b>]
+&nbsp;&nbsp;<b>CERT-PRE31_C (RULE) Avoid side effects in arguments to unsafe macros</b>&nbsp;<font class="gray">(CERT_C-PRE31)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Assertions should not contain function calls nor function-like macro calls&nbsp;<font class="gray">(CERT_C-PRE31-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-ENV02_C (REC) Beware of multiple environment variables with the same effective name</b>&nbsp;<font class="gray">(CERT_C-ENV02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Usage of system properties (environment variables) should be restricted&nbsp;<font class="gray">(CERT_C-ENV02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-STR34_C (RULE) Cast characters to unsigned char before converting to larger integer sizes</b>&nbsp;<font class="gray">(CERT_C-STR34)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Cast characters to unsigned char before assignment to larger integer sizes&nbsp;<font class="gray">(CERT_C-STR34-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>30</b>]
+&nbsp;&nbsp;<b>CERT-MEM07_C (REC) Ensure that the arguments to calloc(), when multiplied, do not wrap</b>&nbsp;<font class="gray">(CERT_C-MEM07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>30</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>88</b>]
+&nbsp;&nbsp;<b>CERT-MSC41_C (RULE) Never hard code sensitive information</b>&nbsp;<font class="gray">(CERT_C-MSC41)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>88</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>22</b>]
+&nbsp;&nbsp;<b>CERT-API00_C (REC) Functions should validate their parameters</b>&nbsp;<font class="gray">(CERT_C-API00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>22</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-CON33_C (RULE) Avoid race conditions when using library functions</b>&nbsp;<font class="gray">(CERT_C-CON33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using thread-unsafe functions&nbsp;<font class="gray">(CERT_C-CON33-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>13</b>]
+&nbsp;&nbsp;<b>CERT-DCL19_C (REC) Minimize the scope of variables and functions</b>&nbsp;<font class="gray">(CERT_C-DCL19)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;Declare variables as locally as possible&nbsp;<font class="gray">(CERT_C-DCL19-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>15</b>]
+&nbsp;&nbsp;<b>CERT-EXP12_C (REC) Do not ignore values returned by functions</b>&nbsp;<font class="gray">(CERT_C-EXP12)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-EXP19_C (REC) Use braces for the body of an if, for, or while statement</b>&nbsp;<font class="gray">(CERT_C-EXP19)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;The statement forming the body of a 'switch', 'while', 'do...while' or 'for' statement shall be a compound statement&nbsp;<font class="gray">(CERT_C-EXP19-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>15</b>]
+&nbsp;&nbsp;<b>CERT-POS54_C (RULE) Detect and handle POSIX library errors</b>&nbsp;<font class="gray">(CERT_C-POS54)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>15</b>]
+&nbsp;&nbsp;<b>CERT-ERR33_C (RULE) Detect and handle standard library errors</b>&nbsp;<font class="gray">(CERT_C-ERR33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-ERR06_C (REC) Understand the termination behavior of assert() and abort()</b>&nbsp;<font class="gray">(CERT_C-ERR06)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Do not use assertions&nbsp;<font class="gray">(CERT_C-ERR06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>10</b>]
+&nbsp;&nbsp;<b>CERT-ERR07_C (REC) Prefer functions that support error checking over equivalent functions that don't</b>&nbsp;<font class="gray">(CERT_C-ERR07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;The Standard Library input/output functions shall not be used&nbsp;<font class="gray">(CERT_C-ERR07-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>33</b>]
+&nbsp;&nbsp;<b>CERT-DCL00_C (REC) Const-qualify immutable objects</b>&nbsp;<font class="gray">(CERT_C-DCL00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>33</b>]
+&nbsp;&nbsp;Declare parameters or local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>10</b>]
+&nbsp;&nbsp;<b>CERT-ERR02_C (REC) Avoid in-band error indicators</b>&nbsp;<font class="gray">(CERT_C-ERR02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;The Standard Library input/output functions shall not be used&nbsp;<font class="gray">(CERT_C-ERR02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-POS34_C (RULE) Do not call putenv() with a pointer to an automatic variable as the argument</b>&nbsp;<font class="gray">(CERT_C-POS34)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Usage of system properties (environment variables) should be restricted&nbsp;<font class="gray">(CERT_C-POS34-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>53</b>]
+&nbsp;&nbsp;<b>CERT-ERR59_CPP (RULE) Do not throw an exception across execution boundaries</b>&nbsp;<font class="gray">(CERT_CPP-ERR59)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>53</b>]
+&nbsp;&nbsp;Do not throw an exception across execution boundaries&nbsp;<font class="gray">(CERT_CPP-ERR59-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>10</b>]
+&nbsp;&nbsp;<b>CERT-DCL51_CPP (RULE) Do not declare or define a reserved identifier</b>&nbsp;<font class="gray">(CERT_CPP-DCL51)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused&nbsp;<font class="gray">(CERT_CPP-DCL51-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-EXP60_CPP (RULE) Do not pass a nonstandard-layout type object across execution boundaries</b>&nbsp;<font class="gray">(CERT_CPP-EXP60)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Do not pass a nonstandard-layout type object across execution boundaries&nbsp;<font class="gray">(CERT_CPP-EXP60-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Coding Conventions for C++</b>&nbsp;<font class="gray">(CODSTA-CPP)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>Metric</b>&nbsp;<font class="gray">(METRIC)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;McCabe Cyclomatic Complexity&nbsp;<font class="gray">(METRIC.CC-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>5</b>]
+&nbsp;&nbsp;<b>Optimization</b>&nbsp;<font class="gray">(OPT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div id="cs_sev" style="display:none;">
+<table width="100%" class="doubleborder" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>175</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;1 - Highest</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>88</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>53</b>]
+&nbsp;&nbsp;Do not throw an exception across execution boundaries&nbsp;<font class="gray">(CERT_CPP-ERR59-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Do not pass a nonstandard-layout type object across execution boundaries&nbsp;<font class="gray">(CERT_CPP-EXP60-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>78</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;2 - High</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;The Standard Library input/output functions shall not be used&nbsp;<font class="gray">(CERT_C-ERR07-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;The statement forming the body of a 'switch', 'while', 'do...while' or 'for' statement shall be a compound statement&nbsp;<font class="gray">(CERT_C-EXP19-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>30</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM04-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>30</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Usage of system properties (environment variables) should be restricted&nbsp;<font class="gray">(CERT_C-POS34-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Cast characters to unsigned char before assignment to larger integer sizes&nbsp;<font class="gray">(CERT_C-STR34-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>129</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;3 - Medium</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>22</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using thread-unsafe functions&nbsp;<font class="gray">(CERT_C-CON33-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>33</b>]
+&nbsp;&nbsp;Declare parameters or local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;Declare variables as locally as possible&nbsp;<font class="gray">(CERT_C-DCL19-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Usage of system properties (environment variables) should be restricted&nbsp;<font class="gray">(CERT_C-ENV02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;The Standard Library input/output functions shall not be used&nbsp;<font class="gray">(CERT_C-ERR02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Do not use assertions&nbsp;<font class="gray">(CERT_C-ERR06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The 'getenv()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-MSC24-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Assertions should not contain function calls nor function-like macro calls&nbsp;<font class="gray">(CERT_C-PRE31-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused&nbsp;<font class="gray">(CERT_CPP-DCL51-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;McCabe Cyclomatic Complexity&nbsp;<font class="gray">(METRIC.CC-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td xmlns:authors="authors" style="padding-left:20px;" colspan="2" align="left" nowrap><a name="cs_dev1"></a><b>msi3</b>&nbsp;&nbsp;Total Tasks			
+			:
+			&nbsp;382
+</td>
+<td xmlns:authors="authors" align="right"><a class="blue_link" href="#top">Back to Top </a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="3" align="left">
+<table width="100%" bgcolor="#FFFFFF" bordercolor="#CBCBCB" class="doubleborder" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_visualization_schedule_testing/src/rmf_visualization_schedule/ScheduleDataNode.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">47:&nbsp;</font></td>
+<td>Constructor 'Data' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">47:&nbsp;</font></td>
+<td>The parameter 'mirror_' of function 'Data' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">71:&nbsp;</font></td>
+<td>Parameter 'node_name' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">72:&nbsp;</font></td>
+<td>Declare parameter 'wait_time' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">72:&nbsp;</font></td>
+<td>Parameter 'wait_time' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">72:&nbsp;</font></td>
+<td>The parameter 'wait_time' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">80:&nbsp;</font></td>
+<td>Do not pass the nonstandard-layout type object to the 'make_mirror' function defined in the library that may not be ABI-compatible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-EXP60-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">81:&nbsp;</font></td>
+<td>Do not pass the nonstandard-layout type object to the 'make_mirror' function defined in the library that may not be ABI-compatible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-EXP60-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">109:&nbsp;</font></td>
+<td>Declare parameter 'node_name' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">109:&nbsp;</font></td>
+<td>The parameter 'node_name' of function 'ScheduleDataNode' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">137:&nbsp;</font></td>
+<td>Parameter 'data_' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">137:&nbsp;</font></td>
+<td>The parameter 'data_' of function 'start' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">145:&nbsp;</font></td>
+<td>Parameter 'request_param' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">156:&nbsp;</font></td>
+<td>'for' statement in a function 'get_elements' should be followed by a block</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP19-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">165:&nbsp;</font></td>
+<td>Do not pass the nonstandard-layout type object to the 'convert' function defined in the library that may not be ABI-compatible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-EXP60-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>Unused function's "copy" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>Unused function's "copy" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>Unused function's "copy" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">193:&nbsp;</font></td>
+<td>'for' statement in a function 'get_conflict_groups' should be followed by a block</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP19-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">200:&nbsp;</font></td>
+<td>Value 7 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">201:&nbsp;</font></td>
+<td>Parameter 'conflict_version' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">201:&nbsp;</font></td>
+<td>Parameter 'sequence' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">232:&nbsp;</font></td>
+<td>Declare local variable 'itin' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">236:&nbsp;</font></td>
+<td>'for' statement in a function 'get_negotiation_trajectories' should be followed by a block</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP19-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">242:&nbsp;</font></td>
+<td>'for' statement in a function 'get_negotiation_trajectories' should be followed by a block</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP19-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">242:&nbsp;</font></td>
+<td>Declare local variable 'route' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_visualization_schedule_testing/src/rmf_visualization_schedule/TrajectoryServer.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">57:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: conflicts</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">57:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: response</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">57:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: values</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">59:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: dimensions</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">59:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: id</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">59:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: segments</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">59:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: shape</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">60:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: t</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">60:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: v</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">60:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: x</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">61:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: error</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">89:&nbsp;</font></td>
+<td>Declare parameter 'hdl' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">89:&nbsp;</font></td>
+<td>Parameter 'hdl' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">91:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">91:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">91:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [TrajectoryServer] Connected with a client</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:92]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">97:&nbsp;</font></td>
+<td>Declare parameter 'hdl' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">97:&nbsp;</font></td>
+<td>Parameter 'hdl' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">99:&nbsp;</font></td>
+<td>Unused function's "erase" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">99:&nbsp;</font></td>
+<td>Unused function's "erase" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">99:&nbsp;</font></td>
+<td>Unused function's "erase" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Unused function's "erase" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Unused function's "erase" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Unused function's "erase" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [TrajectoryServer] Disconnected with a client</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:101]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">107:&nbsp;</font></td>
+<td>Value 32 is out of acceptable range: 'lower than 30'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.CC-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">107:&nbsp;</font></td>
+<td>Value 7 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">108:&nbsp;</font></td>
+<td>Declare parameter 'hdl' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">108:&nbsp;</font></td>
+<td>Parameter 'hdl' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">111:&nbsp;</font></td>
+<td>Variable "err_response" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [TrajectoryServer] Empty request received. Ignoring...</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:115]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">121:&nbsp;</font></td>
+<td>Declare local variable 'ok' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">124:&nbsp;</font></td>
+<td>Variable "public_key" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">125:&nbsp;</font></td>
+<td>Variable "token" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">127:&nbsp;</font></td>
+<td>Avoid using functions which get and set values of environment variable. You used function getenv</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ENV02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">127:&nbsp;</font></td>
+<td>Avoid using functions which get and set values of environment variable. You used function getenv</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS34-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">127:&nbsp;</font></td>
+<td>The 'getenv' function should not be used in multithreading applications</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-CON33-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">127:&nbsp;</font></td>
+<td>The 'getenv' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC24-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">127:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: JWT_PUBLIC_KEY</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">129:&nbsp;</font></td>
+<td>Avoid using functions which get and set values of environment variable. You used function getenv</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ENV02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">129:&nbsp;</font></td>
+<td>Avoid using functions which get and set values of environment variable. You used function getenv</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS34-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">129:&nbsp;</font></td>
+<td>The 'getenv' function should not be used in multithreading applications</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-CON33-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">129:&nbsp;</font></td>
+<td>The 'getenv' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC24-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">129:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: JWT_PUBLIC_KEY</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">132:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: token</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">133:&nbsp;</font></td>
+<td>Declare local variable 'decoded' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">135:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: RS256</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">141:&nbsp;</font></td>
+<td>Declare local variable 'err_excp' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">143:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Error: </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Response: %s</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:149]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">151:&nbsp;</font></td>
+<td>Declare local variable 'response_msg' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [TrajectoryServer] Invalid request received: %s</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:157]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">165:&nbsp;</font></td>
+<td>Value 47 is out of acceptable range: 'lower than 30'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.CC-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">165:&nbsp;</font></td>
+<td>Value 8 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">166:&nbsp;</font></td>
+<td>Declare parameter 'hdl' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">166:&nbsp;</font></td>
+<td>Parameter 'hdl' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">166:&nbsp;</font></td>
+<td>Parameter 'msg' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">167:&nbsp;</font></td>
+<td>Parameter 'response' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">178:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: request</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">181:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: request</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">181:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: trajectory</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">183:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: param</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">187:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: map_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">189:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: duration</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">191:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: trim</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">195:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: duration</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">196:&nbsp;</font></td>
+<td>Declare local variable 'duration' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">200:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: map_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">201:&nbsp;</font></td>
+<td>The error from the 'now' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'fwrite' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'get_logger' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'rcutils_get_error_string' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'rcutils_log' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'rcutils_logging_initialize' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'rcutils_logging_logger_is_enabled_for' library function should be indicated by a return value instead
+of an exception
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The error from the 'rcutils_reset_error' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Trajectory Request received with map_name [%s] and duration [%s]ms</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:205]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">209:&nbsp;</font></td>
+<td>Declare local variable 'lock' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">209:&nbsp;</font></td>
+<td>The error from the 'get_mutex' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">210:&nbsp;</font></td>
+<td>Declare local variable 'elements' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">210:&nbsp;</font></td>
+<td>The error from the 'get_elements' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">212:&nbsp;</font></td>
+<td>Declare local variable 'trim' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">212:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: trim</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">213:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: trajectory</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">214:&nbsp;</font></td>
+<td>The error from the 'get_conflict_groups' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">221:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: request</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">221:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: time</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The error from the 'fwrite' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The error from the 'get_logger' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The error from the 'rcutils_get_error_string' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The error from the 'rcutils_log' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The error from the 'rcutils_logging_initialize' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The error from the 'rcutils_logging_logger_is_enabled_for' library function should be indicated by a return value instead
+of an exception
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The error from the 'rcutils_reset_error' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Time request received</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:223]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">226:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: response</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">226:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: time</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">227:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: values</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">228:&nbsp;</font></td>
+<td>The error from the 'now' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">233:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: negotiation_update_subscribe</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">233:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: request</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">235:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">235:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">235:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">237:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: negotiation_update_subscribe</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">237:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: response</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">238:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: result</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">243:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: negotiation_trajectory</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">243:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: request</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The error from the 'fwrite' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The error from the 'get_logger' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The error from the 'rcutils_get_error_string' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The error from the 'rcutils_log' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The error from the 'rcutils_logging_initialize' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The error from the 'rcutils_logging_logger_is_enabled_for' library function should be indicated by a return value instead
+of an exception
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The error from the 'rcutils_reset_error' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Received Negotiation Trajectory request</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:245]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">248:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: conflict_version</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">248:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: param</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">249:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: param</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">249:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: sequence</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">251:&nbsp;</font></td>
+<td>Declare local variable 'trajectory_elements' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">252:&nbsp;</font></td>
+<td>The error from the 'get_negotiation_trajectories' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">254:&nbsp;</font></td>
+<td>The error from the 'now' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">260:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: negotiation_trajectory</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Cast the argument number '1' passed to the 'to_string' function to the 'unsigned char' type if it is intended to represent
+a character that can be interpreted as a negative number
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-STR34-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Error: %s</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:276]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">276:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">284:&nbsp;</font></td>
+<td>Value 7 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">285:&nbsp;</font></td>
+<td>Parameter 'response_type' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">286:&nbsp;</font></td>
+<td>Parameter 'conflicts' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">289:&nbsp;</font></td>
+<td>Parameter 'request_param' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">293:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: response</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">294:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: conflicts</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">300:&nbsp;</font></td>
+<td>The error from the 'trajectory' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">303:&nbsp;</font></td>
+<td>The error from the 'map' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">303:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: map_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">304:&nbsp;</font></td>
+<td>The error from the 'name' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">304:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: robot_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">305:&nbsp;</font></td>
+<td>The error from the 'owner' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">305:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: fleet_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">306:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: id</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">307:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: route_id</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">308:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: circle</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">308:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: shape</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">309:&nbsp;</font></td>
+<td>The error from the 'footprint' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">309:&nbsp;</font></td>
+<td>The error from the 'get_characteristic_length' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">309:&nbsp;</font></td>
+<td>The error from the 'profile' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">309:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: dimensions</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">312:&nbsp;</font></td>
+<td>Declare local variable 'add_segment' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">329:&nbsp;</font></td>
+<td>The error from the 'start_time' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">331:&nbsp;</font></td>
+<td>The error from the 'finish_time' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">332:&nbsp;</font></td>
+<td>The error from the 'find' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">333:&nbsp;</font></td>
+<td>Assert contains function-like call to 'end'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-PRE31-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">333:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">334:&nbsp;</font></td>
+<td>Assert contains function-like call to 'end'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-PRE31-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">334:&nbsp;</font></td>
+<td>Assert contains function-like call to 'find'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-PRE31-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">334:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">339:&nbsp;</font></td>
+<td>The error from the 'compute_cubic_splines' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">341:&nbsp;</font></td>
+<td>The error from the 'compute_position' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">342:&nbsp;</font></td>
+<td>The error from the 'compute_velocity' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">345:&nbsp;</font></td>
+<td>The error from the 'find' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">347:&nbsp;</font></td>
+<td>Assert contains function-like call to 'end'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-PRE31-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">347:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">348:&nbsp;</font></td>
+<td>The error from the 'time' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">349:&nbsp;</font></td>
+<td>The error from the 'position' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">350:&nbsp;</font></td>
+<td>The error from the 'velocity' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">354:&nbsp;</font></td>
+<td>Assert contains function-like call to 'end'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-PRE31-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">354:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">357:&nbsp;</font></td>
+<td>The error from the 'compute_cubic_splines' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">359:&nbsp;</font></td>
+<td>The error from the 'compute_position' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">360:&nbsp;</font></td>
+<td>The error from the 'compute_velocity' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">365:&nbsp;</font></td>
+<td>The error from the 'begin' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">365:&nbsp;</font></td>
+<td>The error from the 'end' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">367:&nbsp;</font></td>
+<td>The error from the 'time' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">368:&nbsp;</font></td>
+<td>The error from the 'position' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">369:&nbsp;</font></td>
+<td>The error from the 'velocity' library function should be indicated by a return value instead of an exception</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-ERR59-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">372:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: values</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Cast the argument number '1' passed to the 'to_string' function to the 'unsigned char' type if it is intended to represent
+a character that can be interpreted as a negative number
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-STR34-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Declare local variable '__rcutils_logging_location' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Reserved name '__rcutils_logging_location' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Result of "rcutils_get_error_string" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Result of "strlen" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: /media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Error: %s</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: [rcutils|/media/msi3/Data/workspace/rmf_ws/src/rmf/rmf_visualization/rmf_visualization_schedule/src/rmf_visualization_schedule/TrajectoryServer.cpp:378]
+error initializing logging: 
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Unused function's "fwrite" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Usage of 'fwrite' function is not allowed</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Values "stderr" passed to library function "fwrite" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">378:&nbsp;</font></td>
+<td>Variable "__rcutils_logging_location" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">389:&nbsp;</font></td>
+<td>Declare parameter 'hdl' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">389:&nbsp;</font></td>
+<td>Parameter 'hdl' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">389:&nbsp;</font></td>
+<td>Parameter 'msg' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">390:&nbsp;</font></td>
+<td>Declare parameter 'server' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">390:&nbsp;</font></td>
+<td>Parameter 'response' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">390:&nbsp;</font></td>
+<td>Parameter 'server' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">391:&nbsp;</font></td>
+<td>Parameter 'err_excp' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">391:&nbsp;</font></td>
+<td>The parameter 'err_excp' of function 'send_error_message' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">394:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: error</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">395:&nbsp;</font></td>
+<td>Declare local variable 'err_msg' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">403:&nbsp;</font></td>
+<td>Declare parameter 'port' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">403:&nbsp;</font></td>
+<td>Parameter 'port' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">404:&nbsp;</font></td>
+<td>Declare parameter 'schedule_data_node' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">404:&nbsp;</font></td>
+<td>Parameter 'schedule_data_node' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">438:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Failed to start the TrajectoryServer: </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">519:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: shutdown</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="3"><br></td>
+</tr>
+</table><br><script language="JavaScript">
+    if(document.getElementById("cs_link_sev") != null) {
+    document.getElementById("cs_link_sev").style.color="#990000";
+    document.getElementById("cs_link_sev").style.textDecoration="underline";
+    }
+    if(document.getElementById("cs_link_sevtrue") != null) {
+    document.getElementById("cs_link_sevtrue").style.color="#990000";
+    document.getElementById("cs_link_sevtrue").style.textDecoration="underline";
+    }
+    </script></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="100%" bgcolor="#1D488D" border="0" bordercolor="#999999" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center"><font class="white">&copy;Parasoft Corp. -&nbsp;C++test&nbsp;2022.1.0.20220615B1827&nbsp;Reporting System&nbsp;</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

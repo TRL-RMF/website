@@ -1,0 +1,3422 @@
+<html xmlns:graph="graph" xmlns:results="results">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+    BODY,P,OL,TD,pre{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    A:link {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:active {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:visited {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #999999;text-decoration: none;}
+    A:hover {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: underline;}
+    A.gray_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: underline;}
+    A.red_link:link {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:active {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:visited {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:hover {font-family: Arial;font-size: 12px;color: #990000;text-decoration: underline;}
+    A.green_link:link {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:active {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:visited {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:hover {font-family: Arial;font-size: 12px;color: #008040;text-decoration: underline;}
+    A.black_link:link {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:active {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:visited {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:hover {font-family: Arial;font-size: 12px;color: #000000;text-decoration: underline;}
+    
+    A.blue_link:link {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:active {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:visited {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:hover {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: underline;}
+    
+    A.gray_red_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    DIV.suite_details{margin-left: 40px; padding: 10px; border: 2px solid #99aaaa;}
+    DIV.test_comment{color:#666666;}
+    DIV.header{font-size: 32px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }
+    DIV.small_header{font-size: 18px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }    
+    FONT.gray {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #999999;}    
+    FONT.gray2, FONT.gray_red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #666666;}
+    FONT.white {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #FFFFFF;}
+    FONT.time {font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;}
+    FONT.black {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    FONT.red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000;}
+    FONT.red2 {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000; text-decoration: underline;}
+    FONT.blue {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #427fb6;}
+    FONT.green {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #008040;}
+    FONT.orange {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #F69500;}
+    FONT.goldenrod {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #DAA520;}    
+    FONT.small {font-size: 3px;font-family: Arial, Helvetica, sans-serif;color: #cccccc;}
+    IMG.screenshot{float:left; margin-right: 20px; border:1px solid black;}
+    SELECT.cs_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SELECT.ju_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SPAN.toggle_button{width: 16px; padding-right: 2px; display: inline-block;} 
+    TD.associations{vertical-align: top;}
+    TD.collapse_controls{text-align:right;}
+    TD.cs_authors{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;border: 1px; bordercolor: #d9c8ac;}
+    TD.error{background-color:#ffeeee}
+    TD.errorsingleborder{background-color:#ffeeee;border:1px solid #CBCBCB}
+    TD.singleborder{ border:1px solid #CBCBCB}
+    TABLE.header{background-color:#FFFFFF}
+    TABLE.singleborder{ border:1px solid #CBCBCB}
+    TABLE.doubleborder{ border:2px solid #CBCBCB}     
+    TABLE.singleborder_blue{ border:2px solid #427fb6}
+    TD.fixed_width{width: 150px;}
+    TD.no_error{}
+    TD.suite_details{padding:2px; }
+    UL.metrics {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:12px;}
+    UL.root {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:3px;}
+    UL {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:12px;}
+    LI {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left: 0px;}
+    #foldheader{cursor:pointer;cursor:hand ;}
+    #cs_foldheader{cursor:pointer;cursor:hand ;}
+    #metrics_foldheader{cursor:pointer;cursor:hand ;}
+    #exec_foldheader{cursor:pointer;cursor:hand ;}
+    #paramsHeader {word-break:break-all;overflow: auto; padding: 3px;}
+    </style><title>msi3
+- Static Analysis [ 0 / 341 / 50 ]
+
+</title><script language="JavaScript">
+    var nwin;    
+    function openWin (loc_to_open) {    
+       if (!nwin || nwin.closed) {
+          nwin = window.open(loc_to_open,'');
+       } else {
+          nwin.location = loc_to_open;
+       }
+       nwin.focus();
+    }
+    function openDevReport (dev_rep_name) {
+       openWin('&id=' + dev_rep_name);
+    }
+    </script><script language="JavaScript">
+    function sortBySeverity(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }   
+    if(sev != null) sev.style.display='block';
+    if(sev_title != null) sev_title.style.display='block';
+    if(sev_link != null) {
+    sev_link.style.color="#666666";  
+    sev_link.style.textDecoration="none";
+    }
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }   
+    if(cat != null) cat.style.display='none';
+    if(cat_title != null) cat_title.style.display='none';
+    if(cat_link != null) {
+    cat_link.style.color="#990000";
+    cat_link.style.textDecoration="underline";
+    }
+    }
+    
+    function sortByCategory(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }
+    if(sev != null) sev.style.display='none';
+    if(sev_title != null) sev_title.style.display='none';
+    if(sev_link != null) { 
+    sev_link.style.color="#990000";   
+    sev_link.style.textDecoration="underline";
+    }       
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }
+    if(cat != null) cat.style.display='block';
+    if(cat_title != null) cat_title.style.display='block';
+    if(cat_link != null) { 
+    cat_link.style.color="#666666"; 
+    cat_link.style.textDecoration="none";
+    }
+    }
+    
+    function expandViolation(headerID, violationID, startIndex)
+    {
+        var violation = document.getElementById(violationID);
+        var m = document.getElementById(headerID).getElementsByTagName('td');
+
+        if (violation.style.display === '') {
+            violation.style.display = 'none';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#FFFFFF";
+            }
+        }
+        else{
+            violation.style.display = '';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#E0E0E0";
+            }
+        }
+    }
+    </script></head>
+<body bgcolor="#E7F0F5">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="left"><img src="rep_header_logo.png" alt="rep_header_logo.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="40%" align="center"><img src="rep_header_3.png" alt="rep_header_3.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="center"></td>
+</tr>
+</table>
+<table width="100%" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:0px" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-left:20px" align="left" width="20%"></td>
+<td style="padding:10px" align="center" width="60%">
+<table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">User configuration:
+	    		&nbsp;<b>Recommended Rules with Security</b></td>
+</tr>
+<tr>
+<td width="16%" align="center"><font class="time">2022-07-08T15:03:46+08:00</font></td>
+</tr>
+</table>
+</td>
+<td style="padding-right:20px" align="right" width="20%"></td>
+</tr>
+</table>
+<table width="100%" class="singleborder_blue" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:5px" cellspacing="0" bgcolor="#FFFFFF" bordercolor="#A0CAEC">
+<tr>
+<td><a xmlns:textutil="textutil" name="cst_msi3"></a><table xmlns:textutil="textutil" class="header" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td width="15%"></td>
+<td align="center">
+<div class="header">STATIC ANALYSIS</div>
+</td>
+<td width="15%" align="right" valign="bottom"></td>
+</tr>
+</table><br><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td align="left"><a class="black_link" href="#cs_urg_dev1"><b>Recommended Tasks to Accomplish Today</b></a>:
+&nbsp;50
+</td>
+</tr>
+<tr>
+<td align="left">(push the "Import My Recommended Tasks" button to import the tasks into your workspace)</td>
+</tr>
+<tr>
+<td align="left"><b>Tasks</b>:
+
+341&nbsp;<a class="black_link" href="#cs_msi3"><b>total</b></a>,
+&nbsp;0&nbsp;<b>suppressed</b></td>
+</tr>
+<tr>
+<td align="left"><b>Goal</b>:
+accomplish all tasks
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table class="header" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="30%">&nbsp;</td>
+<td align="center">
+<div class="small_header" id="cs_title_cattrue" style="display:block;">All Recommended Tasks&nbsp;by Category</div>
+<div class="small_header" id="cs_title_sevtrue" style="display:none;">All Recommended Tasks&nbsp;by Severity</div>
+</td>
+<td align="right" width="30%"><font class="gray2">by:</font>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_cattrue" class="gray_red_link" href="javascript:sortByCategory(true)">Category</a>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_sevtrue" class="gray_red_link" href="javascript:sortBySeverity(true)">Severity</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left">
+<div id="cs_cattrue" style="display:block;">
+<table class="doubleborder" width="100%" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>24</b>]
+&nbsp;&nbsp;<b>CERT-MSC41_C (RULE) Never hard code sensitive information</b>&nbsp;<font class="gray">(CERT_C-MSC41)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>24</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>12</b>]
+&nbsp;&nbsp;<b>CERT-POS54_C (RULE) Detect and handle POSIX library errors</b>&nbsp;<font class="gray">(CERT_C-POS54)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>12</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>13</b>]
+&nbsp;&nbsp;<b>CERT-ERR33_C (RULE) Detect and handle standard library errors</b>&nbsp;<font class="gray">(CERT_C-ERR33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Initialization</b>&nbsp;<font class="gray">(INIT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div id="cs_sevtrue" style="display:none;">
+<table width="100%" class="doubleborder" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>50</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;1 - Highest</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>24</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>12</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td xmlns:authors="authors" style="padding-left:20px;" colspan="2" align="left" nowrap><a name="cs_urg_dev1"></a><b>msi3</b>&nbsp;&nbsp;Recommended Tasks to Accomplish Today			
+			:
+			&nbsp;50
+</td>
+<td xmlns:authors="authors" align="right"><a class="blue_link" href="#top">Back to Top </a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="3" align="left">
+<table width="100%" bgcolor="#FFFFFF" bordercolor="#CBCBCB" class="doubleborder" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/ParseArgs.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">41:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  using the </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">42:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  argument!</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">68:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: No </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">69:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ] will be used.</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/ScheduleManager.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">67:&nbsp;</font></td>
+<td>Unused function's "set" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/agv/Waypoint.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>No constructor. All member variables: 'yield' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/agv/parse_graph.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ]</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">41:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ] is missing the [levels] key</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">69:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: vertices</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">88:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Duplicated waypoint name [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">96:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: is_parking_spot</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Unused function's "set_parking_spot" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">104:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: is_holding_point</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">109:&nbsp;</font></td>
+<td>Unused function's "set_holding_point" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">112:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: is_passthrough_point</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">125:&nbsp;</font></td>
+<td>Unused function's "set_charger" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">159:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: backward</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">208:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Inconsistency in building map. Map [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">213:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ]. This is not supported!</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">239:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: demo_mock_lift_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">298:&nbsp;</font></td>
+<td>Unused function's "speed_limit" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">298:&nbsp;</font></td>
+<td>Unused function's "speed_limit" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">315:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">315:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">321:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">321:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/events/Error.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>Unused function's "update_status" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/load_param.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">40:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: fleet_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">61:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: angular_velocity</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">63:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: linear_acceleration</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">71:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: reversible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">74:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  ===== We have an irreversible robot</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">87:&nbsp;</font></td>
+<td>Unused function's "set_reversible" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: battery_voltage</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">102:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: battery_capacity</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">105:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: battery_charging_current</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">123:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: inertia</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/make_trajectory.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">91:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">91:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">108:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/project_itinerary.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/services/ProgressEvaluator.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Unused function's "maximum_cost_estimate" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">107:&nbsp;</font></td>
+<td>Unused function's "maximum_cost_estimate" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="3"><br></td>
+</tr>
+</table>
+<table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table class="header" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="30%">&nbsp;</td>
+<td align="center">
+<div class="small_header" id="cs_title_cat" style="display:block;">All Tasks&nbsp;by Category</div>
+<div class="small_header" id="cs_title_sev" style="display:none;">All Tasks&nbsp;by Severity</div>
+</td>
+<td align="right" width="30%"><font class="gray2">by:</font>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_cat" class="gray_red_link" href="javascript:sortByCategory()">Category</a>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_sev" class="gray_red_link" href="javascript:sortBySeverity()">Severity</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left">
+<div id="cs_cat" style="display:block;">
+<table class="doubleborder" width="100%" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-MSC11_C (REC) Incorporate diagnostic tests using assertions</b>&nbsp;<font class="gray">(CERT_C-MSC11)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Assert liberally to document internal assumptions and invariants&nbsp;<font class="gray">(CERT_C-MSC11-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>40</b>]
+&nbsp;&nbsp;<b>CERT-FLP03_C (REC) Detect and handle floating-point errors</b>&nbsp;<font class="gray">(CERT_C-FLP03)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>40</b>]
+&nbsp;&nbsp;Avoid implicit conversions from narrower to wider floating type&nbsp;<font class="gray">(CERT_C-FLP03-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-PRE31_C (RULE) Avoid side effects in arguments to unsafe macros</b>&nbsp;<font class="gray">(CERT_C-PRE31)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Assertions should not contain function calls nor function-like macro calls&nbsp;<font class="gray">(CERT_C-PRE31-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-MSC01_C (REC) Strive for logical completeness</b>&nbsp;<font class="gray">(CERT_C-MSC01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;All 'if...else-if' constructs shall be terminated with an 'else' clause&nbsp;<font class="gray">(CERT_C-MSC01-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-INT36_C (RULE) Converting a pointer to integer or integer to pointer</b>&nbsp;<font class="gray">(CERT_C-INT36)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;A conversion should not be performed between a pointer to object type and an integer type other than 'uintptr_t' or 'intptr_t'&nbsp;<font class="gray">(CERT_C-INT36-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>66</b>]
+&nbsp;&nbsp;<b>CERT-MSC41_C (RULE) Never hard code sensitive information</b>&nbsp;<font class="gray">(CERT_C-MSC41)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>66</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>69</b>]
+&nbsp;&nbsp;<b>CERT-API00_C (REC) Functions should validate their parameters</b>&nbsp;<font class="gray">(CERT_C-API00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>69</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>8</b>]
+&nbsp;&nbsp;<b>CERT-EXP00_C (REC) Use parentheses for precedence of operation</b>&nbsp;<font class="gray">(CERT_C-EXP00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>8</b>]
+&nbsp;&nbsp;Use parenthesis to clarify expression order if operators with precedence lower than arithmetic are used&nbsp;<font class="gray">(CERT_C-EXP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-DCL19_C (REC) Minimize the scope of variables and functions</b>&nbsp;<font class="gray">(CERT_C-DCL19)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Declare variables as locally as possible&nbsp;<font class="gray">(CERT_C-DCL19-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-DCL15_C (REC) Declare file-scope objects or functions that do not need external linkage as static</b>&nbsp;<font class="gray">(CERT_C-DCL15)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Objects or functions with external linkage shall be declared in a header file&nbsp;<font class="gray">(CERT_C-DCL15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-DCL13_C (REC) Declare function parameters that are pointers to values not changed by the function as const</b>&nbsp;<font class="gray">(CERT_C-DCL13)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the
+addressed object&nbsp;<font class="gray">(CERT_C-DCL13-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>22</b>]
+&nbsp;&nbsp;<b>CERT-EXP12_C (REC) Do not ignore values returned by functions</b>&nbsp;<font class="gray">(CERT_C-EXP12)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>22</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-EXP19_C (REC) Use braces for the body of an if, for, or while statement</b>&nbsp;<font class="gray">(CERT_C-EXP19)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;The statement forming the body of a 'switch', 'while', 'do...while' or 'for' statement shall be a compound statement&nbsp;<font class="gray">(CERT_C-EXP19-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>22</b>]
+&nbsp;&nbsp;<b>CERT-POS54_C (RULE) Detect and handle POSIX library errors</b>&nbsp;<font class="gray">(CERT_C-POS54)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>22</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>22</b>]
+&nbsp;&nbsp;<b>CERT-ERR33_C (RULE) Detect and handle standard library errors</b>&nbsp;<font class="gray">(CERT_C-ERR33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>22</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>7</b>]
+&nbsp;&nbsp;<b>CERT-ERR06_C (REC) Understand the termination behavior of assert() and abort()</b>&nbsp;<font class="gray">(CERT_C-ERR06)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>7</b>]
+&nbsp;&nbsp;Do not use assertions&nbsp;<font class="gray">(CERT_C-ERR06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-DCL01_C (REC) Do not reuse variable names in subscopes</b>&nbsp;<font class="gray">(CERT_C-DCL01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Identifiers declared in an inner local scope should not hide identifiers declared in an outer local scope&nbsp;<font class="gray">(CERT_C-DCL01-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>26</b>]
+&nbsp;&nbsp;<b>CERT-DCL00_C (REC) Const-qualify immutable objects</b>&nbsp;<font class="gray">(CERT_C-DCL00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>26</b>]
+&nbsp;&nbsp;Declare parameters or local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-DCL51_CPP (RULE) Do not declare or define a reserved identifier</b>&nbsp;<font class="gray">(CERT_CPP-DCL51)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused (C90)&nbsp;<font class="gray">(CERT_CPP-DCL51-e-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused (C99)&nbsp;<font class="gray">(CERT_CPP-DCL51-f-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-OOP51_CPP (RULE) Do not slice derived objects</b>&nbsp;<font class="gray">(CERT_CPP-OOP51)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid slicing function arguments / return value&nbsp;<font class="gray">(CERT_CPP-OOP51-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-EXP60_CPP (RULE) Do not pass a nonstandard-layout type object across execution boundaries</b>&nbsp;<font class="gray">(CERT_CPP-EXP60)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not pass a nonstandard-layout type object across execution boundaries&nbsp;<font class="gray">(CERT_CPP-EXP60-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Coding Conventions for C++</b>&nbsp;<font class="gray">(CODSTA-CPP)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>Initialization</b>&nbsp;<font class="gray">(INIT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>5</b>]
+&nbsp;&nbsp;<b>Metric</b>&nbsp;<font class="gray">(METRIC)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;McCabe Cyclomatic Complexity&nbsp;<font class="gray">(METRIC.CC-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>25</b>]
+&nbsp;&nbsp;<b>Optimization</b>&nbsp;<font class="gray">(OPT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>25</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div id="cs_sev" style="display:none;">
+<table width="100%" class="doubleborder" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>114</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;1 - Highest</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>22</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>66</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>22</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not pass a nonstandard-layout type object across execution boundaries&nbsp;<font class="gray">(CERT_CPP-EXP60-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>10</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;2 - High</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;The statement forming the body of a 'switch', 'while', 'do...while' or 'for' statement shall be a compound statement&nbsp;<font class="gray">(CERT_C-EXP19-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;All 'if...else-if' constructs shall be terminated with an 'else' clause&nbsp;<font class="gray">(CERT_C-MSC01-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>217</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;3 - Medium</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>69</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>26</b>]
+&nbsp;&nbsp;Declare parameters or local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Identifiers declared in an inner local scope should not hide identifiers declared in an outer local scope&nbsp;<font class="gray">(CERT_C-DCL01-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the
+addressed object&nbsp;<font class="gray">(CERT_C-DCL13-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Objects or functions with external linkage shall be declared in a header file&nbsp;<font class="gray">(CERT_C-DCL15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Declare variables as locally as possible&nbsp;<font class="gray">(CERT_C-DCL19-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>7</b>]
+&nbsp;&nbsp;Do not use assertions&nbsp;<font class="gray">(CERT_C-ERR06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>8</b>]
+&nbsp;&nbsp;Use parenthesis to clarify expression order if operators with precedence lower than arithmetic are used&nbsp;<font class="gray">(CERT_C-EXP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>22</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>40</b>]
+&nbsp;&nbsp;Avoid implicit conversions from narrower to wider floating type&nbsp;<font class="gray">(CERT_C-FLP03-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;A conversion should not be performed between a pointer to object type and an integer type other than 'uintptr_t' or 'intptr_t'&nbsp;<font class="gray">(CERT_C-INT36-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Assert liberally to document internal assumptions and invariants&nbsp;<font class="gray">(CERT_C-MSC11-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Assertions should not contain function calls nor function-like macro calls&nbsp;<font class="gray">(CERT_C-PRE31-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused (C90)&nbsp;<font class="gray">(CERT_CPP-DCL51-e-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused (C99)&nbsp;<font class="gray">(CERT_CPP-DCL51-f-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid slicing function arguments / return value&nbsp;<font class="gray">(CERT_CPP-OOP51-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;McCabe Cyclomatic Complexity&nbsp;<font class="gray">(METRIC.CC-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>25</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td xmlns:authors="authors" style="padding-left:20px;" colspan="2" align="left" nowrap><a name="cs_dev1"></a><b>msi3</b>&nbsp;&nbsp;Total Tasks			
+			:
+			&nbsp;341
+</td>
+<td xmlns:authors="authors" align="right"><a class="blue_link" href="#top">Back to Top </a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="3" align="left">
+<table width="100%" bgcolor="#FFFFFF" bordercolor="#CBCBCB" class="doubleborder" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/ParseArgs.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">27:&nbsp;</font></td>
+<td>Parameter 'args' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">28:&nbsp;</font></td>
+<td>Parameter 'key' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">29:&nbsp;</font></td>
+<td>Parameter 'value' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">30:&nbsp;</font></td>
+<td>Parameter 'desc' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">41:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  using the </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">41:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: You must specify a </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">42:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  argument!</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">46:&nbsp;</font></td>
+<td>Provide 'else' after the last 'else-if' construct</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC01-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">48:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  argument must be followed by a </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">48:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: The </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">49:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: !</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">62:&nbsp;</font></td>
+<td>Parameter 'default_value' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">68:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  flag to specify </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">68:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: . The default [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">68:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: No </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">69:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ] will be used.</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">76:&nbsp;</font></td>
+<td>Parameter 'args' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">77:&nbsp;</font></td>
+<td>Parameter 'key' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>Parameter 'desc' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">79:&nbsp;</font></td>
+<td>Parameter 'default_value' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/ScheduleManager.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">28:&nbsp;</font></td>
+<td>The parameter 'participant' of function 'ScheduleManager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">29:&nbsp;</font></td>
+<td>Declare parameter 'negotiation' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">44:&nbsp;</font></td>
+<td>Parameter 'routes' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">67:&nbsp;</font></td>
+<td>Unused function's "set" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">67:&nbsp;</font></td>
+<td>Unused function's "set" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">67:&nbsp;</font></td>
+<td>Unused function's "set" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>Parameter 'duration' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>The parameter 'duration' of function 'push_delay' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">82:&nbsp;</font></td>
+<td>Parameter 'negotiation_callback' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">82:&nbsp;</font></td>
+<td>The parameter 'negotiation_callback' of function 'set_negotiator' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">109:&nbsp;</font></td>
+<td>Parameter 'table' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">110:&nbsp;</font></td>
+<td>Parameter 'responder' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">119:&nbsp;</font></td>
+<td>Function 'make_schedule_manager' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">122:&nbsp;</font></td>
+<td>Declare parameter 'negotiation' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">122:&nbsp;</font></td>
+<td>Pass parameter "negotiation" with const specifier</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL13-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">123:&nbsp;</font></td>
+<td>Declare parameter 'description' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">123:&nbsp;</font></td>
+<td>The parameter 'description' of function 'make_schedule_manager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">124:&nbsp;</font></td>
+<td>Declare parameter 'revision_callback' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">124:&nbsp;</font></td>
+<td>The parameter 'revision_callback' of function 'make_schedule_manager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">144:&nbsp;</font></td>
+<td>Parameter 'writer' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">145:&nbsp;</font></td>
+<td>Declare parameter 'negotiation' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">145:&nbsp;</font></td>
+<td>Pass parameter "negotiation" with const specifier</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL13-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">146:&nbsp;</font></td>
+<td>Parameter 'description' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">146:&nbsp;</font></td>
+<td>The parameter 'description' of function 'async_make_schedule_manager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">147:&nbsp;</font></td>
+<td>Declare parameter 'ready_callback' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">147:&nbsp;</font></td>
+<td>The parameter 'ready_callback' of function 'async_make_schedule_manager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/ScheduleManager.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">89:&nbsp;</font></td>
+<td>The parameter 'description' of function 'make_schedule_manager' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/agv/Waypoint.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>No constructor. All member variables: 'yield' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">37:&nbsp;</font></td>
+<td>The parameter 'map_name' of function 'Waypoint' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">38:&nbsp;</font></td>
+<td>The parameter 'position' of function 'Waypoint' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">39:&nbsp;</font></td>
+<td>The parameter 'mandatory_delay' of function 'Waypoint' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">59:&nbsp;</font></td>
+<td>Parameter 'new_map_name' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">59:&nbsp;</font></td>
+<td>The parameter 'new_map_name' of function 'map_name' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">72:&nbsp;</font></td>
+<td>Declare parameter 'new_position' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">72:&nbsp;</font></td>
+<td>Parameter 'new_position' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">72:&nbsp;</font></td>
+<td>The parameter 'new_position' of function 'position' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">85:&nbsp;</font></td>
+<td>Declare parameter 'duration' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">85:&nbsp;</font></td>
+<td>Parameter 'duration' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">85:&nbsp;</font></td>
+<td>The parameter 'duration' of function 'mandatory_delay' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">98:&nbsp;</font></td>
+<td>Declare parameter 'on' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">98:&nbsp;</font></td>
+<td>Parameter 'on' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/agv/parse_graph.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Function 'parse_graph' passes return value by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-OOP51-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Value 37 is out of acceptable range: 'lower than 30'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.CC-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">27:&nbsp;</font></td>
+<td>Parameter 'graph_file' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">28:&nbsp;</font></td>
+<td>Parameter 'vehicle_traits' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Failed to load graph file [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ]</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">36:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: levels</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">41:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Graph file [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">41:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ] is missing the [levels] key</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">49:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: The [levels] key does not point to a map in graph file [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">50:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ]</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">69:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: vertices</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">88:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Duplicated waypoint name [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">88:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ] in graph [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">89:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ]</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">96:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: is_parking_spot</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Unused function's "set_parking_spot" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Unused function's "set_parking_spot" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Unused function's "set_parking_spot" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">104:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: is_holding_point</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">109:&nbsp;</font></td>
+<td>Unused function's "set_holding_point" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">109:&nbsp;</font></td>
+<td>Unused function's "set_holding_point" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">109:&nbsp;</font></td>
+<td>Unused function's "set_holding_point" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">112:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: is_passthrough_point</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">117:&nbsp;</font></td>
+<td>Unused function's "set_passthrough_point" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">117:&nbsp;</font></td>
+<td>Unused function's "set_passthrough_point" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">117:&nbsp;</font></td>
+<td>Unused function's "set_passthrough_point" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">120:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: is_charger</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">125:&nbsp;</font></td>
+<td>Unused function's "set_charger" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">125:&nbsp;</font></td>
+<td>Unused function's "set_charger" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">125:&nbsp;</font></td>
+<td>Unused function's "set_charger" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">128:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: lift</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">140:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: lanes</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">148:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: orientation_constraint</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">153:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: forward</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">159:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: backward</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">169:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Unrecognized orientation constraint label given to lane [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">170:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: , </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">171:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ]: [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">172:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ] in graph [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">173:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ]</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">208:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Inconsistency in building map. Map [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">208:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ] has two connected waypoints [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">210:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  -&gt; </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">211:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ] that are in different lifts [</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">212:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  -&gt; </td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">213:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: ]. This is not supported!</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">221:&nbsp;</font></td>
+<td>Provide 'else' after the last 'else-if' construct</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC01-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">234:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: demo_mock_floor_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">239:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: demo_mock_lift_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Missing [demo_mock_lift_name] parameter which is required for mock lifts</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">264:&nbsp;</font></td>
+<td>Provide 'else' after the last 'else-if' construct</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC01-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">264:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: door_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">273:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: dock_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">280:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: We do not currently support a dock_name option when any other lane options
+are also specified
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">294:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: speed_limit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">298:&nbsp;</font></td>
+<td>Unused function's "speed_limit" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">298:&nbsp;</font></td>
+<td>Unused function's "speed_limit" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">298:&nbsp;</font></td>
+<td>Unused function's "speed_limit" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">307:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('-' is the second operand of '&lt;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">310:&nbsp;</font></td>
+<td>Declare local variable 'exit_event' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">315:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">315:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">315:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">321:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">321:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">321:&nbsp;</font></td>
+<td>Unused function's "add_lane" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/estimation.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">23:&nbsp;</font></td>
+<td>Value 8 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>Declare parameter 'node' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">25:&nbsp;</font></td>
+<td>Parameter 'state' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Parameter 'info' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">74:&nbsp;</font></td>
+<td>Assert contains function-like call to 'size'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-PRE31-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">74:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">76:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">84:&nbsp;</font></td>
+<td>Declare parameter 'node' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">84:&nbsp;</font></td>
+<td>Parameter 'node' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">86:&nbsp;</font></td>
+<td>Parameter 'info' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">88:&nbsp;</font></td>
+<td>Assert contains function-like call to 'empty'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-PRE31-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">88:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">98:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">98:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">98:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Do not pass the nonstandard-layout type object to the 'convert' function defined in the library that may not be ABI-compatible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-EXP60-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">103:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">110:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Variable "lane_start" should be declared as locally as possible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL19-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">130:&nbsp;</font></td>
+<td>Parameter 'l' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">131:&nbsp;</font></td>
+<td>The parameter 'lane_start' of function 'estimate_midlane_state' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">135:&nbsp;</font></td>
+<td>Assert contains function-like call to 'size'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-PRE31-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">135:&nbsp;</font></td>
+<td>Consider adding a string with an informational message to the assertion</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC11-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">135:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">155:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('&lt;=' is the first operand of '&amp;&amp;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">155:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('&lt;=' is the second operand of '&amp;&amp;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">156:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('&lt;' is the second operand of '&amp;&amp;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">189:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">191:&nbsp;</font></td>
+<td>Declare local variable 'forward_lane' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">191:&nbsp;</font></td>
+<td>Provide 'else' after the last 'else-if' construct</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC01-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">198:&nbsp;</font></td>
+<td>Declare local variable 'reverse_lane' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">214:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">214:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">214:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">219:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">219:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">219:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">222:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">222:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">222:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">226:&nbsp;</font></td>
+<td>Value 7 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">227:&nbsp;</font></td>
+<td>Declare parameter 'node' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">227:&nbsp;</font></td>
+<td>Pass parameter "node" with const specifier</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL13-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">228:&nbsp;</font></td>
+<td>Parameter 'l' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">242:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>Provide 'else' after the last 'else-if' construct</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC01-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">249:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">249:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">249:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">268:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">268:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">268:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">272:&nbsp;</font></td>
+<td>Value 7 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">273:&nbsp;</font></td>
+<td>Declare parameter 'node' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">273:&nbsp;</font></td>
+<td>Pass parameter "node" with const specifier</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL13-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">274:&nbsp;</font></td>
+<td>Parameter 'l' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">299:&nbsp;</font></td>
+<td>The 'assert' shall not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">310:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/events/Error.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">25:&nbsp;</font></td>
+<td>Parameter 'state' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Declare parameter 'behavior' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Parameter 'behavior' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>Unused function's "update_status" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>Unused function's "update_status" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">33:&nbsp;</font></td>
+<td>Unused function's "update_status" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">52:&nbsp;</font></td>
+<td>The parameter number '1' of function 'begin' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>Parameter 'finished' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>The parameter 'finished' of function 'begin' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">65:&nbsp;</font></td>
+<td>Parameter 'state' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>Parameter 'finished' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>The parameter 'finished' of function 'make' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">67:&nbsp;</font></td>
+<td>Declare parameter 'behavior' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>Unused function's "update_status" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>Unused function's "update_status" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>Unused function's "update_status" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Declare parameter 'task_is_interrupted' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Parameter 'task_is_interrupted' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>The parameter 'task_is_interrupted' of function 'interrupt' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/events/Error.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">45:&nbsp;</font></td>
+<td>No constructor. All member variables: '_behavior' should be initialized in constructor</td>
+<td style="padding-right:10px;" align="right"><font class="gray">INIT-06-1</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/jobs/Rollout.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">25:&nbsp;</font></td>
+<td>The parameter 'result' of function 'Rollout' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Declare parameter 'blocker' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">27:&nbsp;</font></td>
+<td>The parameter 'span' of function 'Rollout' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">28:&nbsp;</font></td>
+<td>The parameter 'max_rollouts' of function 'Rollout' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/load_param.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Parameter 'node' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">27:&nbsp;</font></td>
+<td>Parameter 'param_name' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">28:&nbsp;</font></td>
+<td>Parameter 'default_value' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">38:&nbsp;</font></td>
+<td>Parameter 'node' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">38:&nbsp;</font></td>
+<td>Value 7 is out of acceptable range: 'lower than 7'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">METRIC.NBD-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">40:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: fleet_name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">46:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: fleet_name parameter is missing</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>Parameter 'node' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">54:&nbsp;</font></td>
+<td>Parameter 'default_v_nom' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">54:&nbsp;</font></td>
+<td>Parameter 'default_w_nom' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>Parameter 'default_a_nom' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>Parameter 'default_alpha_nom' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>Parameter 'default_r_f' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>Parameter 'default_r_v' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">59:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: linear_velocity</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">61:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: angular_velocity</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">63:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: linear_acceleration</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">65:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: angular_acceleration</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">67:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: footprint_radius</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">69:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: vicinity_radius</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">71:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: reversible</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">74:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code:  ===== We have an irreversible robot</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">87:&nbsp;</font></td>
+<td>Unused function's "set_reversible" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">87:&nbsp;</font></td>
+<td>Unused function's "set_reversible" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">87:&nbsp;</font></td>
+<td>Unused function's "set_reversible" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">94:&nbsp;</font></td>
+<td>Parameter 'node' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">95:&nbsp;</font></td>
+<td>Parameter 'default_voltage' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">96:&nbsp;</font></td>
+<td>Parameter 'default_capacity' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">97:&nbsp;</font></td>
+<td>Parameter 'default_charging_current' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: battery_voltage</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">102:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: battery_capacity</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">105:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: battery_charging_current</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">107:&nbsp;</font></td>
+<td>Declare local variable 'battery_system' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Parameter 'node' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">116:&nbsp;</font></td>
+<td>Parameter 'default_mass' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">117:&nbsp;</font></td>
+<td>Parameter 'default_moment' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">118:&nbsp;</font></td>
+<td>Parameter 'default_friction' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">121:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: mass</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">123:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: inertia</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">125:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: friction_coefficient</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">127:&nbsp;</font></td>
+<td>Declare local variable 'mechanical_system' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/make_trajectory.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">27:&nbsp;</font></td>
+<td>Parameter 'state' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">28:&nbsp;</font></td>
+<td>Parameter 'traits' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">34:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: B1</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">38:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">38:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">38:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">39:&nbsp;</font></td>
+<td>'for' statement in a function 'make_trajectory' should be followed by a block</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP19-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">40:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">40:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">40:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">69:&nbsp;</font></td>
+<td>Parameter 'start_time' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">69:&nbsp;</font></td>
+<td>The parameter 'start_time' of function 'make_trajectory' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">71:&nbsp;</font></td>
+<td>Parameter 'traits' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">74:&nbsp;</font></td>
+<td>'for' statement in a function 'make_trajectory' should be followed by a block</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP19-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">75:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">75:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">75:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">84:&nbsp;</font></td>
+<td>Parameter 'traits' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">91:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">91:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">91:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">93:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">93:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">93:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">101:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">107:&nbsp;</font></td>
+<td>'for' statement in a function 'make_timed_trajectory' should be followed by a block</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP19-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">108:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">108:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">108:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">115:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">125:&nbsp;</font></td>
+<td>Parameter 'state' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">126:&nbsp;</font></td>
+<td>Parameter 'traits' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">127:&nbsp;</font></td>
+<td>Parameter 'is_sitting' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">137:&nbsp;</font></td>
+<td>Parameter 'l' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">138:&nbsp;</font></td>
+<td>The parameter 't' of function 'make_hold' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">139:&nbsp;</font></td>
+<td>Declare parameter 'duration' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">139:&nbsp;</font></td>
+<td>Parameter 'duration' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">139:&nbsp;</font></td>
+<td>The parameter 'duration' of function 'make_hold' is passed by value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">OPT-14-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">142:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">142:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">142:&nbsp;</font></td>
+<td>Implicit conversion from 'float' type to 'double' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-FLP03-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">148:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">148:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">148:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/make_trajectory.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>Reserved name 'time' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-e-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">53:&nbsp;</font></td>
+<td>Reserved name 'time' used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_CPP-DCL51-f-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/phases/SupervisorHasSession.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>Parameter 'heartbeat' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">32:&nbsp;</font></td>
+<td>Declare local variable 'it' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">44:&nbsp;</font></td>
+<td>Declare local variable 'it2' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/phases/Utils.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">23:&nbsp;</font></td>
+<td>Parameter 'a' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>Parameter 'b' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('==' is the first operand of '&amp;&amp;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('&gt;' is the first operand of '||')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('&gt;' is the second operand of '&amp;&amp;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/project_itinerary.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">24:&nbsp;</font></td>
+<td>Parameter 'starting_from' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">26:&nbsp;</font></td>
+<td>Parameter 'with_planner' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">39:&nbsp;</font></td>
+<td>Declare local variable 'start' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">43:&nbsp;</font></td>
+<td>Unused function's "validator" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">43:&nbsp;</font></td>
+<td>Unused function's "validator" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">43:&nbsp;</font></td>
+<td>Unused function's "validator" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">54:&nbsp;</font></td>
+<td>'for' statement in a function 'project_itinerary' should be followed by a block</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP19-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">54:&nbsp;</font></td>
+<td>Identifier 'wp' is hiding other identifier with the same name declared in outer scope</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL01-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>Unused function's "insert" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/services/ProgressEvaluator.cpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Unused function's "maximum_cost_estimate" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Unused function's "maximum_cost_estimate" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">100:&nbsp;</font></td>
+<td>Unused function's "maximum_cost_estimate" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">105:&nbsp;</font></td>
+<td>Provide 'else' after the last 'else-if' construct</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC01-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">107:&nbsp;</font></td>
+<td>Unused function's "maximum_cost_estimate" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">107:&nbsp;</font></td>
+<td>Unused function's "maximum_cost_estimate" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">107:&nbsp;</font></td>
+<td>Unused function's "maximum_cost_estimate" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">128:&nbsp;</font></td>
+<td>The 'const rmf_fleet_adapter::services::ProgressEvaluator::Result *' pointer to object type should not be implicitly converted
+to the  integral type 'bool'
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT36-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">128:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('&lt;' is the second operand of '||')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/rmf_fleet_adapter_testing/src/rmf_fleet_adapter/services/ProgressEvaluator.hpp</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">34:&nbsp;</font></td>
+<td>Constructor 'ProgressEvaluator' allowing conversion should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CODSTA-CPP-04-1</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="3"><br></td>
+</tr>
+</table><br><script language="JavaScript">
+    if(document.getElementById("cs_link_sev") != null) {
+    document.getElementById("cs_link_sev").style.color="#990000";
+    document.getElementById("cs_link_sev").style.textDecoration="underline";
+    }
+    if(document.getElementById("cs_link_sevtrue") != null) {
+    document.getElementById("cs_link_sevtrue").style.color="#990000";
+    document.getElementById("cs_link_sevtrue").style.textDecoration="underline";
+    }
+    </script></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="100%" bgcolor="#1D488D" border="0" bordercolor="#999999" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center"><font class="white">&copy;Parasoft Corp. -&nbsp;C++test&nbsp;2022.1.0.20220615B1827&nbsp;Reporting System&nbsp;</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

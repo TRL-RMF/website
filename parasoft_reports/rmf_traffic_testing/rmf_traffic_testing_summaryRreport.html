@@ -1,0 +1,2121 @@
+<html xmlns:graph="graph" xmlns:results="results">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+    BODY,P,OL,TD,pre{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    A:link {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:active {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:visited {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #999999;text-decoration: none;}
+    A:hover {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: underline;}
+    A.gray_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: underline;}
+    A.red_link:link {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:active {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:visited {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:hover {font-family: Arial;font-size: 12px;color: #990000;text-decoration: underline;}
+    A.green_link:link {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:active {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:visited {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:hover {font-family: Arial;font-size: 12px;color: #008040;text-decoration: underline;}
+    A.black_link:link {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:active {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:visited {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:hover {font-family: Arial;font-size: 12px;color: #000000;text-decoration: underline;}
+    
+    A.blue_link:link {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:active {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:visited {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:hover {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: underline;}
+    
+    A.gray_red_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    DIV.suite_details{margin-left: 40px; padding: 10px; border: 2px solid #99aaaa;}
+    DIV.test_comment{color:#666666;}
+    DIV.header{font-size: 32px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }
+    DIV.small_header{font-size: 18px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }    
+    FONT.gray {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #999999;}    
+    FONT.gray2, FONT.gray_red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #666666;}
+    FONT.white {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #FFFFFF;}
+    FONT.time {font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;}
+    FONT.black {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    FONT.red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000;}
+    FONT.red2 {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000; text-decoration: underline;}
+    FONT.blue {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #427fb6;}
+    FONT.green {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #008040;}
+    FONT.orange {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #F69500;}
+    FONT.goldenrod {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #DAA520;}    
+    FONT.small {font-size: 3px;font-family: Arial, Helvetica, sans-serif;color: #cccccc;}
+    IMG.screenshot{float:left; margin-right: 20px; border:1px solid black;}
+    SELECT.cs_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SELECT.ju_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SPAN.toggle_button{width: 16px; padding-right: 2px; display: inline-block;} 
+    TD.associations{vertical-align: top;}
+    TD.collapse_controls{text-align:right;}
+    TD.cs_authors{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;border: 1px; bordercolor: #d9c8ac;}
+    TD.error{background-color:#ffeeee}
+    TD.errorsingleborder{background-color:#ffeeee;border:1px solid #CBCBCB}
+    TD.singleborder{ border:1px solid #CBCBCB}
+    TABLE.header{background-color:#FFFFFF}
+    TABLE.singleborder{ border:1px solid #CBCBCB}
+    TABLE.doubleborder{ border:2px solid #CBCBCB}     
+    TABLE.singleborder_blue{ border:2px solid #427fb6}
+    TD.fixed_width{width: 150px;}
+    TD.no_error{}
+    TD.suite_details{padding:2px; }
+    UL.metrics {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:12px;}
+    UL.root {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:3px;}
+    UL {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:12px;}
+    LI {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left: 0px;}
+    #foldheader{cursor:pointer;cursor:hand ;}
+    #cs_foldheader{cursor:pointer;cursor:hand ;}
+    #metrics_foldheader{cursor:pointer;cursor:hand ;}
+    #exec_foldheader{cursor:pointer;cursor:hand ;}
+    #paramsHeader {word-break:break-all;overflow: auto; padding: 3px;}
+    </style><title>C++test&nbsp;Report&nbsp;[2022-07-08T15:24:29+08:00]
+
+</title><script language="JavaScript">
+    var nwin;    
+    function openWin (loc_to_open) {    
+       if (!nwin || nwin.closed) {
+          nwin = window.open(loc_to_open,'');
+       } else {
+          nwin.location = loc_to_open;
+       }
+       nwin.focus();
+    }
+    function openDevReport (dev_rep_name) {
+       openWin('&id=' + dev_rep_name);
+    }
+    </script><script language="JavaScript">
+    function sortBySeverity(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }   
+    if(sev != null) sev.style.display='block';
+    if(sev_title != null) sev_title.style.display='block';
+    if(sev_link != null) {
+    sev_link.style.color="#666666";  
+    sev_link.style.textDecoration="none";
+    }
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }   
+    if(cat != null) cat.style.display='none';
+    if(cat_title != null) cat_title.style.display='none';
+    if(cat_link != null) {
+    cat_link.style.color="#990000";
+    cat_link.style.textDecoration="underline";
+    }
+    }
+    
+    function sortByCategory(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }
+    if(sev != null) sev.style.display='none';
+    if(sev_title != null) sev_title.style.display='none';
+    if(sev_link != null) { 
+    sev_link.style.color="#990000";   
+    sev_link.style.textDecoration="underline";
+    }       
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }
+    if(cat != null) cat.style.display='block';
+    if(cat_title != null) cat_title.style.display='block';
+    if(cat_link != null) { 
+    cat_link.style.color="#666666"; 
+    cat_link.style.textDecoration="none";
+    }
+    }
+    </script><script language="JavaScript">
+    var ns6=document.getElementById && !document.all
+    var ie4=document.all && navigator.userAgent.indexOf("Opera")==-1
+
+    function checkcontained(e)
+    {
+       cur=ns6 ? e.target : event.srcElement;
+       
+       checkFor("foldinglist", "foldheader", cur);
+       checkFor("cs_foldinglist", "cs_foldheader", cur);
+       checkFor("metrics_foldinglist", "metrics_foldheader", cur);
+       checkFor("exec_foldinglist", "exec_foldheader", cur);
+    }
+    
+    function checkFor(foldinglist, foldheader, cur)
+    {
+        var iscontained=0;
+        i = 0;
+        if (cur.id==foldheader) {
+           iscontained=1;
+        } 
+        while (ns6 && cur.parentNode || (ie4 && cur.parentElement)) {
+             if (cur.id==foldheader||cur.id==foldinglist){
+                iscontained=(cur.id==foldheader)? 1 : 0;
+                break;
+             }
+             cur=ns6? cur.parentNode : cur.parentElement;
+        }
+
+        if (iscontained) {
+           var foldercontent=ns6? cur.nextSibling.nextSibling : cur.all.tags("UL")[0];
+           if (foldercontent.style.display=="none"){
+               foldercontent.style.display="";
+           } else {
+               foldercontent.style.display="none";
+           }
+        }    
+    }
+    function expandCSDetails() {
+       expandCollapseAll("cs_foldinglist", true);
+    }
+
+    function collapseCSDetails() {
+       expandCollapseAll("cs_foldinglist", false);
+    }
+
+    function expandMetricsDetails() {
+    expandCollapseAll("metrics_foldinglist", true);
+    }
+
+    function collapseMetricsDetails() {
+    expandCollapseAll("metrics_foldinglist", false);
+    }
+
+    function expandExecDetails() {
+       expandCollapseAll("exec_foldinglist", true);
+    }
+
+    function collapseExecDetails() {
+       expandCollapseAll("exec_foldinglist", false);
+    }
+    
+    function expandCollapseAll(foldinglistID, collapse) 
+    {
+        if (document.getElementById && document.createElement) {
+            m = document.getElementById(foldinglistID).getElementsByTagName('ul');
+            var i;
+            for (i = 0; i < m.length; i++) {
+              if (collapse) {
+                 m[i].style.display='block';
+              } else {
+                 m[i].style.display='none';
+              }
+            }
+        }
+    }
+
+     if (ie4||ns6) {
+       document.onclick=checkcontained;
+    }
+
+    
+    function expandViolation(headerID, violationID, startIndex)
+    {
+        var violation = document.getElementById(violationID);
+        var m = document.getElementById(headerID).getElementsByTagName('td');
+
+        if (violation.style.display === '') {
+            violation.style.display = 'none';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#FFFFFF";
+            }
+        }
+        else{
+            violation.style.display = '';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#E0E0E0";
+            }
+        }
+    }
+    </script></head>
+<body bgcolor="#E7F0F5">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="left"><img src="rep_header_logo.png" alt="rep_header_logo.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="40%" align="center"><img src="rep_header_3.png" alt="rep_header_3.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="center"></td>
+</tr>
+</table>
+<table width="100%" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:0px" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-left:20px" align="left" width="20%"></td>
+<td style="padding:10px" align="center" width="60%">
+<table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">User configuration:
+	    		&nbsp;<b>Recommended Rules with Security</b></td>
+</tr>
+<tr>
+<td width="16%" align="center"><font class="time">2022-07-08T15:24:29+08:00</font></td>
+</tr>
+</table>
+</td>
+<td style="padding-right:20px" align="right" width="20%"></td>
+</tr>
+</table>
+<table width="100%" class="singleborder_blue" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:5px" cellspacing="0" bgcolor="#FFFFFF" bordercolor="#A0CAEC">
+<tr>
+<td><br xmlns:textutil="textutil"><a xmlns:textutil="textutil" name="cs"></a><table xmlns:textutil="textutil" class="header" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td width="15%"></td>
+<td align="center">
+<div class="header">STATIC ANALYSIS</div>
+</td>
+<td width="15%" align="right" valign="bottom"></td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td width="80%">
+<table width="100%" class="singleborder" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td class="singleborder" width="40%" align="center" bgcolor="#F3F3F3" rowspan="2"><b>Project Name</b><br>&nbsp;
+</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3" colspan="4">&nbsp;<b>Tasks</b>&nbsp;
+</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3" colspan="2">&nbsp;<b>Files</b></td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3" colspan="2">&nbsp;<b>Lines</b></td>
+</tr>
+<tr>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">suppressed</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">qfix</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">total</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">per 10,000 lines</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">checked</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">total</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">checked</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">total</td>
+</tr>
+<tr>
+<td class="singleborder" align="left">&nbsp;rmf_traffic_testing</td>
+<td class="singleborder" align="right">&nbsp;0&nbsp;</td>
+<td class="singleborder" align="right">0&nbsp;</td>
+<td class="singleborder" align="right">4308&nbsp;</td>
+<td class="singleborder" align="right">1309&nbsp;</td>
+<td class="singleborder" align="right">&nbsp;106&nbsp;</td>
+<td class="singleborder" align="right">106&nbsp;</td>
+<td class="singleborder" align="right">&nbsp;32902&nbsp;</td>
+<td class="singleborder" align="right">32902&nbsp;</td>
+</tr>
+<tr>
+<td class="singleborder" align="left">&nbsp;<b>Total</b> [0:03:12]
+
+</td>
+<td class="singleborder" align="right">&nbsp;<b>0</b>&nbsp;
+</td>
+<td class="singleborder" align="right">&nbsp;<b>0</b>&nbsp;
+</td>
+<td class="singleborder" align="right">&nbsp;<b>4308</b>&nbsp;
+</td>
+<td class="singleborder" align="right">&nbsp;<b>1309</b>&nbsp;
+</td>
+<td class="singleborder" align="right"><b>106</b>&nbsp;
+</td>
+<td class="singleborder" align="right"><b>106</b>&nbsp;
+</td>
+<td class="singleborder" align="right"><b>32902</b>&nbsp;
+</td>
+<td class="singleborder" align="right"><b>32902</b>&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table class="header" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="30%">&nbsp;</td>
+<td align="center">
+<div class="small_header" id="cs_title_cat" style="display:block;">All Tasks&nbsp;by Category</div>
+<div class="small_header" id="cs_title_sev" style="display:none;">All Tasks&nbsp;by Severity</div>
+</td>
+<td align="right" width="30%"><font class="gray2">by:</font>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_cat" class="gray_red_link" href="javascript:sortByCategory()">Category</a>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_sev" class="gray_red_link" href="javascript:sortBySeverity()">Severity</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left">
+<div id="cs_cat" style="display:block;">
+<table width="100%" class="doubleborder" cellpadding="0" cellspacing="0" bordercolor="#CBCBCB">
+<tr>
+<td>&nbsp;
+[<b>7</b>]
+&nbsp;&nbsp;<b>Possible Bugs</b>&nbsp;<font class="gray">(BD-PB)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid use before initialization&nbsp;<font class="gray">(BD-PB-NOTINIT-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(BD-PB-NP-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>Code Duplication Detection</b>&nbsp;<font class="gray">(CDD)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid function duplication&nbsp;<font class="gray">(CDD-DUPM-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-MSC13_C (REC) Detect and remove unused values</b>&nbsp;<font class="gray">(CERT_C-MSC13)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Avoid unnecessary local variables&nbsp;<font class="gray">(CERT_C-MSC13-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-FLP02_C (REC) Avoid using floating-point numbers when precise computation is needed</b>&nbsp;<font class="gray">(CERT_C-FLP02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Floating-point expressions shall not be tested for equality or inequality&nbsp;<font class="gray">(CERT_C-FLP02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-MSC19_C (REC) For functions that return an array, prefer returning an empty array over a null value</b>&nbsp;<font class="gray">(CERT_C-MSC19)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-MSC19-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-FLP06_C (REC) Convert integers to floating point for floating-point operations</b>&nbsp;<font class="gray">(CERT_C-FLP06)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Implicit conversions from integral to floating type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-FLP06-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>8</b>]
+&nbsp;&nbsp;<b>CERT-INT02_C (REC) Understand integer conversion rules</b>&nbsp;<font class="gray">(CERT_C-INT02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Implicit conversions from wider to narrower integral type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-INT02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid mixing arithmetic of different precisions in the same expression&nbsp;<font class="gray">(CERT_C-INT02-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-FLP00_C (REC) Understand the limitations of floating-point numbers</b>&nbsp;<font class="gray">(CERT_C-FLP00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Floating-point expressions shall not be tested for equality or inequality&nbsp;<font class="gray">(CERT_C-FLP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-INT07_C (REC) Use only explicitly signed or unsigned char type for numeric values</b>&nbsp;<font class="gray">(CERT_C-INT07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-INT07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>35</b>]
+&nbsp;&nbsp;<b>CERT-MEM04_C (REC) Beware of zero-length allocations</b>&nbsp;<font class="gray">(CERT_C-MEM04)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM04-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>7</b>]
+&nbsp;&nbsp;<b>CERT-MEM05_C (REC) Avoid large stack allocations</b>&nbsp;<font class="gray">(CERT_C-MEM05)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>7</b>]
+&nbsp;&nbsp;Do not use recursion&nbsp;<font class="gray">(CERT_C-MEM05-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-MEM02_C (REC) Immediately cast the result of a memory allocation function call into a pointer to the allocated type</b>&nbsp;<font class="gray">(CERT_C-MEM02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Assignment operator should have operands of compatible types&nbsp;<font class="gray">(CERT_C-MEM02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not assign function return value to a variable of incompatible type&nbsp;<font class="gray">(CERT_C-MEM02-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>117</b>]
+&nbsp;&nbsp;<b>CERT-PRE31_C (RULE) Avoid side effects in arguments to unsafe macros</b>&nbsp;<font class="gray">(CERT_C-PRE31)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>117</b>]
+&nbsp;&nbsp;Assertions should not contain function calls nor function-like macro calls&nbsp;<font class="gray">(CERT_C-PRE31-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>19</b>]
+&nbsp;&nbsp;<b>CERT-MSC01_C (REC) Strive for logical completeness</b>&nbsp;<font class="gray">(CERT_C-MSC01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>19</b>]
+&nbsp;&nbsp;All 'if...else-if' constructs shall be terminated with an 'else' clause&nbsp;<font class="gray">(CERT_C-MSC01-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>16</b>]
+&nbsp;&nbsp;<b>CERT-MSC09_C (REC) Character encoding: Use subset of ASCII for safety</b>&nbsp;<font class="gray">(CERT_C-MSC09)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;Only use characters defined in ISO C standard&nbsp;<font class="gray">(CERT_C-MSC09-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>10</b>]
+&nbsp;&nbsp;<b>CERT-INT36_C (RULE) Converting a pointer to integer or integer to pointer</b>&nbsp;<font class="gray">(CERT_C-INT36)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;A conversion should not be performed between a pointer to object type and an integer type other than 'uintptr_t' or 'intptr_t'&nbsp;<font class="gray">(CERT_C-INT36-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>8</b>]
+&nbsp;&nbsp;<b>CERT-EXP46_C (RULE) Do not use a bitwise operator with a Boolean-like operand</b>&nbsp;<font class="gray">(CERT_C-EXP46)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>8</b>]
+&nbsp;&nbsp;Expressions that are effectively Boolean should not be used as operands to operators other than (&amp;&amp;, ||, !, =, ==, !=, ?:)&nbsp;<font class="gray">(CERT_C-EXP46-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>19</b>]
+&nbsp;&nbsp;<b>CERT-FIO41_C (RULE) Do not call getc(), putc(), getwc(), or putwc() with a stream argument that has side effects</b>&nbsp;<font class="gray">(CERT_C-FIO41)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>19</b>]
+&nbsp;&nbsp;A full expression containing an increment (++) or decrement (--) operator should have no other potential side effects&nbsp;<font class="gray">(CERT_C-FIO41-e-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>35</b>]
+&nbsp;&nbsp;<b>CERT-MEM07_C (REC) Ensure that the arguments to calloc(), when multiplied, do not wrap</b>&nbsp;<font class="gray">(CERT_C-MEM07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>311</b>]
+&nbsp;&nbsp;<b>CERT-MSC41_C (RULE) Never hard code sensitive information</b>&nbsp;<font class="gray">(CERT_C-MSC41)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>311</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1000</b>]
+&nbsp;&nbsp;<b>CERT-API00_C (REC) Functions should validate their parameters</b>&nbsp;<font class="gray">(CERT_C-API00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1000</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>20</b>]
+&nbsp;&nbsp;<b>CERT-EXP40_C (RULE) Do not modify constant objects</b>&nbsp;<font class="gray">(CERT_C-EXP40)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>20</b>]
+&nbsp;&nbsp;A cast shall not remove any 'const' or 'volatile' qualification from the type of a pointer or reference&nbsp;<font class="gray">(CERT_C-EXP40-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-EXP33_C (RULE) Do not read uninitialized memory</b>&nbsp;<font class="gray">(CERT_C-EXP33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid use before initialization&nbsp;<font class="gray">(CERT_C-EXP33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-EXP34_C (RULE) Do not dereference null pointers</b>&nbsp;<font class="gray">(CERT_C-EXP34)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-EXP34-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>20</b>]
+&nbsp;&nbsp;<b>CERT-EXP32_C (RULE) Do not access a volatile object through a nonvolatile reference</b>&nbsp;<font class="gray">(CERT_C-EXP32)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>20</b>]
+&nbsp;&nbsp;A cast shall not remove any 'const' or 'volatile' qualification from the type of a pointer or reference&nbsp;<font class="gray">(CERT_C-EXP32-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>13</b>]
+&nbsp;&nbsp;<b>CERT-EXP37_C (RULE) Call functions with the correct number and type of arguments</b>&nbsp;<font class="gray">(CERT_C-EXP37)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;Identifiers shall be given for all of the parameters in a function prototype declaration&nbsp;<font class="gray">(CERT_C-EXP37-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>16</b>]
+&nbsp;&nbsp;<b>CERT-EXP36_C (RULE) Do not cast pointers into more strictly aligned pointer types</b>&nbsp;<font class="gray">(CERT_C-EXP36)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;A cast should not be performed between a pointer to object type and a different pointer to object type&nbsp;<font class="gray">(CERT_C-EXP36-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>66</b>]
+&nbsp;&nbsp;<b>CERT-EXP39_C (RULE) Do not access a variable through a pointer of an incompatible type</b>&nbsp;<font class="gray">(CERT_C-EXP39)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>50</b>]
+&nbsp;&nbsp;There shall be no implicit conversions from integral to floating type&nbsp;<font class="gray">(CERT_C-EXP39-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;A cast should not be performed between a pointer to object type and a different pointer to object type&nbsp;<font class="gray">(CERT_C-EXP39-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-DCL22_C (REC) Use volatile for data that cannot be cached</b>&nbsp;<font class="gray">(CERT_C-DCL22)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Avoid unused values&nbsp;<font class="gray">(CERT_C-DCL22-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>119</b>]
+&nbsp;&nbsp;<b>CERT-EXP00_C (REC) Use parentheses for precedence of operation</b>&nbsp;<font class="gray">(CERT_C-EXP00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>119</b>]
+&nbsp;&nbsp;Use parenthesis to clarify expression order if operators with precedence lower than arithmetic are used&nbsp;<font class="gray">(CERT_C-EXP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>20</b>]
+&nbsp;&nbsp;<b>CERT-EXP05_C (REC) Do not cast away a const qualification</b>&nbsp;<font class="gray">(CERT_C-EXP05)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>20</b>]
+&nbsp;&nbsp;A cast shall not remove any 'const' or 'volatile' qualification from the type of a pointer or reference&nbsp;<font class="gray">(CERT_C-EXP05-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>7</b>]
+&nbsp;&nbsp;<b>CERT-EXP02_C (REC) Be aware of the short-circuit behavior of the logical AND and OR operators</b>&nbsp;<font class="gray">(CERT_C-EXP02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>7</b>]
+&nbsp;&nbsp;The right-hand operand of a logical &amp;&amp; or || operator shall not contain side effects&nbsp;<font class="gray">(CERT_C-EXP02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>12</b>]
+&nbsp;&nbsp;<b>CERT-DCL19_C (REC) Minimize the scope of variables and functions</b>&nbsp;<font class="gray">(CERT_C-DCL19)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>12</b>]
+&nbsp;&nbsp;Declare variables as locally as possible&nbsp;<font class="gray">(CERT_C-DCL19-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>33</b>]
+&nbsp;&nbsp;<b>CERT-DCL15_C (REC) Declare file-scope objects or functions that do not need external linkage as static</b>&nbsp;<font class="gray">(CERT_C-DCL15)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>33</b>]
+&nbsp;&nbsp;Objects or functions with external linkage shall be declared in a header file&nbsp;<font class="gray">(CERT_C-DCL15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>257</b>]
+&nbsp;&nbsp;<b>CERT-EXP12_C (REC) Do not ignore values returned by functions</b>&nbsp;<font class="gray">(CERT_C-EXP12)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>257</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-EXP15_C (REC) Do not place a semicolon on the same line as an if, for, or while statement</b>&nbsp;<font class="gray">(CERT_C-EXP15)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Suspicious use of semicolon&nbsp;<font class="gray">(CERT_C-EXP15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-EXP14_C (REC) Beware of integer promotion when performing bitwise operations on integer types smaller than int</b>&nbsp;<font class="gray">(CERT_C-EXP14)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid mixing arithmetic of different precisions in the same expression&nbsp;<font class="gray">(CERT_C-EXP14-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>85</b>]
+&nbsp;&nbsp;<b>CERT-EXP19_C (REC) Use braces for the body of an if, for, or while statement</b>&nbsp;<font class="gray">(CERT_C-EXP19)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>85</b>]
+&nbsp;&nbsp;The statement forming the body of a 'switch', 'while', 'do...while' or 'for' statement shall be a compound statement&nbsp;<font class="gray">(CERT_C-EXP19-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-STR00_C (REC) Represent characters using an appropriate type</b>&nbsp;<font class="gray">(CERT_C-STR00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR00-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-STR09_C (REC) Don't assume numeric values for expressions with type plain character</b>&nbsp;<font class="gray">(CERT_C-STR09)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Expressions with type (plain) char and wchar_t shall not be used as operands to built-in operators other than  =,  ==, !=
+and the unary &amp; operator&nbsp;<font class="gray">(CERT_C-STR09-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-STR04_C (REC) Use plain char for characters in the basic character set</b>&nbsp;<font class="gray">(CERT_C-STR04)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR04-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-PRE00_C (REC) Prefer inline or static functions to function-like macros</b>&nbsp;<font class="gray">(CERT_C-PRE00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;A function should be used in preference to a function-like macro&nbsp;<font class="gray">(CERT_C-PRE00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>263</b>]
+&nbsp;&nbsp;<b>CERT-POS54_C (RULE) Detect and handle POSIX library errors</b>&nbsp;<font class="gray">(CERT_C-POS54)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>257</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-POS54-c-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>24</b>]
+&nbsp;&nbsp;<b>CERT-ERR30_C (RULE) Set errno to zero before calling a library function known to set errno, and check errno only after the
+function returns a value indicating failure</b>&nbsp;<font class="gray">(CERT_C-ERR30)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>24</b>]
+&nbsp;&nbsp;Properly use errno value&nbsp;<font class="gray">(CERT_C-ERR30-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>24</b>]
+&nbsp;&nbsp;<b>CERT-ERR32_C (RULE) Do not rely on indeterminate values of errno</b>&nbsp;<font class="gray">(CERT_C-ERR32)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>24</b>]
+&nbsp;&nbsp;Properly use errno value&nbsp;<font class="gray">(CERT_C-ERR32-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>263</b>]
+&nbsp;&nbsp;<b>CERT-ERR33_C (RULE) Detect and handle standard library errors</b>&nbsp;<font class="gray">(CERT_C-ERR33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>257</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-ERR33-c-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>129</b>]
+&nbsp;&nbsp;<b>CERT-ERR06_C (REC) Understand the termination behavior of assert() and abort()</b>&nbsp;<font class="gray">(CERT_C-ERR06)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>129</b>]
+&nbsp;&nbsp;Do not use assertions&nbsp;<font class="gray">(CERT_C-ERR06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-DCL01_C (REC) Do not reuse variable names in subscopes</b>&nbsp;<font class="gray">(CERT_C-DCL01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Identifiers declared in an inner local scope should not hide identifiers declared in an outer local scope&nbsp;<font class="gray">(CERT_C-DCL01-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>347</b>]
+&nbsp;&nbsp;<b>CERT-DCL00_C (REC) Const-qualify immutable objects</b>&nbsp;<font class="gray">(CERT_C-DCL00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>347</b>]
+&nbsp;&nbsp;Declare parameters or local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-FLP36_C (RULE) Preserve precision when converting integral values to floating-point type</b>&nbsp;<font class="gray">(CERT_C-FLP36)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Implicit conversions from integral to floating type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-FLP36-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-FLP32_C (RULE) Prevent or detect domain and range errors in math functions</b>&nbsp;<font class="gray">(CERT_C-FLP32)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Validate values passed to library functions&nbsp;<font class="gray">(CERT_C-FLP32-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>21</b>]
+&nbsp;&nbsp;<b>CERT-ERR50_CPP (RULE) Do not abruptly terminate the program</b>&nbsp;<font class="gray">(CERT_CPP-ERR50)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>18</b>]
+&nbsp;&nbsp;Never allow an exception to be thrown from a destructor, deallocation, and swap&nbsp;<font class="gray">(CERT_CPP-ERR50-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Exceptions shall be raised only after start-up and before termination of the program&nbsp;<font class="gray">(CERT_CPP-ERR50-f-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-DCL59_CPP (RULE) Do not define an unnamed namespace in a header file</b>&nbsp;<font class="gray">(CERT_CPP-DCL59)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;There shall be no unnamed namespaces in header files&nbsp;<font class="gray">(CERT_CPP-DCL59-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-MEM51_CPP (RULE) Properly deallocate dynamically allocated resources</b>&nbsp;<font class="gray">(CERT_CPP-MEM51)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Both copy constructor and copy assignment operator should be declared for classes with a nontrivial destructor&nbsp;<font class="gray">(CERT_CPP-MEM51-c-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>18</b>]
+&nbsp;&nbsp;<b>CERT-DCL57_CPP (RULE) Do not let exceptions escape from destructors or deallocation functions</b>&nbsp;<font class="gray">(CERT_CPP-DCL57)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>18</b>]
+&nbsp;&nbsp;Never allow an exception to be thrown from a destructor, deallocation, and swap&nbsp;<font class="gray">(CERT_CPP-DCL57-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-ERR58_CPP (RULE) Handle all exceptions thrown before main() begins executing</b>&nbsp;<font class="gray">(CERT_CPP-ERR58)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Exceptions shall be raised only after start-up and before termination of the program&nbsp;<font class="gray">(CERT_CPP-ERR58-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>26</b>]
+&nbsp;&nbsp;<b>CERT-STR53_CPP (RULE) Range check element access</b>&nbsp;<font class="gray">(CERT_CPP-STR53)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>26</b>]
+&nbsp;&nbsp;Guarantee that container indices are within the valid range&nbsp;<font class="gray">(CERT_CPP-STR53-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>80</b>]
+&nbsp;&nbsp;<b>CERT-DCL51_CPP (RULE) Do not declare or define a reserved identifier</b>&nbsp;<font class="gray">(CERT_CPP-DCL51)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused&nbsp;<font class="gray">(CERT_CPP-DCL51-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused (C90)&nbsp;<font class="gray">(CERT_CPP-DCL51-e-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused (C99)&nbsp;<font class="gray">(CERT_CPP-DCL51-f-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-STR51_CPP (RULE) Do not attempt to create a std::string from a null pointer</b>&nbsp;<font class="gray">(CERT_CPP-STR51)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_CPP-STR51-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-OOP52_CPP (RULE) Do not delete a polymorphic object without a virtual destructor</b>&nbsp;<font class="gray">(CERT_CPP-OOP52)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Define a virtual destructor in classes used as base classes which have virtual functions&nbsp;<font class="gray">(CERT_CPP-OOP52-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>18</b>]
+&nbsp;&nbsp;<b>CERT-OOP51_CPP (RULE) Do not slice derived objects</b>&nbsp;<font class="gray">(CERT_CPP-OOP51)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>18</b>]
+&nbsp;&nbsp;Avoid slicing function arguments / return value&nbsp;<font class="gray">(CERT_CPP-OOP51-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-OOP54_CPP (RULE) Gracefully handle self-copy assignment</b>&nbsp;<font class="gray">(CERT_CPP-OOP54)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Check for assignment to self in operator=&nbsp;<font class="gray">(CERT_CPP-OOP54-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-DCL60_CPP (RULE) Obey the one-definition rule</b>&nbsp;<font class="gray">(CERT_CPP-DCL60)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;A class, union or enum name (including qualification, if any) shall be a unique identifier&nbsp;<font class="gray">(CERT_CPP-DCL60-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>20</b>]
+&nbsp;&nbsp;<b>CERT-EXP55_CPP (RULE) Do not access a cv-qualified object through a cv-unqualified type</b>&nbsp;<font class="gray">(CERT_CPP-EXP55)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>20</b>]
+&nbsp;&nbsp;A cast shall not remove any 'const' or 'volatile' qualification from the type of a pointer or reference&nbsp;<font class="gray">(CERT_CPP-EXP55-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-EXP53_CPP (RULE) Do not read uninitialized memory</b>&nbsp;<font class="gray">(CERT_CPP-EXP53)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid use before initialization&nbsp;<font class="gray">(CERT_CPP-EXP53-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>5</b>]
+&nbsp;&nbsp;<b>CERT-EXP60_CPP (RULE) Do not pass a nonstandard-layout type object across execution boundaries</b>&nbsp;<font class="gray">(CERT_CPP-EXP60)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Do not pass a nonstandard-layout type object across execution boundaries&nbsp;<font class="gray">(CERT_CPP-EXP60-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-ERR60_CPP (RULE) Exception objects must be nothrow copy constructible</b>&nbsp;<font class="gray">(CERT_CPP-ERR60)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Exception objects must be nothrow copy constructible&nbsp;<font class="gray">(CERT_CPP-ERR60-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>26</b>]
+&nbsp;&nbsp;<b>CERT-CTR50_CPP (RULE) Guarantee that container indices and iterators are within the valid range</b>&nbsp;<font class="gray">(CERT_CPP-CTR50)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>26</b>]
+&nbsp;&nbsp;Guarantee that container indices are within the valid range&nbsp;<font class="gray">(CERT_CPP-CTR50-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>11</b>]
+&nbsp;&nbsp;<b>CERT-INT50_CPP (RULE) Do not cast to an out-of-range enumeration value</b>&nbsp;<font class="gray">(CERT_CPP-INT50)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>11</b>]
+&nbsp;&nbsp;An expression with enum underlying type shall only have values corresponding to the enumerators of the enumeration&nbsp;<font class="gray">(CERT_CPP-INT50-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>10</b>]
+&nbsp;&nbsp;<b>Coding Conventions</b>&nbsp;<font class="gray">(CODSTA)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;Local variables should not use the same names as member variables&nbsp;<font class="gray">(CODSTA-44-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>40</b>]
+&nbsp;&nbsp;<b>Coding Conventions for C++</b>&nbsp;<font class="gray">(CODSTA-CPP)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>40</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>28</b>]
+&nbsp;&nbsp;<b>Initialization</b>&nbsp;<font class="gray">(INIT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>28</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>Metric</b>&nbsp;<font class="gray">(METRIC)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;McCabe Cyclomatic Complexity&nbsp;<font class="gray">(METRIC.CC-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>MISRA C 2004</b>&nbsp;<font class="gray">(MISRA2004)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Floating-point expressions shall not be tested for equality or inequality&nbsp;<font class="gray">(MISRA2004-13_3-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>5</b>]
+&nbsp;&nbsp;<b>Object Oriented</b>&nbsp;<font class="gray">(OOP)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;If a class has virtual functions it shall have a virtual destructor&nbsp;<font class="gray">(OOP-23-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>602</b>]
+&nbsp;&nbsp;<b>Optimization</b>&nbsp;<font class="gray">(OPT)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>602</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div id="cs_sev" style="display:none;">
+<table width="100%" class="doubleborder" cellpadding="0" cellspacing="0" bordercolor="#CBCBCB">
+<tr>
+<td>&nbsp;
+[<b>949</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;1 - Highest</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid use before initialization&nbsp;<font class="gray">(BD-PB-NOTINIT-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(BD-PB-NP-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>257</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-ERR33-c-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid use before initialization&nbsp;<font class="gray">(CERT_C-EXP33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-EXP34-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>311</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>257</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-POS54-c-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR00-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid use before initialization&nbsp;<font class="gray">(CERT_CPP-EXP53-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Do not pass a nonstandard-layout type object across execution boundaries&nbsp;<font class="gray">(CERT_CPP-EXP60-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Both copy constructor and copy assignment operator should be declared for classes with a nontrivial destructor&nbsp;<font class="gray">(CERT_CPP-MEM51-c-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_CPP-STR51-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;Local variables should not use the same names as member variables&nbsp;<font class="gray">(CODSTA-44-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>40</b>]
+&nbsp;&nbsp;Constructors allowing for conversion should be made explicit&nbsp;<font class="gray">(CODSTA-CPP-04-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>28</b>]
+&nbsp;&nbsp;All member variables should be initialized in constructor&nbsp;<font class="gray">(INIT-06-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>365</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;2 - High</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid function duplication&nbsp;<font class="gray">(CDD-DUPM-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>24</b>]
+&nbsp;&nbsp;Properly use errno value&nbsp;<font class="gray">(CERT_C-ERR30-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>20</b>]
+&nbsp;&nbsp;A cast shall not remove any 'const' or 'volatile' qualification from the type of a pointer or reference&nbsp;<font class="gray">(CERT_C-EXP05-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>85</b>]
+&nbsp;&nbsp;The statement forming the body of a 'switch', 'while', 'do...while' or 'for' statement shall be a compound statement&nbsp;<font class="gray">(CERT_C-EXP19-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>20</b>]
+&nbsp;&nbsp;A cast shall not remove any 'const' or 'volatile' qualification from the type of a pointer or reference&nbsp;<font class="gray">(CERT_C-EXP32-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>8</b>]
+&nbsp;&nbsp;Expressions that are effectively Boolean should not be used as operands to operators other than (&amp;&amp;, ||, !, =, ==, !=, ?:)&nbsp;<font class="gray">(CERT_C-EXP46-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Implicit conversions from integral to floating type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-FLP06-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Validate values passed to library functions&nbsp;<font class="gray">(CERT_C-FLP32-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Implicit conversions from wider to narrower integral type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-INT02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid mixing arithmetic of different precisions in the same expression&nbsp;<font class="gray">(CERT_C-INT02-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-INT07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM04-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>7</b>]
+&nbsp;&nbsp;Do not use recursion&nbsp;<font class="gray">(CERT_C-MEM05-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>19</b>]
+&nbsp;&nbsp;All 'if...else-if' constructs shall be terminated with an 'else' clause&nbsp;<font class="gray">(CERT_C-MSC01-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>26</b>]
+&nbsp;&nbsp;Guarantee that container indices are within the valid range&nbsp;<font class="gray">(CERT_CPP-CTR50-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>18</b>]
+&nbsp;&nbsp;Never allow an exception to be thrown from a destructor, deallocation, and swap&nbsp;<font class="gray">(CERT_CPP-DCL57-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Exceptions shall be raised only after start-up and before termination of the program&nbsp;<font class="gray">(CERT_CPP-ERR58-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>20</b>]
+&nbsp;&nbsp;A cast shall not remove any 'const' or 'volatile' qualification from the type of a pointer or reference&nbsp;<font class="gray">(CERT_CPP-EXP55-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Define a virtual destructor in classes used as base classes which have virtual functions&nbsp;<font class="gray">(CERT_CPP-OOP52-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>26</b>]
+&nbsp;&nbsp;Guarantee that container indices are within the valid range&nbsp;<font class="gray">(CERT_CPP-STR53-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;If a class has virtual functions it shall have a virtual destructor&nbsp;<font class="gray">(OOP-23-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2994</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;3 - Medium</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1000</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>347</b>]
+&nbsp;&nbsp;Declare parameters or local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Identifiers declared in an inner local scope should not hide identifiers declared in an outer local scope&nbsp;<font class="gray">(CERT_C-DCL01-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>33</b>]
+&nbsp;&nbsp;Objects or functions with external linkage shall be declared in a header file&nbsp;<font class="gray">(CERT_C-DCL15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>12</b>]
+&nbsp;&nbsp;Declare variables as locally as possible&nbsp;<font class="gray">(CERT_C-DCL19-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Avoid unused values&nbsp;<font class="gray">(CERT_C-DCL22-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>129</b>]
+&nbsp;&nbsp;Do not use assertions&nbsp;<font class="gray">(CERT_C-ERR06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>24</b>]
+&nbsp;&nbsp;Properly use errno value&nbsp;<font class="gray">(CERT_C-ERR32-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>119</b>]
+&nbsp;&nbsp;Use parenthesis to clarify expression order if operators with precedence lower than arithmetic are used&nbsp;<font class="gray">(CERT_C-EXP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>7</b>]
+&nbsp;&nbsp;The right-hand operand of a logical &amp;&amp; or || operator shall not contain side effects&nbsp;<font class="gray">(CERT_C-EXP02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>257</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid mixing arithmetic of different precisions in the same expression&nbsp;<font class="gray">(CERT_C-EXP14-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Suspicious use of semicolon&nbsp;<font class="gray">(CERT_C-EXP15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;A cast should not be performed between a pointer to object type and a different pointer to object type&nbsp;<font class="gray">(CERT_C-EXP36-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>13</b>]
+&nbsp;&nbsp;Identifiers shall be given for all of the parameters in a function prototype declaration&nbsp;<font class="gray">(CERT_C-EXP37-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>50</b>]
+&nbsp;&nbsp;There shall be no implicit conversions from integral to floating type&nbsp;<font class="gray">(CERT_C-EXP39-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;A cast should not be performed between a pointer to object type and a different pointer to object type&nbsp;<font class="gray">(CERT_C-EXP39-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>20</b>]
+&nbsp;&nbsp;A cast shall not remove any 'const' or 'volatile' qualification from the type of a pointer or reference&nbsp;<font class="gray">(CERT_C-EXP40-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>19</b>]
+&nbsp;&nbsp;A full expression containing an increment (++) or decrement (--) operator should have no other potential side effects&nbsp;<font class="gray">(CERT_C-FIO41-e-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Floating-point expressions shall not be tested for equality or inequality&nbsp;<font class="gray">(CERT_C-FLP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Floating-point expressions shall not be tested for equality or inequality&nbsp;<font class="gray">(CERT_C-FLP02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Implicit conversions from integral to floating type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-FLP36-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;A conversion should not be performed between a pointer to object type and an integer type other than 'uintptr_t' or 'intptr_t'&nbsp;<font class="gray">(CERT_C-INT36-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Assignment operator should have operands of compatible types&nbsp;<font class="gray">(CERT_C-MEM02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not assign function return value to a variable of incompatible type&nbsp;<font class="gray">(CERT_C-MEM02-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;Only use characters defined in ISO C standard&nbsp;<font class="gray">(CERT_C-MSC09-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Avoid unnecessary local variables&nbsp;<font class="gray">(CERT_C-MSC13-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-MSC19-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;A function should be used in preference to a function-like macro&nbsp;<font class="gray">(CERT_C-PRE00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>117</b>]
+&nbsp;&nbsp;Assertions should not contain function calls nor function-like macro calls&nbsp;<font class="gray">(CERT_C-PRE31-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR04-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Expressions with type (plain) char and wchar_t shall not be used as operands to built-in operators other than  =,  ==, !=
+and the unary &amp; operator&nbsp;<font class="gray">(CERT_C-STR09-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>10</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused&nbsp;<font class="gray">(CERT_CPP-DCL51-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused (C90)&nbsp;<font class="gray">(CERT_CPP-DCL51-e-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The names of standard library macros, objects and functions shall not be reused (C99)&nbsp;<font class="gray">(CERT_CPP-DCL51-f-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;There shall be no unnamed namespaces in header files&nbsp;<font class="gray">(CERT_CPP-DCL59-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;A class, union or enum name (including qualification, if any) shall be a unique identifier&nbsp;<font class="gray">(CERT_CPP-DCL60-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>18</b>]
+&nbsp;&nbsp;Never allow an exception to be thrown from a destructor, deallocation, and swap&nbsp;<font class="gray">(CERT_CPP-ERR50-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Exceptions shall be raised only after start-up and before termination of the program&nbsp;<font class="gray">(CERT_CPP-ERR50-f-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Exception objects must be nothrow copy constructible&nbsp;<font class="gray">(CERT_CPP-ERR60-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>11</b>]
+&nbsp;&nbsp;An expression with enum underlying type shall only have values corresponding to the enumerators of the enumeration&nbsp;<font class="gray">(CERT_CPP-INT50-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>18</b>]
+&nbsp;&nbsp;Avoid slicing function arguments / return value&nbsp;<font class="gray">(CERT_CPP-OOP51-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Check for assignment to self in operator=&nbsp;<font class="gray">(CERT_CPP-OOP54-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;McCabe Cyclomatic Complexity&nbsp;<font class="gray">(METRIC.CC-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Nested Blocks Depth&nbsp;<font class="gray">(METRIC.NBD-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Floating-point expressions shall not be tested for equality or inequality&nbsp;<font class="gray">(MISRA2004-13_3-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>602</b>]
+&nbsp;&nbsp;Pass objects by reference instead of by value&nbsp;<font class="gray">(OPT-14-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="20%"></td>
+<td width="60%" align="center">
+<div class="small_header">Tasks by Author</div>
+</td>
+<td width="20%" align="right"><a class="blue_link" href="#top">Back to Top </a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+<table xmlns:textutil="textutil" align="center" class="singleborder" width="75%" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr bgcolor="#F3F3F3">
+<td class="singleborder" width="50%" align="center" rowspan="2"><b>Author</b>&nbsp;
+</td>
+<td class="singleborder" colspan="3" align="center"><b>Tasks</b></td>
+</tr>
+<tr bgcolor="#F3F3F3">
+<td class="singleborder" align="center">suppressed</td>
+<td class="singleborder" align="center">Total</td>
+<td class="singleborder" align="center">recommended</td>
+</tr>
+<tr>
+<td class="singleborder" align="left">&nbsp;<a xmlns:authors="authors" class="blue_link" href="javascript:openWin(&#34;rep_139470531650097964_dev1.html#cst_dev1&#34;)">msi3</a>&nbsp;
+</td>
+<td class="singleborder" align="right">&nbsp;0&nbsp;</td>
+<td class="singleborder" align="right">&nbsp;4308&nbsp;</td>
+<td class="singleborder" align="right">&nbsp;50&nbsp;</td>
+</tr>
+</table><br xmlns:textutil="textutil"><br></td>
+</tr>
+</table><script language="JavaScript">
+    if(document.getElementById("cs_link_sev") != null) {
+    document.getElementById("cs_link_sev").style.color="#990000";
+    document.getElementById("cs_link_sev").style.textDecoration="underline";
+    }
+    if(document.getElementById("cs_link_sevtrue") != null) {
+    document.getElementById("cs_link_sevtrue").style.color="#990000";
+    document.getElementById("cs_link_sevtrue").style.textDecoration="underline";
+    }
+    </script></td>
+</tr>
+</table>
+<table width="100%" bgcolor="#1D488D" border="0" bordercolor="#999999" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center"><font class="white">&copy;Parasoft Corp. -&nbsp;C++test&nbsp;2022.1.0.20220615B1827&nbsp;Reporting System&nbsp;</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
