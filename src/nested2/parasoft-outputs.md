@@ -10,20 +10,20 @@ As a guideline, modules that are intended for in operational runtime, should be 
 
 # Mandatory Screened (1st July 2022)
 ## [RMF Task](https://github.com/open-rmf/rmf_task) 
-[rmf_task_testing_detailedRRreport.html](../parasoft_reports/rmf_task_testing/rmf_task_testing_detailedRRreport.html)  
-[rmf_task_testing_summaryRRreport.html](../parasoft_reports/rmf_task_testing/rmf_task_testing_summaryRRreport.html)  
+[rmf_task_testing_detailedRreport.html](../parasoft_reports/rmf_task_testing/rmf_task_testing_detailedRreport.html)  
+[rmf_task_testing_summaryRreport.html](../parasoft_reports/rmf_task_testing/rmf_task_testing_summaryRreport.html)  
 
 ## RMF Task ROS2
 [rmf_task_ros2_testing_detailedReport.html](../parasoft_reports/rmf_task_ros2_testing/rmf_task_ros2_testing_detailedReport.html)  
 [rmf_task_ros2_testing_summaryReport.html](../parasoft_reports/rmf_task_ros2_testing/rmf_task_ros2_testing_summaryReport.html)  
 
 ## [RMF Traffic](https://github.com/open-rmf/rmf_traffic)
-[rmf_traffic_testing_detailedRRreport.html](../parasoft_reports/rmf_traffic_testing/rmf_traffic_testing_detailedRRreport.html)  
-[rmf_traffic_testing_summaryRRreport.html](../parasoft_reports/rmf_traffic_testing/rmf_traffic_testing_summaryRRreport.html)  
+[rmf_traffic_testing_detailedRreport.html](../parasoft_reports/rmf_traffic_testing/rmf_traffic_testing_detailedRreport.html)  
+[rmf_traffic_testing_summaryRreport.html](../parasoft_reports/rmf_traffic_testing/rmf_traffic_testing_summaryRreport.html)  
 
 ## [RMF Utils](https://github.com/open-rmf/rmf_utils) 
-[rmf_utils_testing_detailedRRreport.html](../parasoft_reports/rmf_utils_testing/rmf_utils_testing_detailedRRreport.html)  
-[rmf_utils_testing_summaryRRreport.html](../parasoft_reports/rmf_utils_testing/rmf_utils_testing_summaryRRreport.html) 
+[rmf_utils_testing_detailedRreport.html](../parasoft_reports/rmf_utils_testing/rmf_utils_testing_detailedRreport.html)  
+[rmf_utils_testing_summaryRreport.html](../parasoft_reports/rmf_utils_testing/rmf_utils_testing_summaryRreport.html) 
 
 ## RMF Fleet Adapter 
 [rmf_fleet_adapter_testing_detailedReport.html](../parasoft_reports/rmf_fleet_adapter_testing/rmf_fleet_adapter_testing_detailedReport.html)  
