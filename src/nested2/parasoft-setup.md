@@ -20,7 +20,7 @@ To import existing projects on Parasoft to run testings, we need to perform the 
 - Build the rmf_utils project
 
 ##  Add Parasoft Cmake Folder  
-From /$PARASOFT _INSTALL_DIR/integration/cmake directory, copy the entire Parasoft cmake
+From /$PARASOFT_INSTALL_DIR/integration/cmake directory, copy the entire Parasoft cmake
 folder into rmf_utils project structure.
 
 ![Parasoft1](../images/parasoft.1.png)

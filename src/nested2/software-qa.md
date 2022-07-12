@@ -1,4 +1,11 @@
-# Risk Assessment
+# Software Quality Assurance
+
+## Approach
+
+## Commercial QA tool
+Parasoft
+![Parasoft](../images/parasoft.png)
+
 
 ## Many forms of Functional Safety (IEC 61508)
 
