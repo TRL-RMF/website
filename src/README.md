@@ -27,6 +27,7 @@ At higher levels of consideration (from a systems engineering standpoint), we no
 
 Key outcome we want to arrive at, is a *operational* (safe, functional and reliable) RMF system. 
 Thus to bridge the divide from ROS1/ROS2 towards an operational outcome, is not just "software" issues.
+
 There are orthogonal considerations, (ie: systems engineering concerns), that need to be addressed:
 - Risk assessments and hazards analysis
 - Quality assurance & quality control issues (ie: Patform hardware and software, operational safety)
@@ -34,10 +35,17 @@ There are orthogonal considerations, (ie: systems engineering concerns), that ne
 - Design documentations and traceability
 - Qualifications plans and system test/comissioning plans
 
+We note also, that where previously AMRs were installed and comissioned "end to end" by a single Robotics Systems Integrator, 
+RMF is designed to decouple the "end to end" responsibility, into the following roles:
+- Building management systems 
+- Core logic (govening traffic control)
+- AMR fleets ( > 1 brand)  
+
+This allows for multi-fleet interoperability
 
 >"The camel, was a horse, but designed by a committee..." <br> - Sir Alec Issigonis, designer of the Morris Mini, 1959
 
-Turns out these are rather contentious issues.
+So it turns out, these are rather contentious issues, where answers are needed.
 After several months of study, the project team has outlined an approach that we think strikes the best balance of the following factors:
 - Cost
 - Complexity

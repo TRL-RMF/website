@@ -32,6 +32,8 @@
         - [Door Integration](nested2/door-integration.md)
         - [Mapping & Traffic Editor Concerns](nested2/mapping.md)
     - [Cybersecurity](nested2/cybersceurity.md)
+    - [Emergency Requirements & Behaviours](nested2/emergency-behaviors.md)
+    - [Safety Instrumented System](nested2/sis.md)
     - [Universal Wireless Charging](nested2/wireless-charger.md)
     - [ICD of ethernet wiring at TRL](nested2/wiring-diagram.md)
     - [Parasoft setup of RMF](nested2/parasoft-setup.md)
