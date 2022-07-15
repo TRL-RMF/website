@@ -1,2 +1,0 @@
-# AMR to People Interactions
-
