@@ -1,5 +1,190 @@
-# Mapping & Traffic Editor Concerns
 
-## First time set up & RMF Traffic Editor
+  
+# RMF Traffic Editor
+1. [How we used Traffic Editor](#use)
+    1. [Introduction & Installation](#intro)
+        1. [Installation with RMF](#rmf_install)
+        2. [Independent Installation](#independent_install)
+    2. [Using Traffic Editor GUI](#GUI)
+        1. [Step 1: Naming your building](#step1)
+        2. [Step 2: Adding Floorplans](#step2)
+        3. [Step 3: Adding Robot Generated Map](#step3)
+        4. [Step 4: Map Alignment](#step4)
+        5. [Step 5: Adding Walls & Flooring](#step5)
+        6. [Step 6: Adding Interior Walls & Doors](#step6)
+        7. [Step 7: Adding Measurements](#step7)
+        8. [Step 8: Adding Robot Lanes](#step8)
+        9. [Step 9: Robots for Simulation](#step9)
+        10. [Step 10: Level Alignment](#step10)
+        11. [Step 11: Add Lift](#step11) 
+    3. [Tips, Errors and Mistakes](#oops)
+
+## How we used it! <a name="use"></a>
+FYI: Traffic Editor is well documented with instructions on [installation](https://github.com/open-rmf/rmf_traffic_editor#installation) and [usage](https://osrf.github.io/ros2multirobotbook/traffic-editor.html). The documentation below highlights how we used Traffic Editor during this project. Think of this page as the user's perspective 😊.
+
+### Introduction & Installation <a name="intro"></a>
+[RMF Traffic Editor](https://github.com/open-rmf/rmf_traffic_editor) is a repository containing a set of ROS2 packages that enable you to use a GUI to annotate floorplans to create traffic patterns (`rmf_traffic_editor` package) and convert this to a simulation world (`rmf_building_map_tools` package). 
+
+#### Installation with RMF <a name="rmf_install"></a>
+If you have already installed RMF based on the [installation instructions](https://github.com/open-rmf/rmf#building-from-sources), you'll find that it is already included in the `rmf.repos` [file](https://github.com/open-rmf/rmf/blob/main/rmf.repos?#L50-L53) and so it should already be in your `rmf_ws` folder. 
+
+#### Independent Installation <a name="independent_install"></a>
+The beauty of Traffic Editor is that the generated `.world` files are able to be used in simulation even without RMF. So perhaps you would like to just test out how Traffic Editor is like - you can are able to do a separate installation by cloning the repository, installing the dependencies and building the packages. 
+```bash
+# making your workspace
+mkdir -p ~/rmf_traffic_editor_ws/src
+cd ~/rmf_traffic_editor_ws/src
+
+# cloning the repo
+git clone https://github.com/open-rmf/rmf_traffic_editor.git
+# rmf_traffic_editors depends on rmf_utils for building
+git clone https://github.com/open-rmf/rmf_utils.git 
+
+# rmf_traffic_editor dependencies
+sudo apt install python3-shapely python3-yaml python3-requests
+source /opt/ros/galactic/setup.bash
+
+cd ~/rmf_traffic_editor_ws
+colcon build
+```
+
+### Using Traffic Editor GUI <a name="GUI"></a>
+Now that you have the relevant repositories installed, source your workspace and let's get started!
+```bash
+# for full RMF installations
+source ~/rmf_ws/install/setup.bash 
+traffic-editor
+```
+or
+```bash
+# for full independent installations
+source ~/rmf_traffic_editor_ws/install/setup.bash
+traffic-editor
+```
+
+#### Step 1: Naming your Building <a name="step1"></a>
+To start, you'll first name your `building.yaml` file. In the video, I saved it under the `src` folder in my workspace, but you can save it wherever you want.
+
+Traffic Editor supports Geographic Coordinates and Reference-Map Coordinates. This feature was created after our creation of [TRL](https://github.com/TRL-RMF/trl/tree/main/trl_demos_maps/maps/trl), hence we were using the older Reference-Map Coordinate System in the video. Moving forward, it is encouraged to use the Geographic Coordinate system to avoid conflict for multiple levels.
+
+<video src ="https://user-images.githubusercontent.com/54682777/181432387-9a185b30-a2cc-4340-b609-cf0fd3dd2170.mp4" 
+controls="controls" style="max-width: 730px;"></video>
+
+#### Step 2: Adding Floorplans <a name="step2"></a>
+In this step, we start building our level by adding a `png` file of our floorplan. To follow this example, you may use the same files used in the video found in [this repository](https://github.com/TRL-RMF/trl/tree/main/trl_demos_maps/maps/trl). For now, we're adding the floorplan of Level 2 of Tampines Regional Library (that's the lowest floor!).
+
+<video src ="https://user-images.githubusercontent.com/54682777/181432397-6f644985-1861-4897-9c21-75a5294dad14.mp4" controls="controls" style="max-width: 730px;"></video>
+
+#### Step 3: Adding Robot Generated Map <a name="step3"></a>
+Now even though we have a floorplan of the building, we may still be missing some real-life features that do not show up on the floorplan. Hence, we will be adding an additional layer - the Robot Generated Map. This will help reveal extra obstacles such as bookshelves and false walls.
+
+This robot map was generated by CAATO2's 2D LIDARs which produced a `pgm` and `yaml` file. The `pgm` file was converted to `png` to import into RMF Traffic Editor.
+
+<video src ="https://user-images.githubusercontent.com/54682777/181432440-64dcf944-2ae2-49f5-a807-32c9a14908b6.mp4" controls="controls" style="max-width: 730px;"></video>
+
+#### Step 4: Map Alignment  <a name="step4"></a>
+Now that we have 2 maps, we need to align them. The robot_map (in red) as shown in the video, is terribly oversized and needs to be scaled down. We first attempt to manually align the 2 maps such that we're able to roughly identify key features of both maps.
+
+Once done, we're able to "add features" on each of the layers. The idea behind this is that by identifying similar features on both layers, we'll be able to use these points to align the 2 layers automatically.  
+
+>❗️Make sure you select the layer before placing the feature. Notice how I place all the features on the robot_map layer before switching to the Floorplan layer and place the features for the Floorplan layer! You should have at least 3 pairs of features.
+
+Once you're done, you may then draw "rubberbands" to link up the similar features. Once you're done, you can "Optimise Layer Transforms" and you'll see the magic happen!
+
+(p.s. thanks so much for making & explaining this feature Morgan 😁 !)
+
+<video src ="https://user-images.githubusercontent.com/54682777/181432458-22c0275d-7a07-4269-854c-01beca9e0ae7.mp4" controls="controls" style="max-width: 730px;"></video>
+
+#### Step 5: Adding Walls & Flooring  <a name="step5"></a>
+Let's start making our world! Use the blue line tool and trace the parts of the floorplan with walls. Once you're done, you can right-click to end your line.
+
+> ℹ️ You are able to adjust the height of the walls under "Properties" on the bottom right when you select them
+
+After that, you may use the flooring tool by tracing the same vertexes you used to create the walls!
+
+<video src ="https://user-images.githubusercontent.com/54682777/181433109-383fa93e-9460-4eef-80db-a55d48f678f7.mp4" controls="controls" style="max-width: 730px;"></video>
+
+#### Step 6: Adding Interior Walls & Doors  <a name="step6"></a>
+Buildings aren't just made of exterior walls! Don't forget to add in walls within the building.
+
+When adding doors, don't forget to rename the door name for future reference. 
+
+> ℹ️ Use a naming convention to be tidy. At TRL, we named our doors `<description><number>_<floor>_door` 
+
+At TRL, there are mainly 2 types of doors: double_hinged and double_sliding. Play around with the other properties to get it to the orientation you need.
+
+You can refer to the [Official Traffic Editor Documentation](https://osrf.github.io/ros2multirobotbook/traffic-editor.html) for more info the types of doors available. 
+
+<video src ="https://user-images.githubusercontent.com/54682777/181433130-e996e6fd-8194-420e-94b4-3aa943ecf2c4.mp4" controls="controls" style="max-width: 730px;"></video>
+
+#### Step 7: Adding Measurements <a name="step7"></a>
+
+So far during our creation of this world, we have yet to define the measurements for the floorplan. Hence, we can use the measurement tool to add to our file. Be sure to add multiple measurements to get an accurate scaling.
+
+> Admittedly, this step should be done earlier but it's ok if it's done at this stage as well.
+
+<video src ="https://user-images.githubusercontent.com/54682777/181433151-15ff6cb5-397d-4dd5-93e7-c8c6f3ad1e94.mp4" controls="controls" style="max-width: 730px;"></video>
+
+#### Step 8: Adding Robot Lanes <a name="step8"></a>
+
+This step is very important! You are now determining where the robot is able to traverse on. The video simply demonstrates how to add lanes and name certain waypoints.
+
+>ℹ️ Load up [`trl.building.yaml`](https://github.com/TRL-RMF/trl/blob/main/trl_demos_maps/maps/trl/trl.building.yaml) to see how we did our robot lanes! 
+
+<video src ="https://user-images.githubusercontent.com/54682777/181433169-d7a65012-ddd4-417c-bf59-03eaa3504a03.mp4" controls="controls" style="max-width: 730px;"></video>
+
+#### Step 9: Robots for Simulation <a name="step9"></a>
+
+For this project, we tested much of RMF in simulation. Thus, this is technically an optional step for real-life robots.
+
+In order to spawn a robot in simulation, we need to define the properties as shown in the video. You may find a better explanation on the [official documentation](https://osrf.github.io/ros2multirobotbook/traffic-editor.html) but for our use-case, we followed closely to the examples in the `rmf_demos` [repository](https://github.com/open-rmf/rmf_demos/tree/main/rmf_demos_maps/maps/airport_terminal). 
+
+>❗️Make sure you take note of your spelling and capitalization in the `spawn_robot_name` and `spawn_robot_type` properties! They are quite specific so they are possible points of error.
+
+<video src ="https://user-images.githubusercontent.com/54682777/181433289-ed4977bf-49f4-4b33-b2ff-9485edf9de0a.mp4" controls="controls" style="max-width: 730px;"></video>
+
+#### Step 10: Level Alignment <a name="step10"></a>
+Before long, you'll find yourself having multiple floors of different floorplans. The question then is, how do you align these different floors?
+
+In the video, we use the Level Alignment Fiducial tool. 
+
+> ℹ️ Use features that are 100% aligned on every floor such as lift cabins and escalators!
+
+Similar to the other alignment tools, be sure to use more than 2 points to ensure accuracy.
+
+<video src ="https://user-images.githubusercontent.com/54682777/181433301-874614d8-48cd-4594-bb41-f3dca4cac0d2.mp4" controls="controls" style="max-width: 730px;"></video>
+
+#### Step 11: Add Lift <a name="step11"></a>
+Lastly, it's time for us to add the lifts.
+
+After filling the details as shown in the video, align the lift cabin to the proper position on the map.
+
+>❗️Make sure the lift cabin does not touch the walls of the building 
+
+>❗️Be sure to add lift waypoints to enable the robot lanes to join between levels
+
+<video src ="https://user-images.githubusercontent.com/54682777/181433312-4b246f1a-4fdd-4e23-9868-bbd56258f4c2.mp4" controls="controls" style="max-width: 730px;"></video>
+
+
+### Tips, Errors and Mistakes <a name="oops"></a>
+
+❗️Always always always SAVE your work! (ctrl-s)
+
+If Traffic Editor crashes, or if you close the terminal running traffic-editor without saving, your hard work will be lost! 😭
+
+❗️Read the `building.yaml` file!
+
+Also, note that Traffic Editor is after all simply a GUI. All your changes are actually added to the `building.yaml` file. Take a look at it and try to understand it's structure. At times, this will allow you to make more precise changes faster instead of relying heavily on the GUI!
+
+![building_yaml](../images/building_yaml.gif)
+
+## Mapping & Traffic Editor Concerns
+
+Traffic Editor is not perfect and can be buggy at times. The key is not to rely on the GUI but to understand the `building.yaml` file deeply and reading up the official documentation.
+
 
 ## Interoperability considerations (across multiple fleets)
+
+It is vital to create the world with precision. The system integrator but recognize that not just a single type of robot will be relying on this RMF traffic plan. Robots come in different shapes and sizes and may navigate very differently, hence all these must be taken into consideration when creating the traffic plan.
+
+> e.g. the robot lanes must be decided with all stakeholders to make sure that the robot will not perform unexpected behaviors such as entering restricted areas
