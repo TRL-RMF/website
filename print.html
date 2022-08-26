@@ -624,6 +624,66 @@ The gif below shows the RMF scheduler working as intended.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="baseline-0"><a class="header" href="#baseline-0">Baseline 0</a></h1>
 <h2 id="static-test-rig"><a class="header" href="#static-test-rig">Static test rig</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="baseline-1"><a class="header" href="#baseline-1">Baseline 1</a></h1>
+<h2 id="introduction-2"><a class="header" href="#introduction-2">INTRODUCTION</a></h2>
+<p>In this baseline, we will be conducting unit testing for each of the following components:</p>
+<ul>
+<li>RMF (simulation)</li>
+<li>Aurorabot Fleet Adapter (Physical)</li>
+<li>CAATO Fleet Adapter (Physical)</li>
+<li>Fujitec Lift Controller and Adapter (Physical)</li>
+<li>Dormakaba Door Controller and Adapter (Physical)</li>
+</ul>
+<p>For the purpose of this test, we will be using simulation and physical testing of each components ability to meet a set of test requirements before we proceed to baseline 2 testing.W</p>
+<h2 id="objectives-and-tasks"><a class="header" href="#objectives-and-tasks">OBJECTIVES AND TASKS</a></h2>
+<h3 id="objectives-1"><a class="header" href="#objectives-1">Objectives</a></h3>
+<p>The objective of this testing is to ensure that we are able to identify potential issues as well as seek recommended solutions for these problems. We are also expecting to 'tune' the system to achieve a certain level of robustness in handling certain situations, such as receiving changing itineraries or handling conflicts between two robots.</p>
+<h3 id="tasks"><a class="header" href="#tasks">Tasks</a></h3>
+<p>In general, the tasks will occur in the following sequence:</p>
+<ol>
+<li>Identify Test Case</li>
+<li>Conduct Test with system as-is</li>
+<li>Identify any issues (if any)</li>
+<li>If any issues, seek remedy and modify system</li>
+<li>Repeat Steps 2 - 4 until system is able to pass test case identified.</li>
+</ol>
+<h2 id="scope"><a class="header" href="#scope">SCOPE</a></h2>
+<h3 id="rmf-unit-testing"><a class="header" href="#rmf-unit-testing">RMF Unit Testing</a></h3>
+<p>For the purpose of RMF unit testing, we will test using the RMF Gazebo Simulation in ROS2 using the plugin adapters. We will test 4 test cases listed below:</p>
+<h4 id="rmf-unit-test-case-1"><a class="header" href="#rmf-unit-test-case-1">RMF Unit Test Case 1</a></h4>
+<p>Using the map below, and two tinyRobot plugins, we will test conflicting paths. In this case, the two robots will be sent to perform a loop task from their respective charging points to opposing points (tinyRobot1 goes to cafe_4 and tinyRobot2 goes to big_screen). The detailed test plan is in the TESTING STRATEGY section.</p>
+<h4 id="rmf-unit-test-case-2"><a class="header" href="#rmf-unit-test-case-2">RMF Unit Test Case 2</a></h4>
+<p>Using the map below, and two tinyRobot plugins, we will test conflicting paths. In this case, the two robots will be sent to perform a loop task from their respective charging points to the same point via the door at lift_landing. The detailed test plan is in the TESTING STRATEGY section.</p>
+<h4 id="rmf-unit-test-case-3"><a class="header" href="#rmf-unit-test-case-3">RMF Unit Test Case 3</a></h4>
+<p>Using the TRL map, and two tinyRobot plugins, we will test lift coordination. In this case, the two robots will be sent to perform a loop task from their respective charging points to different point via the lift at lift_landing. The detailed test plan is in the TESTING STRATEGY section.</p>
+<h4 id="rmf-unit-test-case-4"><a class="header" href="#rmf-unit-test-case-4">RMF Unit Test Case 4</a></h4>
+<p>Using the TRL map, and two tinyRobot plugins, we will test fire alarm coordination. In this case, the two robots will be sent to perform a loop task from their respective charging points to different points via the lift at lift_landing. The detailed test plan is in the TESTING STRATEGY section.</p>
+<h3 id="aurorabot-and-caato-fleet-adapter-unit-testing"><a class="header" href="#aurorabot-and-caato-fleet-adapter-unit-testing">Aurorabot and CAATO Fleet Adapter Unit Testing</a></h3>
+<p>This is the testing scope</p>
+<h3 id="door-controller-and-adapter-at-trl-unit-testing"><a class="header" href="#door-controller-and-adapter-at-trl-unit-testing">Door Controller and Adapter at TRL Unit Testing</a></h3>
+<p>This is the testing scope</p>
+<h3 id="lift-controller-and-adapter-at-trl-unit-testing"><a class="header" href="#lift-controller-and-adapter-at-trl-unit-testing">Lift Controller and Adapter at TRL Unit Testing</a></h3>
+<p>This is the testing scope</p>
+<h2 id="testing-strategy"><a class="header" href="#testing-strategy">TESTING STRATEGY</a></h2>
+<h3 id="rmf-unit-testing-1"><a class="header" href="#rmf-unit-testing-1">RMF Unit Testing</a></h3>
+<ol>
+<li>Unit Test Case 1 (Robot Deconfliction)</li>
+</ol>
+<div class="table-wrapper"><table><thead><tr><th>Stage</th><th>Description</th><th>Expected Behaviour</th></tr></thead><tbody>
+<tr><td>0</td><td>tinyRobot 1 and 2 at their respective charger points (tinyRobot1_charger and tinyRobot2_charger).</td><td>Robots are waiting at their respective charging points</td></tr>
+<tr><td>1</td><td>tinyRobot_1 issued a patrol task to proceed to cafe_4 anbd then return to tinyRobot1_charger</td><td>tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate</td></tr>
+<tr><td>2</td><td>Delay 1 second</td><td></td></tr>
+<tr><td>3</td><td>tinyRobot_2 issued a patrol task to proceed to big_screen and then return to tinyRobot2_charger</td><td>tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot fleet adapter deconflicts between the two current robots moving and tinyRobot_2 receives navigation requests and proceeds to navigate  without conflicting with tinyRobot1</td></tr>
+<tr><td>4</td><td>Both tinyRobots return to their respective charger</td><td>No conflict occurring between robots, or conflicts able to resolve and robots able to reach charging points</td></tr>
+</tbody></table>
+</div>
+<p><img src="https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_deconflict.gif" alt="" /></p>
+<p><img src="https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_big_screen_holding_point.gif" alt="" /></p>
+<p><img src="https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_passthrough_points_2.gif" alt="" /></p>
+<p><img src="https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_passthrough_points_3.gif" alt="" /></p>
+<p><img src="https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_passthrough_points_fail.gif" alt="" /></p>
+<p><img src="https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_passthrough_points.gif" alt="" /></p>
+<p><img src="https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_multilane_deconflict.gif" alt="" /></p>
+<p><img src="https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_multulane_deconflict_2.gif" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="baseline-2"><a class="header" href="#baseline-2">Baseline 2</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="final-baseline"><a class="header" href="#final-baseline">Final Baseline</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="baseline-0-1"><a class="header" href="#baseline-0-1">Baseline 0</a></h1>
