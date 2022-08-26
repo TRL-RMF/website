@@ -46,11 +46,72 @@ This is the testing scope
 | Stage | Description | Expected Behaviour |
 | --- | --- | --- |
 | 0 | tinyRobot 1 and 2 at their respective charger points (tinyRobot1_charger and tinyRobot2_charger). | Robots are waiting at their respective charging points |
-| 1 | tinyRobot_1 issued a patrol task to proceed to cafe_4 anbd then return to tinyRobot1_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate |
+| 1 | tinyRobot_1 issued a patrol task to proceed to cafe_4 and then return to tinyRobot1_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate |
 | 2 | Delay 1 second |  |
 | 3 | tinyRobot_2 issued a patrol task to proceed to big_screen and then return to tinyRobot2_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot fleet adapter deconflicts between the two current robots moving and tinyRobot_2 receives navigation requests and proceeds to navigate  without conflicting with tinyRobot1 |
 | 4 | Both tinyRobots return to their respective charger | No conflict occurring between robots, or conflicts able to resolve and robots able to reach charging points |
 
+2. Unit Test Case 2 (Door - Robot  Deconfliction)
+
+| Stage | Description | Expected Behaviour |
+| --- | --- | --- |
+| 0 | tinyRobot 1 and 2 at their respective charger points (tinyRobot1_charger and tinyRobot2_charger). | Robots are waiting at their respective charging points |
+| 1 | tinyRobot_1 issued a patrol task to proceed to lift_waiting_point and then return to tinyRobot1_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate |
+| 2 | Delay 1 second |  |
+| 3 | tinyRobot_2 issued a patrol task to proceed to lift_waiting_point and then return to tinyRobot2_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot fleet adapter deconflicts between the two current robots moving and tinyRobot_2 receives navigation requests and proceeds to navigate  without conflicting with tinyRobot1 |
+| 4 | Both tinyRobots return to their respective charger | No conflict occurring between robots, or conflicts able to resolve and robots able to reach charging points |
+
+3. Unit Test Case 3 (Lift - Robot  Deconfliction)
+
+| Stage | Description | Expected Behaviour |
+| --- | --- | --- |
+| 0 | tinyRobot 1 and 2 at their respective charger points (tinyRobot1_charger on L2 and tinyRobot2_charger on L3). | Robots are waiting at their respective charging points |
+| 1 | tinyRobot_1 issued a patrol task to proceed to L3 and then return to tinyRobot1_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate |
+| 2 | Delay 1 second |  |
+| 3 | tinyRobot_2 issued a patrol task to proceed to L4 and then return to tinyRobot2_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot fleet adapter deconflicts between the two current robots moving and tinyRobot_2 receives navigation requests and proceeds to navigate  without conflicting with tinyRobot1 |
+| 4 | Both tinyRobots return to their respective charger | No conflict occurring between robots, or conflicts able to resolve and robots able to reach charging points |
+
+3. Unit Test Case 4 (Fire Alarm)
+
+| Stage | Description | Expected Behaviour |
+| --- | --- | --- |
+| 0 | tinyRobot 1 and 2 at their respective charger points (tinyRobot1_charger on L2 and tinyRobot2_charger on L3). | Robots are waiting at their respective charging points |
+| 1 | tinyRobot_1 issued a patrol task to proceed to L3 and then return to tinyRobot1_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate |
+| 2 | Delay 1 second |  |
+| 3 | tinyRobot_2 issued a patrol task to proceed to L4 and then return to tinyRobot2_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot fleet adapter deconflicts between the two current robots moving and tinyRobot_2 receives navigation requests and proceeds to navigate  without conflicting with tinyRobot1 |
+| 4 | Fire alarm is triggered | Both robots stop and proceed to nearest parking spot |
+
+### Aurorabot and CAATO Fleet Adapter Unit Testing
+
+###  Door Controller and Adapter at TRL Unit Testing
+
+### Lift Controller and Adapter at TRL Unit Testing
+
+## EQUIPMENT REQUIREMENTS
+### RMF Unit Testing
+1. Computer running RMF on Galactic with latest release of RMF and TRL repositories
+
+### Aurorabot and CAATO Fleet Adapter Testing
+1. Aurorabot (or CAATO) robot with Client running
+2. RMF Staging Server on AWS GCC Running with RMF-Web displayed
+
+###  Door Controller and Adapter at TRL Unit Testing
+
+### Lift Controller and Adapter at TRL Unit Testing
+
+## TEST SCHEDULE
+
+## CONTROL PROCEDURES
+
+## FEATURES TO BE TESTED
+
+## FEATURES NOT TO BE TESTED
+ RESOURCES/ROLES & RESPONSIBILITIES
+## RESOURCES/ROLES & RESPONSIBILITIES
+
+## SCHEDULES
+
+## RISKS/ASSUMPTIONS
 
 ![](https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_deconflict.gif)
 
