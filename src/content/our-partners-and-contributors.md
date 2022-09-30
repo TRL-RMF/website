@@ -46,13 +46,13 @@
 
 <br> <br>
 
-## Project Sponsor & Partner
+## Project Sponsor
 
 Mr Chong Teng Sheng  - S&TPPO   
 Project Sponsor  
 <chong_teng_sheng@pmo.gov.sg>
   
-## Project Assistant
+## Project Collaborators
   
 Mr Abilash Sivalingam  
 <abilash_sivalingam@tech.gov.sg>   
