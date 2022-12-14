@@ -29,13 +29,13 @@
         - [Standalone Tests](content/standalone-tests.md)
   
 - [Systems Test Plan (HopeTechnik)](headers/systems-test-plan.md)
-    - [Baseline 0 - Static Lift Rig Tests](content/baseline-0.md)
+    - [Baseline 0 - Static Lift Rig Tests (Senserbot)](content/baseline-0.md)
     - [Baseline 1 - BMS Tests](content/baseline-1.md)
     - [Baseline 2 - BMS & AMR Centric Tests](content/baseline-2.md)
     - [Final Baseline - Accelerated Testing & Corner Cases](content/baseline-final.md)
   
 - [Annex](headers/annex.md)
-    - [Design Documents](content/design-docs.md)
+    - [Design Documents (OSRF)](content/design-docs.md)
     - [AMR To Building Interaction](content/amr-building.md)
         - [AMR Integration (Senserbot)](content/amr.md)
         - [Lift Integration (HopeTechnik)](content/lift-integration.md)
