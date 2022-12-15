@@ -14,3 +14,5 @@ The battle royale demo includes an X crossing with four robots that are told to 
 ## Summary of Test Results <a name="summary"></a>
 
 The test was left to run overnight and throughout the project some stability issues leading to robot deadlocks were identified. In-depth debugging and updates to the scheduler were pushed as part of this deployment that increased the reliability until overnight stress tests were successful. The changes introduced can be seen in the [rmf_internal_msgs](https://github.com/open-rmf/rmf_internal_msgs/pull/45), [rmf_ros2](https://github.com/open-rmf/rmf_ros2/pull/228), [rmf_traffic](https://github.com/open-rmf/rmf_traffic/pull/86) and [rmf_demos](https://github.com/open-rmf/rmf_demos/pull/157) pull requests.
+
+can we add a description of the pull requests. The people reading this are not technical and will be unable to go and see the pull requests
