@@ -153,7 +153,7 @@
 <p><img src="../images/battle_royale_rviz.png" alt="battle_royale_rviz" /></p>
 <h2 id="summary-of-test-results"><a class="header" href="#summary-of-test-results">Summary of Test Results <a name="summary"></a></a></h2>
 <p>The test was left to run overnight and throughout the project some stability issues leading to robot deadlocks were identified. In-depth debugging and updates to the scheduler were pushed as part of this deployment that increased the reliability until overnight stress tests were successful. The changes introduced can be seen in the <a href="https://github.com/open-rmf/rmf_internal_msgs/pull/45">rmf_internal_msgs</a>, <a href="https://github.com/open-rmf/rmf_ros2/pull/228">rmf_ros2</a>, <a href="https://github.com/open-rmf/rmf_traffic/pull/86">rmf_traffic</a> and <a href="https://github.com/open-rmf/rmf_demos/pull/157">rmf_demos</a> pull requests.
-Specifically, the RMF scheduler makes extensive use of parallel and asynchronous behavior to operate as fast and efficiently as possible. Several edge cases of the scheduler behaving incorrectly when for example fleets submitted bad estimates for their tasks, or fleet adapter responses were sent in the wrong order to the scheduler.</p>
+Specifically, the RMF scheduler makes extensive use of parallel and asynchronous behavior to operate as fast and efficiently as possible. Several edge cases of the scheduler behaving incorrectly were fixed, for example when fleets submitted bad estimates for their tasks, or fleet adapter responses were sent in the wrong order to the scheduler.</p>
 
                     </main>
 
