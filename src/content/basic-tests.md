@@ -40,10 +40,8 @@ RMF is expected to demonstrate ability to navigate to a safe “parking spot” 
 | **Basic Test 1** |✔️|✔️|||✅|
 | **Basic Test 2** ||✔️|✔️||✅|
 | **Basic Test 3** |✔️||✔️||✅|
-| **Basic Test 4** ||||✔️|     ❌     |
+| **Basic Test 4** ||||✔️|     :warning:     |
 
 As shown in Basic Tests 1-3, it was found that the RMF Scheduler was largely able to fulfil its basic competencies of controlling the lifts and doors, along with active traffic de-conflicting.
 
-In Basic Test 4, RMF shows some problems. When the robot moves along the expected lanes of RMF, it is able to return to the nearest "safe" waypoint during the activation of the emergency alarm. However, if the robot is midway through the bookshelf scanning task, it will not be able to go back to the nearest "safe" waypoint. Hence, we cannot verify that this test has passed.
-
-This problem has already been raised to the main developers (OSRC).
+In Basic Test 4, RMF has a limitation. When the robot moves along the expected lanes of RMF, it is able to return to the nearest "safe" waypoint during the activation of the emergency alarm. However, if the robot is midway through the bookshelf scanning task, it will not be able to go back to the nearest "safe" waypoint. A way to work around this behavior at the time of writing (Dec 2022) is to manually cancel the task the robot is doing, after the task is cancelled the robot will be routed to the closest parking spot.

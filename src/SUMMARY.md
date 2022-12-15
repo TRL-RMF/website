@@ -24,10 +24,8 @@
 - [Approach to Software Quality Assurance](headers/software-qa.md)
   
 - [Approach to Verification and Validation - RMF Scheduler (OSRF)](headers/verification-validation.md)
-    - [Gazebo SIL of TRL](content/simulation.md)
-        - [Basic Tests](content/basic-tests.md)
-        - [Standalone Tests](content/standalone-tests.md)
-  
+    - [Basic Tests](content/basic-tests.md)
+    - [Standalone Tests](content/standalone-tests.md)
 - [Systems Test Plan (HopeTechnik)](headers/systems-test-plan.md)
     - [Baseline 0 - Static Lift Rig Tests (Senserbot)](content/baseline-0.md)
     - [Baseline 1 - BMS Tests](content/baseline-1.md)
