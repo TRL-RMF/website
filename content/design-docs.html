@@ -142,10 +142,29 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="design-documents"><a class="header" href="#design-documents">Design Documents</a></h1>
+<p>An excellent resource to have an overview of RMF and the integration process is the <a href="https://osrf.github.io/ros2multirobotbook/">ROS2 multirobot book</a>, it's recommended to read it before embarking in any integration effort.</p>
 <h2 id="rmf-bms-integrator"><a class="header" href="#rmf-bms-integrator">RMF-BMS Integrator</a></h2>
+<p>Integration between RMF and infrastructure (doors, lifts and in some cases workcells) is done through adapters.</p>
+<p>The purpose of infrastructure adapters is to act as a translation layer between proprietary APIs (i.e. PLCs, cloud based) and RMF. Open source implementation are available in the <a href="https://github.com/open-rmf/awesome_adapters">awesome_adapters</a> repo, at the time of writing for <a href="https://github.com/sharp-rmf/kone_lift_controller">Kone lifts</a> and <a href="https://github.com/open-rmf/door_adapter_dormakaba">Dormakaba doors</a>.</p>
+<p>Templates are also provided for both <a href="https://github.com/open-rmf/door_adapter_template">doors</a> and <a href="https://github.com/open-rmf/lift_adapter_template">https://github.com/open-rmf/lift_adapter_template</a>. In templates, integrators only need to fill a few functions that are specific to the API of the chosen device, for example for doors, a function to open, one to close and one to query the state of the door.</p>
+<p>Once a door / lift adapter is added to the system RMF, and through it any fleet that is integrated in the future, will be able to use it for operations.</p>
 <h2 id="rmf-core-cloud-integrator"><a class="header" href="#rmf-core-cloud-integrator">RMF-Core (Cloud) Integrator</a></h2>
+<p>A <a href="https://github.com/open-rmf/rmf_deployment_template/">template</a> is provided to integrators to help with cloud deployment, it is rapidly growing so it is recommended to check the repository itself for the latest integration instructions.</p>
+<p>At the date of writing, it uses github actions to build docker images which are hosted in a cloud registry and ran in a cloud kubernetes (k3s) cluster configured through helm charts. The template itself only builds the core RMF services but provides examples on how to add custom pods (i.e. to run fleet adapters or infrastructure adapters).</p>
 <h2 id="rmf-amr-fleet-integrator"><a class="header" href="#rmf-amr-fleet-integrator">RMF-AMR Fleet Integrator</a></h2>
+<p>Integration between RMF and robot fleets is done through fleet adapters.</p>
+<p>Similar to infrastructure adapters, several open source implementations for a variety of robot vendors / models are available in the <a href="https://github.com/open-rmf/awesome_adapters">awesome_adapters</a> repo. We also provide both a <a href="https://github.com/open-rmf/fleet_adapter_template/">fleet adapter template</a> and a <a href="https://github.com/open-rmf/rmf_demos/tree/main/rmf_demos_fleet_adapter">demo fleet adapter</a> that works with Gazebo simulations, depending on preference either can be used to integrate with a new robot vendor.</p>
+<p>Several types of integration are possible depending on the level of control given by the robot vendor, for details on the process consult the relevant <a href="https://osrf.github.io/ros2multirobotbook/integration_fleets.html">multirobot book chapter</a></p>
 <h2 id="overall-systems-integrator"><a class="header" href="#overall-systems-integrator">Overall Systems Integrator</a></h2>
+<p>An overview of the overall system integration effort is available in the <a href="https://osrf.github.io/ros2multirobotbook/integration.html">Integration chapter</a> in the multirobot book. As an overview of the steps that are part of a usual deployment:</p>
+<ol>
+<li>Obtain building blueprints / maps, then design a traffic map through <a href="https://github.com/open-rmf/rmf_traffic_editor">traffic editor.</a></li>
+<li>Integrate and configure the desired mobile robot fleets through fleet adapters.</li>
+<li>Integrate as needed doors, lifts or workcells through infrastructure adapters.</li>
+<li>Test on a local machine for simplicity to make sure all the parts work as needed.</li>
+<li>Create a copy of the <a href="https://github.com/open-rmf/rmf_deployment_template/">https://github.com/open-rmf/rmf_deployment_template/</a> and setup the image building / cloud cluster pipeline.</li>
+<li>Test and iterate, updating cloud images when needed, until performance is satisfactory.</li>
+</ol>
 
                     </main>
 
