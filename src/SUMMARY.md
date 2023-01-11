@@ -3,9 +3,6 @@
 [RMF Systems Engineering Handbook](README.md)
 
 - [Project Outline](headers/project-outline.md)
-    - [Overall Architecture](content/overall-architecture.md)
-    - [Current Status & Timeline](content/current-status.md)
-    - [Partners and Contributors](content/our-partners-and-contributors.md)
 
 - [Design Efforts](headers/design-efforts.md)
     - [Identified Roles & Responsibilities](content/roles-responsibilities.md)
