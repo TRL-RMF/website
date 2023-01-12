@@ -68,12 +68,12 @@ for the components for lift integration.
 
 | Components | Categories| Test Cases       | Reasons                  |
 |------------|----------|------------------|--------------------------|
-| Retrofitted          | Validation    | Testing validity | This test is critical as |
-|  |  | of "lift in      | it serves the following  |
-| E          | Test     | operation"       | purposes:                |
-| lectronics |          | feedback signal. |                          |
-| from lift  |          |                  | 1.  Ensure installation  |
-| vendor     |          | Reservation of   |     > and enhancement    |
+| Retrofitted Electronics from lift vendor | Validation Test   | Testing validity | This test is critical as |
+|                                          |  | of "lift in      | it serves the following  |
+|          |      | operation"       | purposes:                |
+|  |          | feedback signal. |                          |
+|   |          |                  | 1.  Ensure installation  |
+|      |          | Reservation of   |     > and enhancement    |
 |            |          | lift.            |     > works from the     |
 |            |          |                  |     > lift vendor are    |
 |            |          | Release of lift. |     > done correctly.    |
