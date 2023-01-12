@@ -12,20 +12,20 @@ controllers for doors on levels 2 through 6 are installed on site to
 achieve the aforementioned objective. Refer to figure 1 to get an
 overview of the overall architecture.
 
-![](./../images/integration_architecture.png "Figure 1: Physical system architecture."){width="5.381767279090114in"
-height="5.447398293963254in"}
+![](./../images/integration_architecture.png "Figure 1: Physical system architecture.")
 
 Figure 1: Physical system architecture.
+
 
 The server is located at the library's network/server room and it
 communicates with AWS via Wi-Fi. A PLC is housed in a lift controller
 box at level 6 cargo lift lobby, which is shown in figure 2. It is
 connected to the server via LAN/Ethernet cable.
 
-![](./images/lift_lcb.png){width="2.8192672790901137in"
-height="2.346673228346457in"}
+![](./../images/lift_lcb.png "Figure 2: Lift Controller Box installed on-site (front and side views).")
 
 Figure 2: Lift Controller Box installed on-site (front and side views).
+
 
 A controller box was installed for each door to control its movement, as
 shown in figure 3. The controller box interfaces with the door\'s
@@ -34,7 +34,7 @@ sensor as well as its security card access system. An IO acquisition
 module is housed in each controller box which is connected to the server
 via LAN/Ethernet cable.
 
-![](./images/door_dcb.png){width="6.267716535433071in"
+![](./../images/door_dcb.png){width="6.267716535433071in"
 height="3.361111111111111in"}
 
 Figure 3: Door Controller Box installed on-site (the one in photo is at
@@ -79,7 +79,7 @@ their intended destination floor whereas hall calls are cancelled. This
 mode is displayed in the elevator user interface panel as shown in
 figure 4 and the same is announced from the speaker as well.
 
-> ![](./images/agv_mode.png){width="2.170708661417323in" height="1.875in"}
+> ![](./../images/agv_mode.png){width="2.170708661417323in" height="1.875in"}
 >
 > Figure 4: The following message: "ATTENTION AUTOMATIC TRANSPORT
 > OPERATION" is shown on all car and hall lift displays.
@@ -100,7 +100,7 @@ open to facilitate robot movement into the lift car. After receiving a
 signal to move to another floor, the lift doors are automatically
 closed.
 
-![](./images/lift_agv_mode.png){width="3.1771292650918634in"
+![](./../images/lift_agv_mode.png){width="3.1771292650918634in"
 height="2.3802088801399823in"}
 
 Figure 5: Lift in AGV mode at floor 6 with its doors kept open.
@@ -124,7 +124,7 @@ hardware and software.
 
 ## 2.3 Lift Controller Box
 
-![](./images/lcb_architecture.png){width="4.9162937445319335in"
+![](./../images/lcb_architecture.png){width="4.9162937445319335in"
 height="5.161291557305336in"}
 
 Figure 6: Lift Controller Box with respect to the physical system
@@ -147,12 +147,12 @@ and serves no purpose after deployment. In both simulated and actual
 fire, the alarm sound beacon sounds and lights up to alert the nearby
 patrons and staff of the emergency.
 
-![](./images/labelled_lcb.png){width="2.771127515310586in"
+![](./../images/labelled_lcb.png){width="2.771127515310586in"
 height="3.2115004374453195in"}
 
 Figure 7: Labelled lift controller box.
 
-![](./images/lcb_conceptual_diagram.png){width="5.939882983377077in"
+![](./../images/lcb_conceptual_diagram.png){width="5.939882983377077in"
 height="4.265625546806649in"}
 
 Figure 8: Conceptual connections diagram of the lift controller box
@@ -170,7 +170,7 @@ until it is back online.
 
 ## 3.2 Door Controller Box
 
-![](./media/dcb_architecture.png){width="4.880208880139983in"
+![](./../media/dcb_architecture.png){width="4.880208880139983in"
 height="5.131514654418198in"}
 
 Figure 9: Door Controller Boxes with respect to the physical system
@@ -182,12 +182,12 @@ different external components labelled in the image. A conceptual
 diagram with the box's contents and its connections to external
 peripherals and devices is shown in figure 11.
 
-![](./images/labelled_dcb.png){width="6.267716535433071in"
+![](./../images/labelled_dcb.png){width="6.267716535433071in"
 height="2.736111111111111in"}
 
 Figure 10: Labelled door controller box.
 
-![](./images/dcb_conceptual_diagram.png){width="5.75632874015748in"
+![](./../images/dcb_conceptual_diagram.png){width="5.75632874015748in"
 height="4.741847112860892in"}
 
 Figure 11: Conceptual connections diagram of the door controller box
@@ -198,7 +198,7 @@ circuit is utilised to confirm if the door has 'fully opened'.
 
 # Server
 
-![](./images/server_architecture.png){width="4.944267279090114in"
+![](./../images/server_architecture.png){width="4.944267279090114in"
 height="5.180242782152231in"}
 
 Figure 12: Server with respect to the physical system architecture.
@@ -207,7 +207,7 @@ The application is deployed via a Docker container. It utilises AWS IOT
 Core cloud service to connect to the RMF lift adapter. ROS2 messages are
 published via MQTT on specific published and subscribed AWS topics.
 
-![](./images/server_software.png){width="4.380208880139983in"
+![](./../images/server_software.png){width="4.380208880139983in"
 height="3.4634208223972003in"}
 
 Figure 13: Software Architecture of server application.
@@ -223,7 +223,7 @@ or moving), lift's motion status (moving up, moving down, stopped or
 unknown), lift's current mode (offline, manual, AGV, fire or unknown)
 and session ID (identification details of the current AGV mode session).
 
-![](./images/lift_state.png){width="5.572916666666667in"
+![](./../images/lift_state.png){width="5.572916666666667in"
 height="7.072916666666667in"}
 
 Figure 14: ListState.msg contents.
@@ -241,7 +241,7 @@ AGV mode, manual mode or end the current session), destination floor
 (relevant in AGV mode) and lift door state (whether it is open, closed
 or moving).
 
-![](./images/lift_request.png){width="6.267716535433071in"
+![](./../images/lift_request.png){width="6.267716535433071in"
 height="5.541666666666667in"}
 
 Figure 15: LiftRequest.msg contents.
@@ -252,7 +252,7 @@ about the door state at that instance. The contents of the message is
 shown in figure 16. It contains time of publication, name of door, and
 the door mode (open, closed or moving).
 
-![](./images/door_state.png){width="2.9471511373578303in"
+![](./../images/door_state.png){width="2.9471511373578303in"
 height="0.8281255468066492in"}
 
 Figure 16: DoorState.msg contents.
@@ -265,7 +265,7 @@ requester, in case multiple agents need to command the lift), name of
 the door (to specify which door is to be actuated), and requested mode
 (whether to request to open or close).
 
-![](./images/door_request.png){width="3.369792213473316in"
+![](./../images/door_request.png){width="3.369792213473316in"
 height="1.0935618985126858in"}
 
 Figure 17: DoorRequest.msg contents.
@@ -360,7 +360,7 @@ recovery behaviour to handle the occurred exception.
 If PLC goes into error state, it is indicated by the last LED on its
 output terminal, as shown in figure 18:
 
-![](./images/plc_error.png){width="4.291666666666667in"
+![](./../images/plc_error.png){width="4.291666666666667in"
 height="2.8645833333333335in"}
 
 Figure 18: Error state indication by LED on PLC, encircled by red
