@@ -12,7 +12,7 @@ controllers for doors on levels 2 through 6 are installed on site to
 achieve the aforementioned objective. Refer to figure 1 to get an
 overview of the overall architecture.
 
-![](./images/integration_architecture.png?raw=true "Figure 1: Physical system architecture."){width="5.381767279090114in"
+![](./../images/integration_architecture.png "Figure 1: Physical system architecture."){width="5.381767279090114in"
 height="5.447398293963254in"}
 
 Figure 1: Physical system architecture.
