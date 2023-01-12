@@ -12,9 +12,9 @@ controllers for doors on levels 2 through 6 are installed on site to
 achieve the aforementioned objective. Refer to figure 1 to get an
 overview of the overall architecture.
 
-![](./../images/integration_architecture.png "Figure 1: Physical system architecture.")
-
-Figure 1: Physical system architecture.
+>![](./../images/integration_architecture.png "Figure 1: Physical system architecture.")
+>
+>Figure 1: Physical system architecture.
 
 
 The server is located at the library's network/server room and it
@@ -22,9 +22,9 @@ communicates with AWS via Wi-Fi. A PLC is housed in a lift controller
 box at level 6 cargo lift lobby, which is shown in figure 2. It is
 connected to the server via LAN/Ethernet cable.
 
-![](./../images/lift_lcb.png "Figure 2: Lift Controller Box installed on-site (front and side views).")
-
-Figure 2: Lift Controller Box installed on-site (front and side views).
+>![](./../images/lift_lcb.png "Figure 2: Lift Controller Box installed on-site (front and side views).")
+>
+>Figure 2: Lift Controller Box installed on-site (front and side views).
 
 
 A controller box was installed for each door to control its movement, as
@@ -34,11 +34,10 @@ sensor as well as its security card access system. An IO acquisition
 module is housed in each controller box which is connected to the server
 via LAN/Ethernet cable.
 
-![](./../images/door_dcb.png){width="6.267716535433071in"
-height="3.361111111111111in"}
-
-Figure 3: Door Controller Box installed on-site (the one in photo is at
-level 6).
+>![](./../images/door_dcb.png)
+>
+>Figure 3: Door Controller Box installed on-site (the one in photo is at
+>level 6).
 
 With regards to the particular communication protocol between each
 hardware component, RMF communicates with the AWS IoT Core via ROS2
@@ -79,7 +78,7 @@ their intended destination floor whereas hall calls are cancelled. This
 mode is displayed in the elevator user interface panel as shown in
 figure 4 and the same is announced from the speaker as well.
 
-> ![](./../images/agv_mode.png){width="2.170708661417323in" height="1.875in"}
+> ![](./../images/agv_mode.png)
 >
 > Figure 4: The following message: "ATTENTION AUTOMATIC TRANSPORT
 > OPERATION" is shown on all car and hall lift displays.
