@@ -65,12 +65,11 @@ Chapter 10.2.2.
 The table below shows a high level description of the tests carried out
 for the components for lift integration.
 
-+------------+----------+------------------+--------------------------+
-| Components | Ca       | Test Cases       | Reasons                  |
-|            | tegories |                  |                          |
-+============+==========+==================+==========================+
-| R          | Va       | Testing validity | This test is critical as |
-| etrofitted | lidation | of "lift in      | it serves the following  |
+
+| Components | Categories| Test Cases       | Reasons                  |
+|------------|----------|------------------|--------------------------|
+| Retrofitted          | Validation    | Testing validity | This test is critical as |
+|  |  | of "lift in      | it serves the following  |
 | E          | Test     | operation"       | purposes:                |
 | lectronics |          | feedback signal. |                          |
 | from lift  |          |                  | 1.  Ensure installation  |

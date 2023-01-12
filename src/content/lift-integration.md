@@ -12,7 +12,7 @@ controllers for doors on levels 2 through 6 are installed on site to
 achieve the aforementioned objective. Refer to figure 1 to get an
 overview of the overall architecture.
 
->![](./../images/integration_architecture.png "Figure 1: Physical system architecture.")
+>![](./../images/integration_architecture.png)
 >
 >Figure 1: Physical system architecture.
 
@@ -22,7 +22,7 @@ communicates with AWS via Wi-Fi. A PLC is housed in a lift controller
 box at level 6 cargo lift lobby, which is shown in figure 2. It is
 connected to the server via LAN/Ethernet cable.
 
->![](./../images/lift_lcb.png "Figure 2: Lift Controller Box installed on-site (front and side views).")
+>![](./../images/lift_lcb.png)
 >
 >Figure 2: Lift Controller Box installed on-site (front and side views).
 
