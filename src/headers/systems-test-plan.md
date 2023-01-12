@@ -66,93 +66,37 @@ The table below shows a high level description of the tests carried out
 for the components for lift integration.
 
 
-| Components | Categories| Test Cases       | Reasons                  |
-|------------|----------|------------------|--------------------------|
-| Retrofitted Electronics from lift vendor | Validation Test   | Testing validity | This test is critical as |
-|                                          |  | of "lift in      | it serves the following  |
-|          |      | operation"       | purposes:                |
-|  |          | feedback signal. |                          |
-|   |          |                  | 1.  Ensure installation  |
-|      |          | Reservation of   |     > and enhancement    |
-|            |          | lift.            |     > works from the     |
-|            |          |                  |     > lift vendor are    |
-|            |          | Release of lift. |     > done correctly.    |
-|            |          |                  |                          |
-|            |          | Calling lift to  | 2.  Ensure the           |
-|            |          | go to a level.   |     > handovered system  |
-|            |          |                  |     > works as intended  |
-|            |          |                  |     > to pre-given       |
-|            |          |                  |     > specification      |
-|            |          |                  |     > documents. The     |
-|            |          |                  |     > design of the      |
-|            |          |                  |     > developed lift     |
-|            |          |                  |     > controller box     |
-|            |          |                  |     > references these   |
-|            |          |                  |     > specification      |
-|            |          |                  |     > documents. A test  |
-|            |          |                  |     > early on will show |
-|            |          |                  |     > any discrepancy in |
-|            |          |                  |     > provided           |
-|            |          |                  |     > information which  |
-|            |          |                  |     > may affect the     |
-|            |          |                  |     > final developed    |
-|            |          |                  |     > design.            |
-+------------+----------+------------------+--------------------------+
-| Lift       | Funct    | Testing reading  | To ensure the developed  |
-| Controller | ionality | of "lift in      | system is assembled and  |
-| Box        | Test     | operation"       | fabricated as designed.  |
-|            |          | feedback signal. |                          |
-|            |          |                  | To ensure fabricated     |
-|            |          | Reservation of   | electronics are stable,  |
-|            |          | lift.            | safe and durable for     |
-|            |          |                  | 24/7 operations.         |
-|            |          | Release of lift. |                          |
-|            |          |                  |                          |
-|            |          | Calling lift to  |                          |
-|            |          | go to a level.   |                          |
-|            |          |                  |                          |
-|            |          | Exceptional      |                          |
-|            |          | Behaviors        |                          |
-|            |          |                  |                          |
-|            |          | -   Turnkey to   |                          |
-|            |          |     >            |                          |
-|            |          |  non-interfering |                          |
-|            |          |     > mode       |                          |
-|            |          |                  |                          |
-|            |          | -   Electrical   |                          |
-|            |          |     > release of |                          |
-|            |          |     > signals in |                          |
-|            |          |     > error /    |                          |
-|            |          |     > exception  |                          |
-|            |          |     > mode       |                          |
-|            |          |                  |                          |
-|            |          | -   Reconnecting |                          |
-|            |          |     > when loss  |                          |
-|            |          |     > of 2 way   |                          |
-|            |          |     > heartbeat  |                          |
-|            |          |                  |                          |
-|            |          | -   And more     |                          |
-|            |          |                  |                          |
-|            |          | Quality checks   |                          |
-|            |          |                  |                          |
-|            |          | -   Thermal      |                          |
-|            |          |                  |                          |
-|            |          |    > ventilation |                          |
-|            |          |                  |                          |
-|            |          | -   Crimping and |                          |
-|            |          |     > connection |                          |
-|            |          |     > quality    |                          |
-|            |          |                  |                          |
-|            |          | -   Mounting     |                          |
-|            |          |                  |                          |
-|            |          |  > reliabilities |                          |
-+------------+----------+------------------+--------------------------+
-|            | Software | Static Analysis  | Ensure production        |
-|            | Test     | Tests            | quality code. Expose     |
-|            |          |                  | vulnerabilities in       |
-|            |          |                  | "distance" &             |
-|            |          |                  | "hard-to-reach" code.    |
-+------------+----------+------------------+--------------------------+
++------------------------------------------+--------------------+----------------------------------------------------------+--------------------------------------------------------------+
+| Components                               | Categories         | Test Cases                                               | Reasons                                                      |
++------------------------------------------+--------------------+----------------------------------------------------------+--------------------------------------------------------------+
+| Retrofitted Electronics from lift vendor | Validation Test    | Testing validity of “lift in operation” feedback signal. | This test is critical as it serves the following purposes:   |
+|                                          |                    | Reservation of lift.                                     | Ensure installation and enhancement works from the lift      |
+|                                          |                    | Release of lift.                                         | vendor are done correctly.                                   |
+|                                          |                    | Calling lift to go to a level.                           | Ensure the handovered system works as intended to pre-given  |
+|                                          |                    |                                                          | specification documents. The design of the developed lift    |
+|                                          |                    |                                                          | controller box references these specification documents.     |
+|                                          |                    |                                                          | A test early on will show any discrepancy in provided        |
+|                                          |                    |                                                          | information which may affect the final developed design.     |
++------------------------------------------+--------------------+----------------------------------------------------------+--------------------------------------------------------------+
+| Lift Controller Box                      | Functionality Test | Testing reading of “lift in operation” feedback signal.  | To ensure the developed system is assembled and fabricated   |
+|                                          |                    | Reservation of lift.                                     | as designed.                                                 |
+|                                          |                    | Release of lift.                                         | To ensure fabricated electronics are stable, safe and        |
+|                                          |                    | Calling lift to go to a level.                           | durable for 24/7 operations.                                 |
+|                                          |                    | Exceptional Behaviors                                    |                                                              |
+|                                          |                    | Turnkey to non-interfering mode                          |                                                              |
+|                                          |                    | Electrical release of signals in error / exception mode  |                                                              |
+|                                          |                    | Reconnecting when loss of 2 way heartbeat                |                                                              |
+|                                          |                    | And more                                                 |                                                              |
+|                                          |                    | Quality checks                                           |                                                              |
+|                                          |                    | Thermal ventilation                                      |                                                              |
+|                                          |                    | Crimping and connection quality                          |                                                              |
+|                                          |                    | Mounting reliabilities                                   |                                                              |
++------------------------------------------+--------------------+----------------------------------------------------------+--------------------------------------------------------------+
+|                                          | Software Test      | Static Analysis Tests                                    | Ensure production quality code. Expose vulnerabilities in    |
+|                                          |                    |                                                          | “distance” & “hard-to-reach” code.                           |
++------------------------------------------+--------------------+----------------------------------------------------------+--------------------------------------------------------------+
+
+
 
 **[Standalone tests for door integration]{.underline}**
 
