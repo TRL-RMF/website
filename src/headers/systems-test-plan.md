@@ -77,10 +77,10 @@ reliability.
 A more in-depth explanation on the work behind door integrations can be
 found in Chapter 10.2.3.
 
-|                     |                    |                                                                                                                                                                                        |                                                                                                                                                           |
+
 | ------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Components          | Categories         | Test Cases                                                                                                                                                                             | Reasons                                                                                                                                                   |
-| Door Controller Box | Functionality Test | Testing reading of door statesTesting of commanding doors to close and open.Exceptional Behaviors- Switch to non-interfering mode - Connection loss behaviors - And moreQuality checks | To ensure the developed system is assembled and fabricated as designed.To ensure fabricated electronics are stable, safe and durable for 24/7 operations. |
+| Door Controller Box | Functionality Test | Testing reading of door statesTesting of commanding doors to close and open. Exceptional Behaviors  * Switch to non-interfering mode * Connection loss behaviors * And moreQuality checks | To ensure the developed system is assembled and fabricated as designed.To ensure fabricated electronics are stable, safe and durable for 24/7 operations. |
 |                     | Software Test      | Static Analysis Tests                                                                                                                                                                  | Ensure production quality code. Expose vulnerabilities in “distance” & “hard-to-reach” code.                                                              |
 
 **Integration tests - RMF-Lift and RMF-Doors**
