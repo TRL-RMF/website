@@ -78,7 +78,7 @@ their intended destination floor whereas hall calls are cancelled. This
 mode is displayed in the elevator user interface panel as shown in
 figure 4 and the same is announced from the speaker as well.
 
-> ![](./../images/agv_mode.png)
+> ![](./../images/agv_mode.png =2.17inx1.875in)
 >
 > Figure 4: The following message: "ATTENTION AUTOMATIC TRANSPORT
 > OPERATION" is shown on all car and hall lift displays.

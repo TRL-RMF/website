@@ -1,4 +1,4 @@
->![](../images/image1.png)
+>![](../images/systems_test_plan.png)
 
 To ensure a stable system integrating multi-party components, different
 levels of testing were required. As shown in the diagram above, three
