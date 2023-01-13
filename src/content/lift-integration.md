@@ -1,4 +1,4 @@
-# **TRL Lift and Doors Integration Doc**
+# **Lift and Doors Integration**
 
 
 # Overall System Overview
