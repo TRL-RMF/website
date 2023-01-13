@@ -43,7 +43,7 @@ Apart from the multi-level design reviews carried out for the developed
 components for lift and door integration, a list of tests have also been
 carried out on the standalone level to ensure quality.
 
-**[Standalone tests for lift integration]{.underline}**
+**Standalone tests for lift integration**
 
 To respect the confidentiality of the lift vendor who provided its
 services and helping hands in this project, the details of the conducted
@@ -77,7 +77,7 @@ for the components for lift integration.
 
 
 
-**[Standalone tests for door integration]**
+**Standalone tests for door integration**
 
 Similar to the standalone tests done for lift integrations, the
 developed door controllers also follow similar test cases to ensure its
@@ -111,9 +111,9 @@ infrastructure systems can be found in Chapter 10.2.2 and 10.2.3.
 |                    |                          |                                                                                                                                                                                                                                                                                                                            |                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------ | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Subsystems         | Categories               | Test Cases                                                                                                                                                                                                                                                                                                                 | Reasons                                                                                                                                                                                                                                                                                                                                                           |
-| RMF-Lift           | Functionality Test       | Changing of modes: AGV mode, Human mode.Calling of lift to level 2,3,4,5,6.Reading and publishing of lift states for all modes and all floors.Exceptional behaviors- Loss of comms - Fire Alarm mode - Timeouts - Non-interfering mode - And moreMechanical quality checks- Lift controller box mounting - Dust protection | To ensure integration is done correctly.To ensure the system is operational even during exceptional situations.To ensure no unintended “hanging” states for all situations.To ensure the system is recoverable after exceptional situations.To ensure the lift controller box is installed in a safe and reliable manner.                                         |
-| RMF-Doors          |                          | Commanding of doorsReading and publishing door statesExceptional behaviors- Loss of comms - Fire Alarm mode - Timeouts - Non-interfering mode - And moreMechanical quality checks- Door controller box mounting- Sensor mounting reliability - Dust protection                                                             | To ensure integration is done correctly.To ensure the system is operational even during exceptional situations.To ensure no unintended “hanging” states for all situations.To ensure the system is recoverable after exceptional situations.To ensure the lift controller box is installed in a safe and reliable manner.                                         |
-| RMF- LiftRMF-Doors | Connectivity Stress Test | Extended period of packet drop monitoringValidating no single point of failure                                                                                                                                                                                                                                             | To ensure the reliability of the connectivity.Due to circumstances, the infrastructure-rmf software adapter for all integrated doors and lifts is a monolithic piece of code multithreaded into different processes. This test also covers the code that never blocks / crashes due to a single point of hardware failure in any of the door or lift controllers. |
+| RMF-Lift           | Functionality Test       | Changing of modes: AGV mode, Human mode.<br/><br/>Calling of lift to level 2,3,4,5,6.<br/><br/>Reading and publishing of lift states for all modes and all floors.<br/><br/>Exceptional behaviors <br/>- Loss of comms <br/>- Fire Alarm mode <br/>- Timeouts -<br/> Non-interfering mode <br/>- And more<br/><br/>Mechanical quality checks<br/>- Lift controller box mounting <br/>- Dust protection | To ensure integration is done correctly. <br/><br/> To ensure the system is operational even during exceptional situations. <br/><br/> To ensure no unintended “hanging” states for all situations. <br/><br/> To ensure the system is recoverable after exceptional situations. <br/><br/> To ensure the lift controller box is installed in a safe and reliable manner.                                         |
+| RMF-Doors          |                          | Commanding of doors <br/><br/> Reading and publishing door states <br/><br/> Exceptional behaviors<br/>- Loss of comms <br/>- Fire Alarm mode <br/>- Timeouts <br/>- Non-interfering mode <br/>- And more<br/><br/>Mechanical quality checks<br/>- Door controller box mounting<br/> - Sensor mounting reliability <br/>- Dust protection                                                             | To ensure integration is done correctly.<br/><br/>To ensure the system is operational even during exceptional situations.<br/><br/>To ensure no unintended “hanging” states for all situations.<br/><br/>To ensure the system is recoverable after exceptional situations.<br/><br/>To ensure the lift controller box is installed in a safe and reliable manner.                                         |
+| RMF- LiftRMF-Doors | Connectivity Stress Test | Extended period of packet drop monitoringValidating no single point of failure                                                                                                                                                                                                                                             | To ensure the reliability of the connectivity. <br/><br/> Due to circumstances, the infrastructure-rmf software adapter for all integrated doors and lifts is a monolithic piece of code multithreaded into different processes. This test also covers the code that never blocks / crashes due to a single point of hardware failure in any of the door or lift controllers. |
 
 
 **\
@@ -126,32 +126,22 @@ For this project, a total of three scenarios (which represent similar
 operational situations) were tested. The tested scenarios are the
 following:
 
-1.  Robot moving through lift and door to workcell to perform its
-    > mission
+1.  Robot moving through lift and door to workcell to perform its mission
 
-    a.  To demonstrate the ability of robots to take lift to different
-        > floors, open and move through doors and start its task.
+    a.  To demonstrate the ability of robots to take lift to different floors, open and move through doors and start its task.
 
-    b.  Consists of 20 permutations of robots taking lift from Floor A
-        > to Floor B and opening the doors for both Floor A and Floor B.
+    b.  Consists of 20 permutations of robots taking lift from Floor A to Floor B and opening the doors for both Floor A and Floor B.
 
 2.  Wireless Charging of Robot
 
-    a.  To demonstrate the robot can be commanded by RMF to go and get
-        > charged at level 6 wireless charging point from any floor.
+    a.  To demonstrate the robot can be commanded by RMF to go and get charged at level 6 wireless charging point from any floor.
 
-    b.  Consists of 5 permutations of the robot taking lift from Floor X
-        > to Floor 6's charging point.
+    b.  Consists of 5 permutations of the robot taking lift from Floor X to Floor 6's charging point.
 
 3.  Robot's movement during Emergency
 
-    a.  To demonstrate that during an emergency situation such as a
-        > building fire alarm being triggered, the robots can
-        > automatically move out of the main paths of evacuation to
-        > prevent blockage. It also covers recovery behaviors of the
-        > robot when the emergency situation is disengaged.
+    a.  To demonstrate that during an emergency situation such as a building fire alarm being triggered, the robots can automatically move out of the main paths of evacuation to prevent blockage. It also covers recovery behaviors of the robot when the emergency situation is disengaged.
 
-    b.  Consists of 5 permutations of the robot traveling when a fire
-        > alarm is triggered.
+    b.  Consists of 5 permutations of the robot traveling when a fire alarm is triggered.
 
 The test plans for the above scenarios can be downloaded here.

@@ -1,7 +1,7 @@
 # **Lift and Doors Integration**
 
 
-# Overall System Overview
+# 1. Overall System Overview
 
 The objective of lift and doors integration with RMF (Robotics
 Middleware Framework) is to facilitate infrastructure interoperability
@@ -18,7 +18,7 @@ overview of the overall architecture.
 
 
 The server is located at the library's network/server room and it
-communicates with AWS via Wi-Fi. A PLC is housed in a lift controller
+communicates to RMF via AWSCore/MQTT. A PLC is housed in a lift controller
 box at level 6 cargo lift lobby, which is shown in figure 2. It is
 connected to the server via LAN/Ethernet cable.
 
@@ -40,8 +40,7 @@ via LAN/Ethernet cable.
 >level 6).
 
 With regards to the particular communication protocol between each
-hardware component, RMF communicates with the AWS IoT Core via ROS2
-messages which in turn communicates with the server via MQTT . RMF sends
+hardware component, RMF communicates to the infrastructure via a ROS2-AWSCore/MQTT bridge. RMF sends
 a LiftRequest.msg to AWS to command the lift while it receives
 LiftState.msg as lift's status update at a frequency of 1 Hz. Similarly
 for doors, with DoorRequest.msg and DoorState.msg.
@@ -60,7 +59,7 @@ with the pre-installed automated door controller via a DPDT relay. Adam
 
 The following sections explore each component in detail.
 
-# Integration with Lift
+# 2. Integration with Lift
 
 ## 2.1 AGV Mode
 
@@ -78,7 +77,7 @@ their intended destination floor whereas hall calls are cancelled. This
 mode is displayed in the elevator user interface panel as shown in
 figure 4 and the same is announced from the speaker as well.
 
-> ![<img src="agv_mode.png" width="50"/>](./../images/agv_mode.png )
+> ![](./../images/agv_mode.png )
 >
 > Figure 4: The following message: "ATTENTION AUTOMATIC TRANSPORT
 > OPERATION" is shown on all car and hall lift displays.
@@ -152,7 +151,7 @@ patrons and staff of the emergency.
 >
 >Figure 8: Conceptual connections diagram of the lift controller box
 
-# Integration with Doors
+# 3. Integration with Doors
 
 ## 3.1 Flow of Operations
 
@@ -165,7 +164,7 @@ until it is back online.
 
 ## 3.2 Door Controller Box
 
->![](./../media/dcb_architecture.png)
+>![](./../images/dcb_architecture.png)
 >
 >Figure 9: Door Controller Boxes with respect to the physical system
 >architecture.
@@ -188,7 +187,7 @@ The limit switches are used as feedback to confirm if the door has
 'fully closed'. The pre-installed automated door controller's internal
 circuit is utilised to confirm if the door has 'fully opened'.
 
-# Server
+# 4. Server
 
 >![](./../images/server_architecture.png)
 >
@@ -204,14 +203,7 @@ published via MQTT on specific published and subscribed AWS topics.
 
 A LiftState.msg is published to the AWS topic every 2 seconds which is
 read by RMF to get all relevant information about the lift state at that
-instance. The contents of the message is shown in figure 14. It contains
-time of publication, name of lift, available floors (floors which lift
-can transit to), lift's current floor (shows actual value only in AGV
-mode), lift's destination floor (this target floor was the previous
-destination set by RMF), lift door's state (whether it is open, closed
-or moving), lift's motion status (moving up, moving down, stopped or
-unknown), lift's current mode (offline, manual, AGV, fire or unknown)
-and session ID (identification details of the current AGV mode session).
+instance. The contents of the message is shown in figure 14. 
 
 >![](./../images/lift_state.png)
 >
@@ -223,22 +215,16 @@ preferred method.
 
 RMF commands the lift by publishing a LiftRequest.msg every 1 second on
 a different AWS topic which the server subscribes to. The contents of
-the message is shown in figure 9. It contains the time of publication,
-name of lift, session ID (unique for each requester, in case multiple
-agents need to command the lift), request type (whether to request to
-AGV mode, manual mode or end the current session), destination floor
-(relevant in AGV mode) and lift door state (whether it is open, closed
-or moving).
+the message is shown in figure 15. 
 
 >![](./../images/lift_request.png)
 >
-F>igure 15: LiftRequest.msg contents.
+>Figure 15: LiftRequest.msg contents.
 
 A DoorState.msg for each door is published to the respective AWS topic
 every 2 seconds which is read by RMF to get all relevant information
 about the door state at that instance. The contents of the message is
-shown in figure 16. It contains time of publication, name of door, and
-the door mode (open, closed or moving).
+shown in figure 16. 
 
 >![](./../images/door_state.png)
 >
@@ -246,17 +232,13 @@ the door mode (open, closed or moving).
 
 RMF commands each door by publishing a DoorRequest.msg every 1 second on
 an AWS topic which the server subscribes to. This topic is the same for
-all doors. The contents of the message is shown in figure 17. It
-contains the time of publication, requester ID (unique for each
-requester, in case multiple agents need to command the lift), name of
-the door (to specify which door is to be actuated), and requested mode
-(whether to request to open or close).
+all doors. The contents of the message is shown in figure 17. 
 
 >![](./../images/door_request.png)
 >
-F>igure 17: DoorRequest.msg contents.
+>Figure 17: DoorRequest.msg contents.
 
-# Exception Scenarios
+# 5. Exception Scenarios
 
 The following subsections explore all possible exception cases for lift
 and doors and their respective recovery behaviours. The application is
