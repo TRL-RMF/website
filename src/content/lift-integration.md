@@ -271,77 +271,18 @@ recovery behaviour to handle the occurred exception.
 
 > Table 1: Exception Scenarios for service lift:
 >
->+-----+------------------+------------------------+-------------------+
->| **  | **E              | **Action**             | **Recovery        |
->| Sr. | rror/Exception** |                        | behaviour**       |
->| No  |                  |                        |                   |
->| .** |                  |                        |                   |
-+=====+==================+========================+===================+
-| 1   | Loss of          | 1.  Lift goes back to  | When the          |
-|     | communications   |     > manual mode.     | heartbeat is      |
-|     | between server   |                        | heard again, it   |
-|     | and PLC.         | 2.  PLC state goes to  | goes back to      |
-|     |                  |     > error state.     | human mode.       |
-|     |                  |                        |                   |
-|     |                  |                        | No need for human |
-|     |                  |                        | intervention.     |
-+-----+------------------+------------------------+-------------------+
-| 2   | Fire Alarm is    | 1.  Lift goes back to  | Manual            |
-|     | activated.       |     > manual mode.     | intervention is   |
-|     |                  |                        | needed. PLC will  |
-|     |                  | 2.  PLC state goes to  | stay in error     |
-|     |                  |     > error state.     | state until it is |
-|     |                  |                        | restarted.        |
-|     |                  | 3.  Sound beacon is    |                   |
-|     |                  |     > switched on.     |                   |
-+-----+------------------+------------------------+-------------------+
-| 3   | Lift is not in   | 1.  Lift goes back to  | No need for human |
-|     | operational      |     > manual mode.     | intervention.     |
-|     | state.           |                        | Operations will   |
-|     |                  | 2.  PLC state goes to  | continue as they  |
-|     |                  |     > error state.     | were after lift   |
-|     |                  |                        | is back in        |
-|     |                  |                        | operational       |
-|     |                  |                        | state.            |
-+-----+------------------+------------------------+-------------------+
-| 4   | Simulated Fire   | 1.  Lift goes back to  | Manual            |
-|     | Alarm button is  |     > manual mode.     | intervention is   |
-|     | pressed.         |                        | needed. PLC will  |
-|     |                  | 2.  PLC state goes to  | stay in error     |
-|     |                  |     > error state.     | state until it is |
-|     |                  |                        | restarted.        |
-|     |                  | 3.  Alarm beacon is    |                   |
-|     |                  |     > switched on.     |                   |
-+-----+------------------+------------------------+-------------------+
-| 5   | If turnkey is    | 1.  Lift goes back to  | To return things  |
-|     | toggled towards  |     > manual mode.     | to normal, toggle |
-|     | Manual           |                        | turnkey towards   |
-|     |                  | 2.  PLC state goes to  | AGV mode.         |
-|     |                  |     > error state      |                   |
-+-----+------------------+------------------------+-------------------+
-| 6   | Mode Timeout (10 | 1.  Lift goes back to  | Manual            |
-|     | minutes)         |     > manual mode.     | intervention is   |
-|     |                  |                        | needed. PLC will  |
-|     | (Lift is unable  | 2.  PLC state goes to  | stay in error     |
-|     | to go to AGV     |     > error state.     | state until it is |
-|     | mode from human  |                        | restarted.        |
-|     | mode)            |                        |                   |
-+-----+------------------+------------------------+-------------------+
-| 7   | Destination      | 1.  Lift goes back to  | Operations flow   |
-|     | floor requested  |     > manual mode.     | is not hampered.  |
-|     | is not in        |                        | RMF to send a     |
-|     | available floors |                        | correct           |
-|     |                  |                        | destination floor |
-|     |                  |                        | in the next       |
-|     |                  |                        | request.          |
-+-----+------------------+------------------------+-------------------+
-| 8   | Lift movement    | 1.  Lift goes back to  | Manual            |
-|     | timeout - Lift   |     > manual mode.     | intervention is   |
-|     | did not reach    |                        | needed. PLC will  |
-|     | destination      | 2.  PLC state goes to  | stay in error     |
-|     | floor after 2    |     > error state.     | state until it is |
-|     | minutes          |                        | restarted.        |
-+-----+------------------+------------------------+-------------------+
+|             |                                                                              |                                                                                                     |                                                                                                                |
+| ----------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Sr. No.** | **Error/Exception**                                                          | **Action**                                                                                          | **Recovery behaviour**                                                                                         |
+| 1           | Loss of communications between server and PLC.                               | 1. Lift goes back to manual mode. 2. PLC state goes to error state.                                 | When the heartbeat is heard again, it goes back to human mode. No need for human intervention.                 |
+| 2           | Fire Alarm is activated.                                                     | 1. Lift goes back to manual mode. 2. PLC state goes to error state. 3. Sound beacon is switched on. | Manual intervention is needed. PLC will stay in error state until it is restarted.                             |
+| 3           | Lift is not in operational state.                                            | 1. Lift goes back to manual mode. 2. PLC state goes to error state.                                 | No need for human intervention. Operations will continue as they were after lift is back in operational state. |
+| 4           | Simulated Fire Alarm button is pressed.                                      | 1. Lift goes back to manual mode. 2. PLC state goes to error state. 3. Alarm beacon is switched on. | Manual intervention is needed. PLC will stay in error state until it is restarted.                             |
+| 5           | If turnkey is toggled towards Manual                                         | 1. Lift goes back to manual mode. 2. PLC state goes to error state                                  | To return things to normal, toggle turnkey towards AGV mode.                                                   |
+| 6           | Mode Timeout (10 minutes)(Lift is unable to go to AGV mode from human mode)  | 1. Lift goes back to manual mode. 2. PLC state goes to error state.                                 | Manual intervention is needed. PLC will stay in error state until it is restarted.                             |
+| 7           | Destination floor requested is not in available floors                       | 1. Lift goes back to manual mode.                                                                   | Operations flow is not hampered. RMF to send a correct destination floor in the next request.                  |
+| 8           | Lift movement timeout - Lift did not reach destination floor after 2 minutes | 1. Lift goes back to manual mode. 2. PLC state goes to error state.                                 | Manual intervention is needed. PLC will stay in error state until it is restarted.                             |
+
 
 If PLC goes into error state, it is indicated by the last LED on its
 output terminal, as shown in figure 18:
@@ -358,26 +299,9 @@ lift and its controller box. It also specifies the corresponding
 recovery behaviour to handle the occurred exception.
 
 > Table 2: Exception Scenarios for doors:
-
-+-----+------------------+------------------------+-------------------+
-| **  | **E              | **Action**             | **Recovery        |
-| Sr. | rror/Exception** |                        | behaviour**       |
-| No  |                  |                        |                   |
-| .** |                  |                        |                   |
-+=====+==================+========================+===================+
-| 1   | Loss of          | 1.  Door mode is       | Need for human    |
-|     | communications   |     > reflected as     | intervention if   |
-|     | between server   |     > 'offline'.       | it stays          |
-|     | and door         |                        | disconnected for  |
-|     | controller.      |                        | a long time.      |
-|     |                  |                        | After             |
-|     |                  |                        | reconnection, the |
-|     |                  |                        | operation         |
-|     |                  |                        | continues as      |
-|     |                  |                        | before.           |
-+-----+------------------+------------------------+-------------------+
-| 2   | Cannot detect    | > \-                   | Need for manual   |
-|     | fully open or    |                        | intervention to   |
-|     | fully closed     |                        | fix the relevant  |
-|     | door state.      |                        | sensor.           |
-+-----+------------------+------------------------+-------------------+
+>
+|             |                                                            |                                         |                                                                                                                              |
+| ----------- | ---------------------------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Sr. No.** | **Error/Exception**                                        | **Action**                              | **Recovery behaviour**                                                                                                       |
+| 1           | Loss of communications between server and door controller. | 1. Door mode is reflected as ‘offline’. | Need for human intervention if it stays disconnected for a long time. After reconnection, the operation continues as before. |
+| 2           | Cannot detect fully open or fully closed door state.       | \-                                      | Need for manual intervention to fix the relevant sensor.                                                                     |

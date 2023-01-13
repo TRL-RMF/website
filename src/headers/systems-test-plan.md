@@ -65,6 +65,12 @@ Chapter 10.2.2.
 The table below shows a high level description of the tests carried out
 for the components for lift integration.
 
+|                                          |                    |                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ---------------------------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Components                               | Categories         | Test Cases                                                                                                                                                                                                                                                                                                                                                                                     | Reasons                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Retrofitted Electronics from lift vendor | Validation Test    | Testing validity of “lift in operation” feedback signal.Reservation of lift.Release of lift.Calling lift to go to a level.                                                                                                                                                                                                                                                                     | This test is critical as it serves the following purposes:1. Ensure installation and enhancement works from the lift vendor are done correctly. 2. Ensure the handovered system works as intended to pre-given specification documents. The design of the developed lift controller box references these specification documents. A test early on will show any discrepancy in provided information which may affect the final developed design. |
+| Lift Controller Box                      | Functionality Test | Testing reading of “lift in operation” feedback signal.Reservation of lift.Release of lift.Calling lift to go to a level.Exceptional Behaviors- Turnkey to non-interfering mode - Electrical release of signals in error / exception mode - Reconnecting when loss of 2 way heartbeat - And moreQuality checks- Thermal ventilation - Crimping and connection quality - Mounting reliabilities | To ensure the developed system is assembled and fabricated as designed.To ensure fabricated electronics are stable, safe and durable for 24/7 operations.                                                                                                                                                                                                                                                                                        |
+|                                          | Software Test      | Static Analysis Tests                                                                                                                                                                                                                                                                                                                                                                          | Ensure production quality code. Expose vulnerabilities in “distance” & “hard-to-reach” code.                                                                                                                                                                                                                                                                                                                                                     |
 
 
 
@@ -93,115 +99,13 @@ mismatches between the two systems.
 A more in depth explanation of the architecture between RMF and the
 infrastructure systems can be found in Chapter 10.2.2 and 10.2.3.
 
-+------------+----------+------------------+--------------------------+
-| Subsystems | Ca       | Test Cases       | Reasons                  |
-|            | tegories |                  |                          |
-+============+==========+==================+==========================+
-| RMF-Lift   | Funct    | Changing of      | To ensure integration is |
-|            | ionality | modes: AGV mode, | done correctly.          |
-|            | Test     | Human mode.      |                          |
-|            |          |                  | To ensure the system is  |
-|            |          | Calling of lift  | operational even during  |
-|            |          | to level         | exceptional situations.  |
-|            |          | 2,3,4,5,6.       |                          |
-|            |          |                  | To ensure no unintended  |
-|            |          | Reading and      | "hanging" states for all |
-|            |          | publishing of    | situations.              |
-|            |          | lift states for  |                          |
-|            |          | all modes and    | To ensure the system is  |
-|            |          | all floors.      | recoverable after        |
-|            |          |                  | exceptional situations.  |
-|            |          | Exceptional      |                          |
-|            |          | behaviors        | To ensure the lift       |
-|            |          |                  | controller box is        |
-|            |          | -   Loss of      | installed in a safe and  |
-|            |          |     > comms      | reliable manner.         |
-|            |          |                  |                          |
-|            |          | -   Fire Alarm   |                          |
-|            |          |     > mode       |                          |
-|            |          |                  |                          |
-|            |          | -   Timeouts     |                          |
-|            |          |                  |                          |
-|            |          | -                |                          |
-|            |          |  Non-interfering |                          |
-|            |          |     > mode       |                          |
-|            |          |                  |                          |
-|            |          | -   And more     |                          |
-|            |          |                  |                          |
-|            |          | Mechanical       |                          |
-|            |          | quality checks   |                          |
-|            |          |                  |                          |
-|            |          | -   Lift         |                          |
-|            |          |     > controller |                          |
-|            |          |     > box        |                          |
-|            |          |     > mounting   |                          |
-|            |          |                  |                          |
-|            |          | -   Dust         |                          |
-|            |          |     > protection |                          |
-+------------+----------+------------------+--------------------------+
-| RMF-Doors  |          | Commanding of    | To ensure integration is |
-|            |          | doors            | done correctly.          |
-|            |          |                  |                          |
-|            |          | Reading and      | To ensure the system is  |
-|            |          | publishing door  | operational even during  |
-|            |          | states           | exceptional situations.  |
-|            |          |                  |                          |
-|            |          | Exceptional      | To ensure no unintended  |
-|            |          | behaviors        | "hanging" states for all |
-|            |          |                  | situations.              |
-|            |          | -   Loss of      |                          |
-|            |          |     > comms      | To ensure the system is  |
-|            |          |                  | recoverable after        |
-|            |          | -   Fire Alarm   | exceptional situations.  |
-|            |          |     > mode       |                          |
-|            |          |                  | To ensure the lift       |
-|            |          | -   Timeouts     | controller box is        |
-|            |          |                  | installed in a safe and  |
-|            |          | -                | reliable manner.         |
-|            |          |  Non-interfering |                          |
-|            |          |     > mode       |                          |
-|            |          |                  |                          |
-|            |          | -   And more     |                          |
-|            |          |                  |                          |
-|            |          | Mechanical       |                          |
-|            |          | quality checks   |                          |
-|            |          |                  |                          |
-|            |          | -   Door         |                          |
-|            |          |     > controller |                          |
-|            |          |     > box        |                          |
-|            |          |     > mounting   |                          |
-|            |          |                  |                          |
-|            |          | ```{=html}       |                          |
-|            |          | <!-- -->         |                          |
-|            |          | ```              |                          |
-|            |          | -   Sensor       |                          |
-|            |          |     > mounting   |                          |
-|            |          |                  |                          |
-|            |          |    > reliability |                          |
-|            |          |                  |                          |
-|            |          | -   Dust         |                          |
-|            |          |     > protection |                          |
-+------------+----------+------------------+--------------------------+
-| RMF- Lift  | Conn     | Extended period  | To ensure the            |
-|            | ectivity | of packet drop   | reliability of the       |
-| RMF-Doors  | Stress   | monitoring       | connectivity.            |
-|            | Test     |                  |                          |
-|            |          | Validating no    | Due to circumstances,    |
-|            |          | single point of  | the infrastructure-rmf   |
-|            |          | failure          | software adapter for all |
-|            |          |                  | integrated doors and     |
-|            |          |                  | lifts is a monolithic    |
-|            |          |                  | piece of code            |
-|            |          |                  | multithreaded into       |
-|            |          |                  | different processes.     |
-|            |          |                  | This test also covers    |
-|            |          |                  | the code that never      |
-|            |          |                  | blocks / crashes due to  |
-|            |          |                  | a single point of        |
-|            |          |                  | hardware failure in any  |
-|            |          |                  | of the door or lift      |
-|            |          |                  | controllers.             |
-+------------+----------+------------------+--------------------------+
+|                    |                          |                                                                                                                                                                                                                                                                                                                            |                                                                                                                                                                                                                                                                                                                                                                   |
+| ------------------ | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Subsystems         | Categories               | Test Cases                                                                                                                                                                                                                                                                                                                 | Reasons                                                                                                                                                                                                                                                                                                                                                           |
+| RMF-Lift           | Functionality Test       | Changing of modes: AGV mode, Human mode.Calling of lift to level 2,3,4,5,6.Reading and publishing of lift states for all modes and all floors.Exceptional behaviors- Loss of comms - Fire Alarm mode - Timeouts - Non-interfering mode - And moreMechanical quality checks- Lift controller box mounting - Dust protection | To ensure integration is done correctly.To ensure the system is operational even during exceptional situations.To ensure no unintended “hanging” states for all situations.To ensure the system is recoverable after exceptional situations.To ensure the lift controller box is installed in a safe and reliable manner.                                         |
+| RMF-Doors          |                          | Commanding of doorsReading and publishing door statesExceptional behaviors- Loss of comms - Fire Alarm mode - Timeouts - Non-interfering mode - And moreMechanical quality checks- Door controller box mounting- Sensor mounting reliability - Dust protection                                                             | To ensure integration is done correctly.To ensure the system is operational even during exceptional situations.To ensure no unintended “hanging” states for all situations.To ensure the system is recoverable after exceptional situations.To ensure the lift controller box is installed in a safe and reliable manner.                                         |
+| RMF- LiftRMF-Doors | Connectivity Stress Test | Extended period of packet drop monitoringValidating no single point of failure                                                                                                                                                                                                                                             | To ensure the reliability of the connectivity.Due to circumstances, the infrastructure-rmf software adapter for all integrated doors and lifts is a monolithic piece of code multithreaded into different processes. This test also covers the code that never blocks / crashes due to a single point of hardware failure in any of the door or lift controllers. |
+
 
 **\
 Final Test**
