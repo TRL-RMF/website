@@ -1,7 +1,7 @@
 # **Lift and Doors Integration**
 
 
-# 1. Overall System Overview
+# 10.2.2.1 Overall System Overview
 
 The objective of lift and doors integration with RMF (Robotics
 Middleware Framework) is to facilitate infrastructure interoperability
@@ -59,9 +59,9 @@ with the pre-installed automated door controller via a DPDT relay. Adam
 
 The following sections explore each component in detail.
 
-# 2. Integration with Lift
+# 10.2.2.2 Integration with Lift
 
-## 2.1 AGV Mode
+## AGV Mode
 
 To facilitate the project's operations, the lift vendor upgraded the
 installed lift to accommodate a new mode of operation called AGV mode.
@@ -83,7 +83,7 @@ figure 4 and the same is announced from the speaker as well.
 > Figure 4: The following message: "ATTENTION AUTOMATIC TRANSPORT
 > OPERATION" is shown on all car and hall lift displays.
 
-## 2.2 Flow of operations
+## Flow of operations
 
 The standard flow of operations is as follows (with respect to lift
 controller): Particular input signals are activated if the lift is in
@@ -120,7 +120,7 @@ command the lift to reach it. This can be easily modified later if
 needed by making corresponding changes in the lift controller box
 hardware and software.
 
-## 2.3 Lift Controller Box
+## Lift Controller Box
 
 >![](./../images/lcb_architecture.png)
 >
@@ -152,9 +152,9 @@ patrons and staff of the emergency.
 >
 >Figure 8: Conceptual connections diagram of the lift controller box
 
-# 3. Integration with Doors
+# 10.2.2.3 Integration with Doors
 
-## 3.1 Flow of Operations
+## Flow of Operations
 
 The standard flow of operations is quite straightforward (with respect
 to the door controller): if the door controller is not offline, either
@@ -163,7 +163,7 @@ open command, the door is kept open until explicitly commanded
 otherwise. If the door controller is offline, all requests are ignored
 until it is back online.
 
-## 3.2 Door Controller Box
+## Door Controller Box
 
 >![](./../images/dcb_architecture.png)
 >
@@ -188,7 +188,7 @@ The limit switches are used as feedback to confirm if the door has
 'fully closed'. The pre-installed automated door controller's internal
 circuit is utilised to confirm if the door has 'fully opened'.
 
-# 4. Server
+# 10.2.2.4 Server
 
 >![](./../images/server_architecture.png)
 >
@@ -239,14 +239,14 @@ all doors. The contents of the message is shown in figure 17.
 >
 >Figure 17: DoorRequest.msg contents.
 
-# 5. Exception Scenarios
+# 10.2.2.5 Exception Scenarios
 
 The following subsections explore all possible exception cases for lift
 and doors and their respective recovery behaviours. The application is
 built in a non-blocking way, for example, if one door has error or is
 offline, other doors and lift are unaffected and vice-versa.
 
-## 5.1 Lift Exceptions and Recovery Behaviour
+## Lift Exceptions and Recovery Behaviour
 
 Table 1 summarises the exception scenarios possible with regards to the
 lift and its controller box. It also specifies the corresponding
@@ -276,7 +276,7 @@ output terminal, as shown in figure 18:
 >Figure 18: Error state indication by LED on PLC, encircled by red
 >ellipse.
 
-## 5.2 Door Exceptions and Recovery Behaviour
+## Door Exceptions and Recovery Behaviour
 
 Table 2 summarises the exception scenarios possible with regards to the
 lift and its controller box. It also specifies the corresponding
