@@ -198,7 +198,7 @@ The application is deployed via a Docker container. It utilises AWS IOT
 Core cloud service to connect to the RMF lift adapter. ROS2 messages are
 published via MQTT on specific published and subscribed AWS topics.
 
->![](./../images/server_software.png)
+> <img src="./../images/server_software.png" width="350" height="300" />
 >
 >Figure 13: Software Architecture of server application.
 
@@ -218,7 +218,7 @@ RMF commands the lift by publishing a LiftRequest.msg every 1 second on
 a different AWS topic which the server subscribes to. The contents of
 the message is shown in figure 15. 
 
->![](./../images/lift_request.png)
+> <img src="./../images/lift_request.png" width="550" height="500" />
 >
 >Figure 15: LiftRequest.msg contents.
 
@@ -254,20 +254,7 @@ recovery behaviour to handle the occurred exception.
 
 > Table 1: Exception Scenarios for service lift:
 >
-<style>
-table th:first-of-type {
-    width: 10%;
-}
-table th:nth-of-type(2) {
-    width: 30%;
-}
-table th:nth-of-type(3) {
-    width: 25%;
-}
-table th:nth-of-type(4) {
-    width: 35%;
-}
-</style>
+
 |             |                                                                              |                                                                                                                 |                                                                                                                |
 | ----------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | **Sr. No.** | **Error/Exception**                                                          | **Action**                                                                                                      | **Recovery behaviour**                                                                                         |
