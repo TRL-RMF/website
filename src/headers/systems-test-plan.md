@@ -23,9 +23,9 @@ Chapter 8.
 **Integration tests** involve sub-system integrated testing. For the
 Tampines Regional Library project and since RMF is the overarching meta
 system integrating all components, this involves integrated testing
-between:\
-1. RMF - Lift\
-2. RMF - Doors\
+between:
+1. RMF - Lift
+2. RMF - Doors
 3. RMF - Robots
 
 The tests mainly revolve around testing all actions and feedback sent

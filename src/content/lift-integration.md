@@ -77,7 +77,8 @@ their intended destination floor whereas hall calls are cancelled. This
 mode is displayed in the elevator user interface panel as shown in
 figure 4 and the same is announced from the speaker as well.
 
-> ![](./../images/agv_mode.png )
+
+> <img src="./../images/agv_mode.png" width="250" height="300" />
 >
 > Figure 4: The following message: "ATTENTION AUTOMATIC TRANSPORT
 > OPERATION" is shown on all car and hall lift displays.
@@ -98,7 +99,7 @@ open to facilitate robot movement into the lift car. After receiving a
 signal to move to another floor, the lift doors are automatically
 closed.
 
->![](./../images/lift_agv_mode.png)
+> <img src="./../images/lift_agv_mode.png" width="450" height="400" />
 >
 >Figure 5: Lift in AGV mode at floor 6 with its doors kept open.
 
