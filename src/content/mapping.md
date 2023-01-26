@@ -109,7 +109,7 @@ Buildings aren't just made of exterior walls! Don't forget to add in walls withi
 
 When adding doors, don't forget to rename the door name for future reference. 
 
-> ℹ️ Use a naming convention to be tidy. At TRL, we named our doors `<description><number>_<floor>_door` 
+> ℹ️ Use a naming convention to be tidy. At TRL, we named our doors `<description>_lvl_<floor number>_door` 
 
 At TRL, there are mainly 2 types of doors: double_hinged and double_sliding. Play around with the other properties to get it to the orientation you need.
 
@@ -180,11 +180,18 @@ Also, note that Traffic Editor is after all simply a GUI. All your changes are a
 
 ## Mapping & Traffic Editor Concerns
 
-Traffic Editor is not perfect and can be buggy at times. The key is not to rely on the GUI but to understand the `building.yaml` file deeply and reading up the official documentation.
+1. Traffic Editor GUI is not perfect and can be buggy at times. Removing of properties cannot be done through GUI. The key is not to rely on the GUI but to understand the `building.yaml` file deeply and reading up the official documentation. 
+
+1. There is a need to make sure all floor plan images sharing the same resolution and scale. Position of each floor within the building has to be aligned as well. Otherwise, the map display on web dashboard would have issue.
+
+1. Since Traffic Editor is a GUI based application, it would have issue to be opened on cloud server which does not support GUI. Thus users will need to install the Traffic Editor GUI on their own machines and then commit the edited `building.yaml` and other related files to the Git repository.
 
 
 ## Interoperability considerations (across multiple fleets)
 
-It is vital to create the world with precision. The system integrator but recognize that not just a single type of robot will be relying on this RMF traffic plan. Robots come in different shapes and sizes and may navigate very differently, hence all these must be taken into consideration when creating the traffic plan.
+1. It is vital to create the world with precision. The system integrator must recognize that not just a single type of robot will be relying on this RMF traffic plan. Robots come in different shapes and sizes and may navigate very differently, hence all these must be taken into consideration when creating the traffic plans which are also known as nav graphs in Traffic Editor.
 
-> e.g. the robot lanes must be decided with all stakeholders to make sure that the robot will not perform unexpected behaviors such as entering restricted areas
+    > e.g. the robot lanes must be decided with all stakeholders to make sure that the robot will not perform unexpected behaviors such as entering restricted areas
+
+1. Based on the fact that each waypoint name must be unique, it is advisable to enforce a suitable naming convention such as `L<floor number>_<description>` for non-vendor specific and `L<floor number>_<description>_<vendor>` for vendor specific.
+
