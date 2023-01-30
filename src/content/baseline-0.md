@@ -60,3 +60,26 @@ At speed 0.3 m/s,
 | Orientation | Straight | Straight | Straight | Diagonal |
 | Success rate | 3/10 | 46/50 | 50/50 | 10/10 |
 | Percentage | 30% | 92% | 100% | 100% | 
+
+### Discussion
+The robot fails to cross the platform gap when both omni wheels are at the platform gap and the differential drive wheels are slipping without enough friction force for the robot to move forward. 
+<div align="center">
+  <img src="../images/omniwheelstuckatgap.png" alt="Robot omni wheels stuck at the platform gap" />
+  <figcaption>Figure 4: Robot omni wheels stuck at the platform gap</figcaption>
+</div>
+
+Moving at a higher speed yields a higher success rate but it is less reliable as the robot is using its momentum to force itself across the platform gap. This impact on the wheels when it collides with the other side of the platform increases the wear and tear damage which is not ideal for the robot. This is also the reason why more tests were conducted with a speed of 0.1m/s.
+
+The ratio of the vertical height and horizontal gap changes the angle at which the robot wheel rolls over the platform gap which in turn also affects the success rate. At a gentler gradient, the success rate would be higher as seen from the repetitive test results.
+
+<div align="center">
+  <img src="../images/gradientforwheeltomoveacrossgap.png" alt="Illustration of the gradient for the wheel to move across the platform gap" />
+  <figcaption>Figure 5: Illustration of the gradient for the wheel to move across the platform gap</figcaption>
+</div>
+
+The requirement set by Infocomm Media Development Authority (IMDA) is for the robot to enter the lift if the horizontal gap is less than 3cm and vertical height difference is less than 1cm. Based on the repetitive test results, the robot reliably crosses the platforms with a horizontal gap of 3cm and vertical height difference of 0.5cm.
+
+### Conclusion
+Out of all the 4 variables, robot orientation affects the success rate the most. For the robot to have the highest success rate crossing the platform gap, the robot needs to cross the platform gap diagonally so that the omni wheels would not get stuck at the platform gap.
+
+
