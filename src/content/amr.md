@@ -9,13 +9,13 @@ fleet_adapter_aurora was initially developed by referring to [fleet_adapter_temp
 In summmary, fleet_adapter_aurora does the followings:
 1. Send different commands to Aurora robot.
 
-    | Types | Purposes |
-    |---------|---------|
-    | Navigation commands | To navigate robot to certain waypoints on the map |
-    | Docking commands | To trigger user-defined behaviors when robot is approaching  a waypoint that has "dock_name" being filled |
-    | Action executor commands | To command robot to start custom actions eg. cleaning task and shelf reading task |
+| Types | Purposes |
+|---------|---------|
+| Navigation commands | To navigate robot to certain waypoints on the map |
+| Docking commands | To trigger user-defined behaviors when robot is approaching  a waypoint that has "dock_name" being filled |
+| Action executor commands | To command robot to start custom actions eg. cleaning task and shelf reading task |
 
-1. Request real-time information from Aurora robot such as robot pose and battery percentage. Will also query for task status when needed.
+2. Request real-time information from Aurora robot such as robot pose and battery percentage. Will also query for task status when needed.
 
 <img src="../images/RMF_robot_diagram.jpg" alt="fleet adapter communicate with robots"/>
 
