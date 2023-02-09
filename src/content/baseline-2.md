@@ -1,1 +1,24 @@
-# Baseline 2
+# Integration Tests
+
+**RMF-Lift and RMF-Doors**
+
+On the second level, integration tests between the Lift as well as Doors
+and RMF were carried out to ensure integration quality and correctness
+as well as expose any shortcomings or bugs in terms of behavioral
+mismatches between the two systems.
+
+A more in depth explanation of the architecture between RMF and the
+infrastructure systems can be found in Chapter 10.2.2.
+
+<p align="center">
+Table 3: Tests for integration of RMF-Lifts and RMF-Doors
+</p>
+
+|                                          |                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|*Sub-Systems*|*Categories*|*Test Cases*|*Reasons*|
+| RMF-Lift           | Functionality Test       | Changing of modes: AGV mode, Human mode.<br/><br/>Calling of lift to level 2,3,4,5,6.<br/><br/>Reading and publishing of lift states for all modes and all floors.<br/><br/>Exceptional behaviors <br/>- Loss of comms <br/>- Fire Alarm mode <br/>- Timeouts -<br/> Non-interfering mode <br/>- And more<br/><br/>Mechanical quality checks<br/>- Lift controller box mounting <br/>- Dust protection | To ensure integration is done correctly. <br/><br/> To ensure the system is operational even during exceptional situations. <br/><br/> To ensure no unintended “hanging” states for all situations. <br/><br/> To ensure the system is recoverable after exceptional situations. <br/><br/> To ensure the lift controller box is installed in a safe and reliable manner.     |
+| RMF-Doors          |                          | Commanding of doors <br/><br/> Reading and publishing door states <br/><br/> Exceptional behaviors<br/>- Loss of comms <br/>- Fire Alarm mode <br/>- Timeouts <br/>- Non-interfering mode <br/>- And more<br/><br/>Mechanical quality checks<br/>- Door controller box mounting<br/> - Sensor mounting reliability <br/>- Dust protection                                                              | To ensure integration is done correctly.<br/><br/>To ensure the system is operational even during exceptional situations.<br/><br/>To ensure no unintended “hanging” states for all situations.<br/><br/>To ensure the system is recoverable after exceptional situations.<br/><br/>To ensure the lift controller box is installed in a safe and reliable manner.             |
+| RMF- LiftRMF-Doors | Connectivity Stress Test | Extended period of packet drop monitoringValidating no single point of failure                                                                                                                                                                                                                                                                                                                         | To ensure the reliability of the connectivity. <br/><br/> Due to circumstances, the infrastructure-rmf software adapter for all integrated doors and lifts is a monolithic piece of code multithreaded into different processes. This test also covers the code that never blocks / crashes due to a single point of hardware failure in any of the door or lift controllers. |
+
+

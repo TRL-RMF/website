@@ -1,3 +1,1 @@
-# Baseline 0
-
-## Static test rig
+# Standalone Test - Static Lift Rig Tests (Senserbot)

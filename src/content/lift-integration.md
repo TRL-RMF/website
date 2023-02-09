@@ -1,3 +1,0 @@
-# Lift Integration
-
-## Fujitec

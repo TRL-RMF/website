@@ -1,131 +1,60 @@
-# Baseline 1
 
-## INTRODUCTION
-In this baseline, we will be conducting unit testing for each of the following components:
-- RMF (simulation)
-- Aurorabot Fleet Adapter (Physical)
-- CAATO Fleet Adapter (Physical)
-- Fujitec Lift Controller and Adapter (Physical)
-- Dormakaba Door Controller and Adapter (Physical)
+# Standalone test - Lifts and Doors
 
-For the purpose of this test, we will be using simulation and physical testing of each components ability to meet a set of test requirements before we proceed to baseline 2 testing.W
-## OBJECTIVES AND TASKS
-### Objectives
-The objective of this testing is to ensure that we are able to identify potential issues as well as seek recommended solutions for these problems. We are also expecting to 'tune' the system to achieve a certain level of robustness in handling certain situations, such as receiving changing itineraries or handling conflicts between two robots.
-### Tasks
-In general, the tasks will occur in the following sequence:
-1. Identify Test Case
-2. Conduct Test with system as-is
-3. Identify any issues (if any)
-4. If any issues, seek remedy and modify system
-5. Repeat Steps 2 - 4 until system is able to pass test case identified.
-## SCOPE
-### RMF Unit Testing
-For the purpose of RMF unit testing, we will test using the RMF Gazebo Simulation in ROS2 using the plugin adapters. We will test 4 test cases listed below:
-#### RMF Unit Test Case 1
-Using the map below, and two tinyRobot plugins, we will test conflicting paths. In this case, the two robots will be sent to perform a loop task from their respective charging points to opposing points (tinyRobot1 goes to cafe_4 and tinyRobot2 goes to big_screen). The detailed test plan is in the TESTING STRATEGY section.
-#### RMF Unit Test Case 2
-Using the map below, and two tinyRobot plugins, we will test conflicting paths. In this case, the two robots will be sent to perform a loop task from their respective charging points to the same point via the door at lift_landing. The detailed test plan is in the TESTING STRATEGY section.
-#### RMF Unit Test Case 3
-Using the TRL map, and two tinyRobot plugins, we will test lift coordination. In this case, the two robots will be sent to perform a loop task from their respective charging points to different point via the lift at lift_landing. The detailed test plan is in the TESTING STRATEGY section.
-#### RMF Unit Test Case 4
-Using the TRL map, and two tinyRobot plugins, we will test fire alarm coordination. In this case, the two robots will be sent to perform a loop task from their respective charging points to different points via the lift at lift_landing. The detailed test plan is in the TESTING STRATEGY section.
+Apart from the multi-level design reviews carried out for the developed
+components for lift and door integration, a list of tests have also been
+carried out on the standalone level to ensure quality.
 
-### Aurorabot and CAATO Fleet Adapter Unit Testing 
-This is the testing scope
+**Standalone tests for lift integration**
 
-### Door Controller and Adapter at TRL Unit Testing
-This is the testing scope
-### Lift Controller and Adapter at TRL Unit Testing
-This is the testing scope
+To respect the confidentiality of the lift vendor who provided its
+services and helping hands in this project, the details of the conducted
+tests will not be disclosed in this section. However, this section will
+still give a description of the tested items / cases to provide a better
+understanding of what needs to be tested to ensure quality and
+stability.
 
-## TESTING STRATEGY
-### RMF Unit Testing
-1.  Unit Test Case 1 (Robot Deconfliction)
+For RMF to control the lift, the lift vendor has retrofitted its service
+lift with electronics which exposes its functionality to external
+systems via dry contact interfaces. A beckhoff PLC coupled with
+additional electronics (Lift Controller Box) which holds the logic in
+firing the correct sequence of signals to the lift vendor's electronics
+serves as a safe and stable intermediate controller. Higher level
+software calls can then be routed to the PLC to control the lift. A more
+detailed description of the work in integrating the lift can be found in
+Chapter 10.2.2.
 
-| Stage | Description | Expected Behaviour |
-| --- | --- | --- |
-| 0 | tinyRobot 1 and 2 at their respective charger points (tinyRobot1_charger and tinyRobot2_charger). | Robots are waiting at their respective charging points |
-| 1 | tinyRobot_1 issued a patrol task to proceed to cafe_4 and then return to tinyRobot1_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate |
-| 2 | Delay 1 second |  |
-| 3 | tinyRobot_2 issued a patrol task to proceed to big_screen and then return to tinyRobot2_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot fleet adapter deconflicts between the two current robots moving and tinyRobot_2 receives navigation requests and proceeds to navigate  without conflicting with tinyRobot1 |
-| 4 | Both tinyRobots return to their respective charger | No conflict occurring between robots, or conflicts able to resolve and robots able to reach charging points |
+Table 1 below shows a high level description of the tests carried out
+for the components for lift integration.
 
-2. Unit Test Case 2 (Door - Robot  Deconfliction)
+<p align="center">
+Table 1: Tests for components for lift integration
+</p>
 
-| Stage | Description | Expected Behaviour |
-| --- | --- | --- |
-| 0 | tinyRobot 1 and 2 at their respective charger points (tinyRobot1_charger and tinyRobot2_charger). | Robots are waiting at their respective charging points |
-| 1 | tinyRobot_1 issued a patrol task to proceed to lift_waiting_point and then return to tinyRobot1_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate |
-| 2 | Delay 1 second |  |
-| 3 | tinyRobot_2 issued a patrol task to proceed to lift_waiting_point and then return to tinyRobot2_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot fleet adapter deconflicts between the two current robots moving and tinyRobot_2 receives navigation requests and proceeds to navigate  without conflicting with tinyRobot1 |
-| 4 | Both tinyRobots return to their respective charger | No conflict occurring between robots, or conflicts able to resolve and robots able to reach charging points |
+|                                          |                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|*Components*|*Categories*|*Test Cases*|*Reasons*|
+| Retrofitted Electronics from lift vendor | Validation Test    | Testing validity of “lift in operation” feedback signal. <br/> <br/> Reservation of lift. <br/> <br/> Release of lift. <br/> <br/> Calling lift to go to a level.                                                                                                                                                                                                                                                                                                                                         | This test is critical as it serves the following purposes: <br/> 1. Ensure installation and enhancement <br/> works from the lift vendor are done correctly. <br/> 2. Ensure the handovered system works as <br/> intended to pre-given specification documents. <br/> The design of the developed lift controller box references these specification documents. <br/> A test early on will show any discrepancy in provided information which may affect the final developed design. |
+| Lift Controller Box                      | Functionality Test | Testing reading of “lift in operation” feedback signal. <br/><br/> Reservation of lift. <br/><br/> Release of lift. <br/><br/> Calling lift to go to a level. <br/><br/> Exceptional Behaviors:  <br/> - Turnkey to non-interfering mode <br/> - Electrical release of signals in error / exception mode <br/> - Reconnecting when loss of 2 way heartbeat <br/> - And more <br/> <br/> Quality checks <br/> - Thermal ventilation <br/> - Crimping and connection quality <br/> - Mounting reliabilities | To ensure the developed system is assembled <br/> and fabricated as designed.To ensure fabricated <br/> electronics are stable, safe and durable for 24/7 <br/> operations.                                                                                                                                                                                                                                                                                                           |
+|                                          | Software Test      | Static Analysis Tests                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Ensure production quality code. <br/> Expose vulnerabilities in “distance” & “hard-to-reach” code.                                                                                                                                                                                                                                                                                                                                                                                    |
 
-3. Unit Test Case 3 (Lift - Robot  Deconfliction)
 
-| Stage | Description | Expected Behaviour |
-| --- | --- | --- |
-| 0 | tinyRobot 1 and 2 at their respective charger points (tinyRobot1_charger on L2 and tinyRobot2_charger on L3). | Robots are waiting at their respective charging points |
-| 1 | tinyRobot_1 issued a patrol task to proceed to L3 and then return to tinyRobot1_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate |
-| 2 | Delay 1 second |  |
-| 3 | tinyRobot_2 issued a patrol task to proceed to L4 and then return to tinyRobot2_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot fleet adapter deconflicts between the two current robots moving and tinyRobot_2 receives navigation requests and proceeds to navigate  without conflicting with tinyRobot1 |
-| 4 | Both tinyRobots return to their respective charger | No conflict occurring between robots, or conflicts able to resolve and robots able to reach charging points |
 
-3. Unit Test Case 4 (Fire Alarm)
+**Standalone tests for door integration**
 
-| Stage | Description | Expected Behaviour |
-| --- | --- | --- |
-| 0 | tinyRobot 1 and 2 at their respective charger points (tinyRobot1_charger on L2 and tinyRobot2_charger on L3). | Robots are waiting at their respective charging points |
-| 1 | tinyRobot_1 issued a patrol task to proceed to L3 and then return to tinyRobot1_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot_1 receives navigation requests and proceeds to navigate |
-| 2 | Delay 1 second |  |
-| 3 | tinyRobot_2 issued a patrol task to proceed to L4 and then return to tinyRobot2_charger | tinyRobot fleet adapter submits bid, wins bid and then issues task to navigate to the stated waypoints. tinyRobot fleet adapter deconflicts between the two current robots moving and tinyRobot_2 receives navigation requests and proceeds to navigate  without conflicting with tinyRobot1 |
-| 4 | Fire alarm is triggered | Both robots stop and proceed to nearest parking spot |
+Similar to the standalone tests done for lift integrations, the
+developed door controllers also follow similar test cases to ensure its
+reliability.
 
-### Aurorabot and CAATO Fleet Adapter Unit Testing
+A more in-depth explanation on the work behind door integrations can be
+found in Chapter 10.2.2.
 
-###  Door Controller and Adapter at TRL Unit Testing
+<p align="center">
+Table 2: Tests for components for door integration
+</p>
 
-### Lift Controller and Adapter at TRL Unit Testing
-
-## EQUIPMENT REQUIREMENTS
-### RMF Unit Testing
-1. Computer running RMF on Galactic with latest release of RMF and TRL repositories
-
-### Aurorabot and CAATO Fleet Adapter Testing
-1. Aurorabot (or CAATO) robot with Client running
-2. RMF Staging Server on AWS GCC Running with RMF-Web displayed
-
-###  Door Controller and Adapter at TRL Unit Testing
-
-### Lift Controller and Adapter at TRL Unit Testing
-
-## TEST SCHEDULE
-
-## CONTROL PROCEDURES
-
-## FEATURES TO BE TESTED
-
-## FEATURES NOT TO BE TESTED
- RESOURCES/ROLES & RESPONSIBILITIES
-## RESOURCES/ROLES & RESPONSIBILITIES
-
-## SCHEDULES
-
-## RISKS/ASSUMPTIONS
-
-![](https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_deconflict.gif)
-
-![](https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_big_screen_holding_point.gif)
-
-![](https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_passthrough_points_2.gif)
-
-![](https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_passthrough_points_3.gif)
-
-![](https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_passthrough_points_fail.gif)
-
-![](https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_1_lane_with_passthrough_points.gif)
-
-![](https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_multilane_deconflict.gif)
-
-![](https://rmf-systems-engineering-handbook.s3.ap-southeast-1.amazonaws.com/baseline-1/MBC_sim_multulane_deconflict_2.gif)
-
+|                                          |                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|*Components*|*Categories*|*Test Cases*|*Reasons*|
+| Door Controller Box | Functionality Test | Testing reading of door states<br/><br/>Testing of commanding doors to close and open. <br/><br/>Exceptional Behaviors <br/>- Switch to non-interfering mode <br/>- Connection loss behaviors <br/>- And more<br/><br/>Quality checks | To ensure the developed system is assembled and fabricated as designed.<br/><br/>To ensure fabricated electronics are stable, safe and durable for 24/7 operations. |
+|                     | Software Test      | Static Analysis Tests                                                                                                                                                                                                                 | Ensure production quality code. <br/> Expose vulnerabilities in “distance” & “hard-to-reach” code.                                                                  |
