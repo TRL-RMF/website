@@ -1,7 +1,7 @@
 # AMR Integration
 Senserbot Pte Ltd have at least 10 shelf reading robots being deployed at different national libraries in Singapore. However, those robots do not have the capabilities to take lift and move through the doors on themselves. Hence, in those situations, robots would require library staffs to joystick teleop them to different floors and move through the doors to reach the designated locations. With RMF in place, these issues could be resolved and human intervention is no longer required.
 
-In this project, an Aurora robot that is meant for Punggul Regional Library was used to test with RMF. In order for RMF taking control of Aurora robot , it required a fleet adapter to be installed in a Kubernetes cluster and API endpoints to be available on the robot.
+In this project, an Aurora robot that is meant for Punggol Regional Library was used to test with RMF. In order for RMF taking control of Aurora robot , it required a fleet adapter to be installed in a Kubernetes cluster and API endpoints to be available on the robot.
 
 ## Fleet Adapter
 fleet_adapter_aurora was initially developed by referring to [fleet_adapter_template](https://github.com/open-rmf/fleet_adapter_template) and [fleet_adapter_ecobot](https://github.com/open-rmf/fleet_adapter_ecobot). As time passed by, there were some modifications and new logics being added to work seamlessly with Aurora robot.
