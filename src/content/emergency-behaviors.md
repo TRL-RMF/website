@@ -15,7 +15,7 @@ During the UAT test, all emergency requirements mentioned above were satisfied a
 
 1 of the videos
 <br>
-<video src="" controls="controls" style="max-width: 730px;">
+<video src="../images/fire_alarm_test.webm" controls="controls" style="max-width: 730px;">
 </video>
 
 
